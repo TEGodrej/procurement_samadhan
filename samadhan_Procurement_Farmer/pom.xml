@@ -9,7 +9,7 @@
 <dependency>
     <groupId>org.testng</groupId>
     <artifactId>testng</artifactId>
-    <version>7.4.0</version>
+    <version>7.7.1</version>
     <scope>test</scope>
 </dependency>
 
@@ -17,7 +17,7 @@
 <dependency>
     <groupId>io.appium</groupId>
     <artifactId>java-client</artifactId>
-    <version>8.3.0</version>
+    <version>9.2.2</version>
 </dependency>
 
 <!-- https://mvnrepository.com/artifact/commons-io/commons-io -->
@@ -34,5 +34,11 @@
     <version>4.8.3</version>
 </dependency>
 
+<!-- https://mvnrepository.com/artifact/com.aventstack/extentreports -->
+<dependency>
+    <groupId>com.aventstack</groupId>
+    <artifactId>extentreports</artifactId>
+    <version>4.0.9</version>
+</dependency>
   </dependencies>
 </project>
