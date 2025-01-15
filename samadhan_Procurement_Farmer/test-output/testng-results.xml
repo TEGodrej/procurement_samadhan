@@ -1,25 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+<testng-results ignored="4" total="5" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-01-10T16:43:48 IST" name="Default suite" finished-at="2025-01-10T16:44:33 IST" duration-ms="44738">
+  <suite started-at="2025-01-14T17:38:34 IST" name="Default suite" finished-at="2025-01-14T17:39:11 IST" duration-ms="37172">
     <groups>
     </groups>
-    <test started-at="2025-01-10T16:43:48 IST" name="Default test" finished-at="2025-01-10T16:44:33 IST" duration-ms="44738">
-      <class name="Farmer_V106_Functional.collectionCenterBooking">
-        <test-method is-config="true" signature="startApp()[pri:0, instance:Farmer_V106_Functional.collectionCenterBooking@4f6ee6e4]" started-at="2025-01-10T16:43:48 IST" name="startApp" finished-at="2025-01-10T16:43:54 IST" duration-ms="6588" status="PASS">
+    <test started-at="2025-01-14T17:38:34 IST" name="Default test" finished-at="2025-01-14T17:39:11 IST" duration-ms="37172">
+      <class name="Farmer_V106_Functional.LandDetails">
+        <test-method is-config="true" signature="startApp()[pri:0, instance:Farmer_V106_Functional.LandDetails@3e58a80e]" started-at="2025-01-14T17:38:34 IST" name="startApp" finished-at="2025-01-14T17:38:41 IST" duration-ms="6678" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- startApp -->
-        <test-method signature="bookCC()[pri:0, instance:Farmer_V106_Functional.collectionCenterBooking@4f6ee6e4]" started-at="2025-01-10T16:43:54 IST" name="bookCC" finished-at="2025-01-10T16:44:32 IST" duration-ms="37462" status="PASS">
+        <test-method signature="verifyUserNotBeAbleToRecordHarvestWithoutEnteringFFBcount()[pri:0, instance:Farmer_V106_Functional.LandDetails@3e58a80e]" started-at="2025-01-14T17:38:41 IST" name="verifyUserNotBeAbleToRecordHarvestWithoutEnteringFFBcount" finished-at="2025-01-14T17:39:10 IST" duration-ms="29611" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- bookCC -->
-        <test-method is-config="true" signature="closeApp()[pri:0, instance:Farmer_V106_Functional.collectionCenterBooking@4f6ee6e4]" started-at="2025-01-10T16:44:32 IST" name="closeApp" finished-at="2025-01-10T16:44:33 IST" duration-ms="671" status="PASS">
+        </test-method> <!-- verifyUserNotBeAbleToRecordHarvestWithoutEnteringFFBcount -->
+        <test-method is-config="true" signature="closeApp()[pri:0, instance:Farmer_V106_Functional.LandDetails@3e58a80e]" started-at="2025-01-14T17:39:10 IST" name="closeApp" finished-at="2025-01-14T17:39:11 IST" duration-ms="865" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeApp -->
-      </class> <!-- Farmer_V106_Functional.collectionCenterBooking -->
+      </class> <!-- Farmer_V106_Functional.LandDetails -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

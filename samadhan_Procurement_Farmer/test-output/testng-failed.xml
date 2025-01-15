@@ -3,13 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="Farmer_V106_Functional.collectionCenterBooking">
+      <class name="Farmer_V106_Functional.LandDetails">
         <methods>
           <include name="closeApp"/>
-          <include name="bookCC"/>
+          <include name="verifyUserNotBeAbleToRecordHarvestWithoutEnteringFFBcount"/>
           <include name="startApp"/>
         </methods>
-      </class> <!-- Farmer_V106_Functional.collectionCenterBooking -->
+      </class> <!-- Farmer_V106_Functional.LandDetails -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

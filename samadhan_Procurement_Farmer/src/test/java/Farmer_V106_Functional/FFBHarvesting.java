@@ -9,7 +9,9 @@ import GenericUtilities.BaseClass_Farmer;
 import io.appium.java_client.AppiumBy;
 
 public class FFBHarvesting extends BaseClass_Farmer {
-
+/*
+ *This is verify user is able to record harvest or not 
+ */
 	@Test
 	public void RecordHarvest() {
 		dutil.implicitWait(10);
@@ -32,7 +34,9 @@ public class FFBHarvesting extends BaseClass_Farmer {
 		rhp.getokayBtn().click();
 	
 	}
-	
+	/*
+	 *This is to verify that the recorded harvest in have same data or not 
+	 */
 	@Test
 	public void verifyEnteredDetail() {
 		String expectedharvestId="553";
@@ -48,6 +52,56 @@ public class FFBHarvesting extends BaseClass_Farmer {
 			assertTrue(true);
 		}else {
 			System.out.println("harvestId is not matching:Case Fail");
+		}
+	}
+	/*
+	 *This is to verify that if user is not entering the harvest date; They should not be able to record harvesting. 
+	 */
+	@Test
+	public void RecordHarvestWithoutEnteringDate() {
+		dutil.implicitWait(10);
+		hp.getHambergerTab().click();
+		htp.getFFBharvesttab().click();
+		fsp.getrecordharvestingbtn().click();
+		fldsp.getfirstlandinfo().click();
+		pdsp.getplantationId().click();
+		pdsp.getrecordharvestbtn().click();
+		rhp.getFFBcountTextfeild().sendKeys("234");
+		WebElement submitBtn=rhp.getsubmitBtn();
+		dutil.explicitWait(10, submitBtn);
+		submitBtn.click();
+		WebElement ErrorMsg=sdriver.findElement(AppiumBy.xpath("//android.widget.TextView[@text=\"Select harvesting date.\"]"));
+		if(ErrorMsg.isDisplayed()) {
+			assertTrue(true);
+		}else {
+			System.out.println("Message not displayed: case Fail");
+		}
+	}
+	/*
+	 *This is to verify that if user do not upload picture they should not be able to record the harvest
+	 */
+	@Test
+	public void recordHarvestWithoutUploadingPicture() {
+		dutil.implicitWait(10);
+		hp.getHambergerTab().click();
+		htp.getFFBharvesttab().click();
+		fsp.getrecordharvestingbtn().click();
+		fldsp.getfirstlandinfo().click();
+		pdsp.getplantationId().click();
+		pdsp.getrecordharvestbtn().click();
+		rhp.getdateTextFeild().click();
+		WebElement date=sdriver.findElement(AppiumBy.xpath("//android.widget.TextView[@text=\"14\"]"));
+		gutil.click(date);
+		rhp.getsaveBtn().click();
+		rhp.getFFBcountTextfeild().sendKeys("234");
+		WebElement submitBtn=  rhp.getsubmitBtn();
+		dutil.explicitWait(5, submitBtn);
+		submitBtn.click();
+		WebElement ImageErrorMsg=sdriver.findElement(AppiumBy.xpath("//android.widget.TextView[@text=\"Please upload file.\"]"));
+		if(ImageErrorMsg.isDisplayed()) {
+			assertTrue(true);
+		}else {
+			System.out.println("Message did not displayed: Case Fails");
 		}
 	}
 }
