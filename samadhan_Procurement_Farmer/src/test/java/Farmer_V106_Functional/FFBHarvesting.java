@@ -55,7 +55,7 @@ public class FFBHarvesting extends BaseClass_Farmer {
 		}
 	}
 	/*
-	 *This is to verify that if user is not entering the harvest date; They should not be able to record harvesting. 
+	 *This is to verify that user should not be able to record harvest Without entering Date
 	 */
 	@Test
 	public void RecordHarvestWithoutEnteringDate() {

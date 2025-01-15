@@ -23,6 +23,7 @@ public class Profile extends BaseClass_Farmer {
 			System.out.println("The script got failed");
 		}
 	}
+	
 //	This is to verify users bank details
 	@Test
 	public void VerifyBankDetail() {

@@ -84,9 +84,7 @@ public class LandDetails extends BaseClass_Farmer{
 		mldp.getFirstLandId().click();
 		mldp.getPlantationId().click();
 		mldp.getRecordHarvesting().click();
-		
 		rhp.getFFBcountTextfeild().sendKeys("269");
-	
 		WebElement submitBtn=rhp.getsubmitBtn();
 		dutil.explicitWait(5, submitBtn);
 		submitBtn.click();
@@ -123,6 +121,23 @@ public class LandDetails extends BaseClass_Farmer{
 	
 	@Test
 	public void verifyUserNotBeAbleToRecordHarvestWithoutUploadingImage() {
-		
+		dutil.implicitWait(10);
+		hp.getHambergerTab().click();
+		htp.getMylandtab().click();
+		mldp.getFirstLandId().click();
+		mldp.getPlantationId().click();
+		mldp.getRecordHarvesting().click();
+		rhp.getdateTextFeild().click();
+		WebElement date=sdriver.findElement(AppiumBy.xpath("//android.widget.TextView[@text=\"15\"]"));
+		date.click();
+		rhp.getsaveBtn().click();
+		rhp.getFFBcountTextfeild().sendKeys("898");
+		rhp.getsubmitBtn().click();
+		WebElement ErrorMsg=sdriver.findElement(AppiumBy.xpath("//android.widget.TextView[@text=\"Please upload file.\"]"));
+		if(ErrorMsg.isDisplayed()) {
+			assertTrue(true);
+		}else {
+			assertTrue(false, "Message did not displayed: Case Fails");
+		}
 	}
 }

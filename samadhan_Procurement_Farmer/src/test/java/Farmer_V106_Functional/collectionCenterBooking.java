@@ -9,7 +9,9 @@ import GenericUtilities.BaseClass_Farmer;
 import io.appium.java_client.AppiumBy;
 
 public class collectionCenterBooking extends BaseClass_Farmer{
-
+/*
+ *This is to verify that user should be able to book slot 
+ */
 	@Test
 	public void bookCC() {
 		String Expectedtext="Upcoming Slot";
@@ -26,9 +28,8 @@ public class collectionCenterBooking extends BaseClass_Farmer{
 //		sdriver.findElement(AppiumBy.androidUIAutomator(
 //			    "new UiScrollable(new UiSelector()).scrollIntoView(new UiSelector().text(\"7:30 PM - 8:30 PM \"))"));
 		WebElement time=dtp.getThirteenthtimeslot();
-		gutil.scroll(time, true, 0, 0, 0, 0, 0, Expectedtext);
-		
-		
+		gutil.scroll(time, true, 0, 0, 0, 0, 0, "up");
+		time.click();
 		dtp.getConfirmbtn().click();
 		dtp.getokBtn().click();
 		WebElement Text=sdriver.findElement(AppiumBy.xpath("(//android.widget.TextView[@text=\"Upcoming Slot!\"])[1]"));
@@ -41,6 +42,7 @@ public class collectionCenterBooking extends BaseClass_Farmer{
 	}
 	/*
 	 *This is to verify that the user is able to do CC Slot Booking without entering weight on select land page 
+	 *Assertions are made on error Message display
 	 */
 	@Test
 	public void verifyUserIsAbleToBookCcWithoutWeight() {
@@ -57,7 +59,9 @@ public class collectionCenterBooking extends BaseClass_Farmer{
 			System.out.println("Message did not displayed");
 		}
 	}
-	
+	/*
+	 *This is to verify that user should not be able to book a slot without selecting date 
+	 */
 	@Test
 	public void VerifyUserAbleTOBookSlotWithoutSelectingDate() {
 		dutil.implicitWait(10);
@@ -77,4 +81,5 @@ public class collectionCenterBooking extends BaseClass_Farmer{
 			assertTrue(false, "Message did not Dispalyed: Case Fails");
 		}
 	}
+	
 }
