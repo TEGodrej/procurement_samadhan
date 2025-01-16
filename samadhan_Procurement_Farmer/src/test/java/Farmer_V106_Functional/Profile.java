@@ -43,7 +43,9 @@ public class Profile extends BaseClass_Farmer {
 	}
 	
 	
-//	This is to verify that user should be able to see his RFID card details
+	/*
+	 * This is to verify that user should be able to see his RFID card details
+	 */
 	@Test
 	public void VerifyRFIDcard() {
 		dutil.implicitWait(5);
@@ -56,5 +58,17 @@ public class Profile extends BaseClass_Farmer {
 		}else {
 			System.out.println("Card does not displayed");
 		}
+	}
+	
+	/*
+	 *This is to verify that user should be able to change profile picture
+	 */
+	@Test
+	public void verifyUserIsAbleToChangeProfileImageThroughCamera() {
+		dutil.implicitWait(10);
+		hp.getHambergerTab().click();
+		htp.getProfile().click();
+		mpp.getprofilepicIcon().click();
+		ppp.getCameraTab().click();
 	}
 }

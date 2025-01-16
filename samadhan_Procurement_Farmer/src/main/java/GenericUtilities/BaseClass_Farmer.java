@@ -20,6 +20,7 @@ import ObjectoRepository_Farmer.RecordHarvestingPage;
 import ObjectoRepository_Farmer.ccSlotBookingPage;
 import ObjectoRepository_Farmer.newEnquiryPage;
 import ObjectoRepository_Farmer.plantationDetailsScreenPage;
+import ObjectoRepository_Farmer.profilePicturePage;
 import ObjectoRepository_Farmer.selectCcPage;
 import ObjectoRepository_Farmer.selectLandPage;
 import ObjectoRepository_Farmer.successpopupPage;
@@ -52,6 +53,7 @@ public class BaseClass_Farmer {
 	public static MyProfilePage mpp;
 	public static EnquiriesPage ep;
 	public static newEnquiryPage nep;
+	public static profilePicturePage ppp;
 	
 
 		@BeforeClass
@@ -99,6 +101,7 @@ public class BaseClass_Farmer {
 			 mpp=new MyProfilePage(driver);
 			 ep= new EnquiriesPage(driver);
 			 nep=new newEnquiryPage(driver);
+			 ppp=new profilePicturePage(driver);
 		}
 		
 		@AfterClass

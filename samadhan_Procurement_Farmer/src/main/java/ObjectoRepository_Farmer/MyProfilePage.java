@@ -25,6 +25,13 @@ public class MyProfilePage {
 	
 	@FindBy(xpath = "//android.widget.TextView[@text=\"Family Group Mapping\"]")
 	private WebElement familyGroupMap;
+	
+	@FindBy(xpath = "//android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[1]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.ImageView")
+	private WebElement profilepicIcon;
+	
+	public WebElement getprofilepicIcon() {
+		return profilepicIcon;
+	}
 
 	public WebElement getPersonalInfo() {
 		return personalInfo;
