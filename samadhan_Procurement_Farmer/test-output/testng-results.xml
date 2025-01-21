@@ -1,25 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="3" total="4" passed="1" failed="0" skipped="0">
+<testng-results ignored="1" total="2" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-01-15T15:23:44 IST" name="Default suite" finished-at="2025-01-15T15:24:12 IST" duration-ms="27680">
+  <suite started-at="2025-01-17T14:39:52 IST" name="Default suite" finished-at="2025-01-17T14:40:11 IST" duration-ms="19773">
     <groups>
     </groups>
-    <test started-at="2025-01-15T15:23:44 IST" name="Default test" finished-at="2025-01-15T15:24:12 IST" duration-ms="27680">
-      <class name="Farmer_V106_Functional.Profile">
-        <test-method is-config="true" signature="startApp()[pri:0, instance:Farmer_V106_Functional.Profile@6b927fb]" started-at="2025-01-15T15:23:44 IST" name="startApp" finished-at="2025-01-15T15:23:53 IST" duration-ms="9224" status="PASS">
+    <test started-at="2025-01-17T14:39:52 IST" name="Default test" finished-at="2025-01-17T14:40:11 IST" duration-ms="19773">
+      <class name="Farmer_V106_Functional.Home">
+        <test-method is-config="true" signature="startApp()[pri:0, instance:Farmer_V106_Functional.Home@3e58a80e]" started-at="2025-01-17T14:39:52 IST" name="startApp" finished-at="2025-01-17T14:39:59 IST" duration-ms="7734" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- startApp -->
-        <test-method signature="verifyUserIsAbleToChangeProfileImageThroughCamera()[pri:0, instance:Farmer_V106_Functional.Profile@6b927fb]" started-at="2025-01-15T15:23:53 IST" name="verifyUserIsAbleToChangeProfileImageThroughCamera" finished-at="2025-01-15T15:24:11 IST" duration-ms="17457" status="PASS">
+        <test-method signature="verifyUserRank()[pri:0, instance:Farmer_V106_Functional.Home@3e58a80e]" started-at="2025-01-17T14:39:59 IST" name="verifyUserRank" finished-at="2025-01-17T14:40:11 IST" duration-ms="11272" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- verifyUserIsAbleToChangeProfileImageThroughCamera -->
-        <test-method is-config="true" signature="closeApp()[pri:0, instance:Farmer_V106_Functional.Profile@6b927fb]" started-at="2025-01-15T15:24:11 IST" name="closeApp" finished-at="2025-01-15T15:24:12 IST" duration-ms="978" status="PASS">
+        </test-method> <!-- verifyUserRank -->
+        <test-method is-config="true" signature="closeApp()[pri:0, instance:Farmer_V106_Functional.Home@3e58a80e]" started-at="2025-01-17T14:40:11 IST" name="closeApp" finished-at="2025-01-17T14:40:11 IST" duration-ms="747" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeApp -->
-      </class> <!-- Farmer_V106_Functional.Profile -->
+      </class> <!-- Farmer_V106_Functional.Home -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

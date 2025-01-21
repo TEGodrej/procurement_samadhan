@@ -42,7 +42,6 @@ public class Profile extends BaseClass_Farmer {
 		}
 	}
 	
-	
 	/*
 	 * This is to verify that user should be able to see his RFID card details
 	 */

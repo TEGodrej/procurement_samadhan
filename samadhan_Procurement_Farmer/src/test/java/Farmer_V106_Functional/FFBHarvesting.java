@@ -11,6 +11,7 @@ import io.appium.java_client.AppiumBy;
 public class FFBHarvesting extends BaseClass_Farmer {
 /*
  *This is verify user is able to record harvest or not 
+ *Date has to be changed every time before new run
  */
 	@Test
 	public void RecordHarvest() {
@@ -23,7 +24,7 @@ public class FFBHarvesting extends BaseClass_Farmer {
 		pdsp.getrecordharvestbtn().click();
 		rhp.getdateTextFeild().click();
 
-		WebElement date=sdriver.findElement(AppiumBy.xpath("//android.widget.TextView[@text=\"10\"]"));
+		WebElement date=sdriver.findElement(AppiumBy.xpath("//android.widget.TextView[@text=\"17\"]"));
 		gutil.click(date);
 		rhp.getsaveBtn().click();
 		rhp.getFFBcountTextfeild().sendKeys("290");
@@ -36,16 +37,17 @@ public class FFBHarvesting extends BaseClass_Farmer {
 	}
 	/*
 	 *This is to verify that the recorded harvest in have same data or not 
+	 *Xpath of harvestId Should Be changed before running every script
 	 */
 	@Test
 	public void verifyEnteredDetail() {
-		String expectedharvestId="553";
+		String expectedharvestId="589";
 		dutil.implicitWait(10);
 		hp.getHambergerTab().click();
 		htp.getFFBharvesttab().click();
 		WebElement harvest=sdriver.findElement(AppiumBy.xpath("//android.view.ViewGroup[@resource-id=\"card\"]/android.view.ViewGroup"));
 		harvest.click();
-		WebElement harvestId=sdriver.findElement(AppiumBy.xpath("//android.widget.TextView[@text=\"553\"]"));
+		WebElement harvestId=sdriver.findElement(AppiumBy.xpath("//android.widget.TextView[@text=\"589\"]"));
 		String actualharvestid=harvestId.getText();
 		
 		if(actualharvestid.equals(expectedharvestId)) {
@@ -79,6 +81,7 @@ public class FFBHarvesting extends BaseClass_Farmer {
 	}
 	/*
 	 *This is to verify that if user do not upload picture they should not be able to record the harvest
+	 *Date xpath should be changed every time before execution
 	 */
 	@Test
 	public void recordHarvestWithoutUploadingPicture() {
@@ -90,7 +93,7 @@ public class FFBHarvesting extends BaseClass_Farmer {
 		pdsp.getplantationId().click();
 		pdsp.getrecordharvestbtn().click();
 		rhp.getdateTextFeild().click();
-		WebElement date=sdriver.findElement(AppiumBy.xpath("//android.widget.TextView[@text=\"14\"]"));
+		WebElement date=sdriver.findElement(AppiumBy.xpath("//android.widget.TextView[@text=\"17\"]"));
 		gutil.click(date);
 		rhp.getsaveBtn().click();
 		rhp.getFFBcountTextfeild().sendKeys("234");

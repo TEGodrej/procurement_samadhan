@@ -28,7 +28,7 @@ public class collectionCenterBooking extends BaseClass_Farmer{
 //		sdriver.findElement(AppiumBy.androidUIAutomator(
 //			    "new UiScrollable(new UiSelector()).scrollIntoView(new UiSelector().text(\"7:30 PM - 8:30 PM \"))"));
 		WebElement time=dtp.getThirteenthtimeslot();
-		gutil.scroll(time, true, 0, 0, 0, 0, 0, "up");
+//		gutil.scroll(time, true, 0, 0, 0, 0, 0, "up");
 		time.click();
 		dtp.getConfirmbtn().click();
 		dtp.getokBtn().click();
@@ -40,6 +40,7 @@ public class collectionCenterBooking extends BaseClass_Farmer{
 			System.out.println("Text does not matched : Case Fail");
 		}
 	}
+	
 	/*
 	 *This is to verify that the user is able to do CC Slot Booking without entering weight on select land page 
 	 *Assertions are made on error Message display
@@ -59,6 +60,7 @@ public class collectionCenterBooking extends BaseClass_Farmer{
 			System.out.println("Message did not displayed");
 		}
 	}
+	
 	/*
 	 *This is to verify that user should not be able to book a slot without selecting date 
 	 */

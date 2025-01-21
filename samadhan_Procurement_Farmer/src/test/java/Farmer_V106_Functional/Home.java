@@ -5,30 +5,24 @@ package Farmer_V106_Functional;
 
 import static org.testng.Assert.assertTrue;
 
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
 import GenericUtilities.BaseClass_Farmer;
+import GenericUtilities.ListenerUtility;
 
+@Listeners(ListenerUtility.class)
 public class Home extends BaseClass_Farmer {
 
-	@Test
-	public void verifyUserRank() {
-		dutil.implicitWait(10);
-		if(hp.getAmatureText().isDisplayed()) {
-		assertTrue(true, "The element is visible");
-		}else {
-			System.out.println("Element not visible");
-		}
-	}
-	
-	@Test
-	public void FFBPricing() {
-		dutil.implicitWait(10);
-		if(hp.getFFBprice().isDisplayed()) {
-		assertTrue(true, "The Element is visible");
-		}
-		else {
-			System.out.println("Element is not visible");
-		}
-	}
+    @Test
+    public void verifyUserRank() {
+        dutil.implicitWait(10);
+        assertTrue(hp.getAmatureText().isDisplayed(), "The element is visible");
+    }
+
+    @Test
+    public void FFBPricing() {
+        dutil.implicitWait(10);
+        assertTrue(hp.getFFBprice().isDisplayed(), "The Element is visible");
+    }
 }

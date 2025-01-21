@@ -3,13 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="Farmer_V106_Functional.collectionCenterBooking">
+      <class name="Farmer_V106_Functional.Enquiry">
         <methods>
           <include name="closeApp"/>
           <include name="startApp"/>
-          <include name="verifyUserAbleToBookHarvestWithoutUploadingImage"/>
+          <include name="raiseNewEnquiry"/>
         </methods>
-      </class> <!-- Farmer_V106_Functional.collectionCenterBooking -->
+      </class> <!-- Farmer_V106_Functional.Enquiry -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

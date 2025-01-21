@@ -14,7 +14,7 @@ import io.appium.java_client.AppiumBy;
 public class LandDetails extends BaseClass_Farmer{
 
 	@Test
-	public void landDetail() {
+	public void verifyFarmerIsAbleToSeelandDetail() {
 		dutil.implicitWait(10);
 		hp.getHambergerTab().click();
 	    htp.getMylandtab().click();
@@ -28,9 +28,12 @@ public class LandDetails extends BaseClass_Farmer{
 		    }
 	    }
 	
-//	This is to verify that user is able to record harvest through land details page
+/*
+ * This is to verify that user is able to record harvest through land details page
+ * Date Xpath should be changed manually every time
+ */	
 	@Test
-	public void RecordHarvest() {
+	public void RecordHarvestThroughMyLandDetail() {
 		dutil.implicitWait(10);
 		hp.getHambergerTab().click();
 		htp.getMylandtab().click();
@@ -38,7 +41,7 @@ public class LandDetails extends BaseClass_Farmer{
 		mldp.getPlantationId().click();
 		mldp.getRecordHarvesting().click();
 		rhp.getdateTextFeild().click();
-		WebElement date=sdriver.findElement(AppiumBy.xpath("//android.view.ViewGroup[@content-desc=\"8\"]"));
+		WebElement date=sdriver.findElement(AppiumBy.xpath("//android.view.ViewGroup[@content-desc=\"17\"]"));
 		gutil.click(date);
 		rhp.getsaveBtn().click();
 		rhp.getFFBcountTextfeild().sendKeys("250");
@@ -62,7 +65,7 @@ public class LandDetails extends BaseClass_Farmer{
 		mldp.getPlantationId().click();
 		mldp.getRecordHarvesting().click();
 		rhp.getdateTextFeild().click();
-		WebElement date=sdriver.findElement(AppiumBy.xpath("//android.view.ViewGroup[@content-desc=\"8\"]"));
+		WebElement date=sdriver.findElement(AppiumBy.xpath("//android.view.ViewGroup[@content-desc=\"17\"]"));
 		gutil.click(date);
 		rhp.getsaveBtn().click();
 		rhp.getFFBcountTextfeild().sendKeys("269");
@@ -75,6 +78,11 @@ public class LandDetails extends BaseClass_Farmer{
 		htp.getFFBharvesttab().click();
 		
 	}
+	
+/*
+ *This is to check user should not be able to record Harvest without selecting date 
+ * 
+ */	
 	
 	@Test
 	public void verifyUserNotBeAbleToRecordHarvestWithoutEnteringDate() {
@@ -95,6 +103,10 @@ public class LandDetails extends BaseClass_Farmer{
 			assertTrue(false, "Message did not displayed: Case Fails");
 		}
 	}
+/*
+ *This is to verify that user should not be able to record harvest without entering FFB Count
+ *Date xpath have to be change before execution
+ */	
 	
 	@Test
 	public void verifyUserNotBeAbleToRecordHarvestWithoutEnteringFFBcount() {
@@ -105,7 +117,7 @@ public class LandDetails extends BaseClass_Farmer{
 		mldp.getPlantationId().click();
 		mldp.getRecordHarvesting().click();
 		rhp.getdateTextFeild().click();
-		WebElement date=sdriver.findElement(AppiumBy.xpath("//android.view.ViewGroup[@content-desc=\"14\"]"));
+		WebElement date=sdriver.findElement(AppiumBy.xpath("//android.view.ViewGroup[@content-desc=\"17\"]"));
 		gutil.click(date);
 		rhp.getsaveBtn().click();
 		WebElement submitBtn=rhp.getsubmitBtn();
@@ -118,9 +130,13 @@ public class LandDetails extends BaseClass_Farmer{
 			assertTrue(false, "Message did not displayed: Case Fails");
 		}
 	}
-	
+/*
+ * This is to check farmer should not be able to record harvest without uploading image
+ * Date xpath has to be changed before execution of the script
+ * 
+ */	
 	@Test
-	public void verifyUserNotBeAbleToRecordHarvestWithoutUploadingImage() {
+	public void verifyUserNotBeAbleToRecordHarvestWithoutUploadingImageInLandDetail() {
 		dutil.implicitWait(10);
 		hp.getHambergerTab().click();
 		htp.getMylandtab().click();

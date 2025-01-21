@@ -46,8 +46,9 @@ public class Enquiry extends BaseClass_Farmer{
 		    .ignoring(NoSuchElementException.class);  // Ignore specific exceptions
 
 		WebElement cam = wait.until(new Function<AndroidDriver, WebElement>() {
-		    public WebElement apply1(AndroidDriver driver) {
-		        return sdriver.findElement(By.xpath("//android.widget.TextView[@text=\\\"Capture Image\\\"])[2]"));  // Your XPath here
+		    @SuppressWarnings("unused")
+			public WebElement apply1(AndroidDriver driver) {
+		        return sdriver.findElement(By.xpath("//android.widget.TextView[@text=\"Capture Image\"])[2]"));  
 		    }
 
 			@Override
