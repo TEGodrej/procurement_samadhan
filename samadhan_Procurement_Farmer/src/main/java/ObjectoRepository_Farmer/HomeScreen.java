@@ -6,9 +6,9 @@ import org.openqa.selenium.support.PageFactory;
 
 import io.appium.java_client.android.AndroidDriver;
 
-public class HomePage {
+public class HomeScreen {
 	AndroidDriver driver;
-	public HomePage(AndroidDriver driver) {
+	public HomeScreen(AndroidDriver driver) {
 		this.driver=driver;
 		PageFactory.initElements(driver, this);
 	}

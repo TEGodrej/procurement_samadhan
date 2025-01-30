@@ -7,11 +7,11 @@ import org.openqa.selenium.support.PageFactory;
 import GenericUtilities.GestureUtility;
 import io.appium.java_client.android.AndroidDriver;
 
-public class ccSlotBookingPage {
+public class ccSlotBookingScreen {
 
 	AndroidDriver driver;
 	GestureUtility gutil= new GestureUtility(driver);
-	public ccSlotBookingPage(AndroidDriver driver) {
+	public ccSlotBookingScreen(AndroidDriver driver) {
 		this.driver=driver;
 		PageFactory.initElements(driver, this);
 		

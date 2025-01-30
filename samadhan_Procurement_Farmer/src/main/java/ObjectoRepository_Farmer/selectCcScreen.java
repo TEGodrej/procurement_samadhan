@@ -7,10 +7,10 @@ import org.openqa.selenium.support.PageFactory;
 import GenericUtilities.GestureUtility;
 import io.appium.java_client.android.AndroidDriver;
 
-public class selectCcPage {
+public class selectCcScreen {
 	AndroidDriver driver;
 	GestureUtility gutil= new GestureUtility(driver);
-	public selectCcPage(AndroidDriver driver) {
+	public selectCcScreen(AndroidDriver driver) {
 		this.driver=driver;
 		PageFactory.initElements(driver, this);
 	}

@@ -7,32 +7,34 @@ import org.testng.annotations.Test;
 
 import GenericUtilities.BaseClass_Farmer;
 import io.appium.java_client.AppiumBy;
-
-public class FFBHarvesting extends BaseClass_Farmer {
+/*
+ * @author Testing Engineer
+ */
+public class FFBHarvestingTest extends BaseClass_Farmer {
 /*
  *This is verify user is able to record harvest or not 
  *Date has to be changed every time before new run
  */
 	@Test
 	public void RecordHarvest() {
-		dutil.implicitWait(10);
-		hp.getHambergerTab().click();
-		htp.getFFBharvesttab().click();
-		fsp.getrecordharvestingbtn().click();
-		fldsp.getfirstlandinfo().click();
-		pdsp.getplantationId().click();
-		pdsp.getrecordharvestbtn().click();
-		rhp.getdateTextFeild().click();
+		driverUtility.implicitWait(10);
+		homeScreen.getHambergerTab().click();
+		hambergerTabScreen.getFFBharvesttab().click();
+		ffbSupplyScreen.getrecordharvestingbtn().click();
+		farmerLandDetailScreen.getfirstlandinfo().click();
+		plantationDetailScreen.getplantationId().click();
+		plantationDetailScreen.getrecordharvestbtn().click();
+		recordHarvestScreen.getdateTextFeild().click();
 
 		WebElement date=sdriver.findElement(AppiumBy.xpath("//android.widget.TextView[@text=\"17\"]"));
-		gutil.click(date);
-		rhp.getsaveBtn().click();
-		rhp.getFFBcountTextfeild().sendKeys("290");
-		rhp.getcaptureimageTab().click();
-		WebElement submitBtn=  rhp.getsubmitBtn();
-		dutil.explicitWait(5, submitBtn);
+		gestureUtility.click(date);
+		recordHarvestScreen.getsaveBtn().click();
+		recordHarvestScreen.getFFBcountTextfeild().sendKeys("290");
+		recordHarvestScreen.getcaptureimageTab().click();
+		WebElement submitBtn=  recordHarvestScreen.getsubmitBtn();
+		driverUtility.explicitWait(5, submitBtn);
 		submitBtn.click();
-		rhp.getokayBtn().click();
+		recordHarvestScreen.getokayBtn().click();
 	
 	}
 	/*
@@ -42,9 +44,9 @@ public class FFBHarvesting extends BaseClass_Farmer {
 	@Test
 	public void verifyEnteredDetail() {
 		String expectedharvestId="589";
-		dutil.implicitWait(10);
-		hp.getHambergerTab().click();
-		htp.getFFBharvesttab().click();
+		driverUtility.implicitWait(10);
+		homeScreen.getHambergerTab().click();
+		hambergerTabScreen.getFFBharvesttab().click();
 		WebElement harvest=sdriver.findElement(AppiumBy.xpath("//android.view.ViewGroup[@resource-id=\"card\"]/android.view.ViewGroup"));
 		harvest.click();
 		WebElement harvestId=sdriver.findElement(AppiumBy.xpath("//android.widget.TextView[@text=\"589\"]"));
@@ -61,16 +63,16 @@ public class FFBHarvesting extends BaseClass_Farmer {
 	 */
 	@Test
 	public void RecordHarvestWithoutEnteringDate() {
-		dutil.implicitWait(10);
-		hp.getHambergerTab().click();
-		htp.getFFBharvesttab().click();
-		fsp.getrecordharvestingbtn().click();
-		fldsp.getfirstlandinfo().click();
-		pdsp.getplantationId().click();
-		pdsp.getrecordharvestbtn().click();
-		rhp.getFFBcountTextfeild().sendKeys("234");
-		WebElement submitBtn=rhp.getsubmitBtn();
-		dutil.explicitWait(10, submitBtn);
+		driverUtility.implicitWait(10);
+		homeScreen.getHambergerTab().click();
+		hambergerTabScreen.getFFBharvesttab().click();
+		ffbSupplyScreen.getrecordharvestingbtn().click();
+		farmerLandDetailScreen.getfirstlandinfo().click();
+		plantationDetailScreen.getplantationId().click();
+		plantationDetailScreen.getrecordharvestbtn().click();
+		recordHarvestScreen.getFFBcountTextfeild().sendKeys("234");
+		WebElement submitBtn=recordHarvestScreen.getsubmitBtn();
+		driverUtility.explicitWait(10, submitBtn);
 		submitBtn.click();
 		WebElement ErrorMsg=sdriver.findElement(AppiumBy.xpath("//android.widget.TextView[@text=\"Select harvesting date.\"]"));
 		if(ErrorMsg.isDisplayed()) {
@@ -85,20 +87,20 @@ public class FFBHarvesting extends BaseClass_Farmer {
 	 */
 	@Test
 	public void recordHarvestWithoutUploadingPicture() {
-		dutil.implicitWait(10);
-		hp.getHambergerTab().click();
-		htp.getFFBharvesttab().click();
-		fsp.getrecordharvestingbtn().click();
-		fldsp.getfirstlandinfo().click();
-		pdsp.getplantationId().click();
-		pdsp.getrecordharvestbtn().click();
-		rhp.getdateTextFeild().click();
+		driverUtility.implicitWait(10);
+		homeScreen.getHambergerTab().click();
+		hambergerTabScreen.getFFBharvesttab().click();
+		ffbSupplyScreen.getrecordharvestingbtn().click();
+		farmerLandDetailScreen.getfirstlandinfo().click();
+		plantationDetailScreen.getplantationId().click();
+		plantationDetailScreen.getrecordharvestbtn().click();
+		recordHarvestScreen.getdateTextFeild().click();
 		WebElement date=sdriver.findElement(AppiumBy.xpath("//android.widget.TextView[@text=\"17\"]"));
-		gutil.click(date);
-		rhp.getsaveBtn().click();
-		rhp.getFFBcountTextfeild().sendKeys("234");
-		WebElement submitBtn=  rhp.getsubmitBtn();
-		dutil.explicitWait(5, submitBtn);
+		gestureUtility.click(date);
+		recordHarvestScreen.getsaveBtn().click();
+		recordHarvestScreen.getFFBcountTextfeild().sendKeys("234");
+		WebElement submitBtn=  recordHarvestScreen.getsubmitBtn();
+		driverUtility.explicitWait(5, submitBtn);
 		submitBtn.click();
 		WebElement ImageErrorMsg=sdriver.findElement(AppiumBy.xpath("//android.widget.TextView[@text=\"Please upload file.\"]"));
 		if(ImageErrorMsg.isDisplayed()) {

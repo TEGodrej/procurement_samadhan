@@ -6,9 +6,9 @@ import org.openqa.selenium.support.PageFactory;
 
 import io.appium.java_client.android.AndroidDriver;
 
-public class MyLandDetailsPage {
+public class MyLandDetailsScreen {
 	AndroidDriver driver;
-	public MyLandDetailsPage(AndroidDriver driver) {
+	public MyLandDetailsScreen(AndroidDriver driver) {
 		this.driver=driver;
 		PageFactory.initElements(driver, this);
 	}

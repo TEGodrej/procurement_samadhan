@@ -6,10 +6,10 @@ import org.openqa.selenium.support.PageFactory;
 
 import io.appium.java_client.android.AndroidDriver;
 
-public class FarmerLandDetailsScreenPage {
+public class FarmerLandDetailsScreen {
 	
 	AndroidDriver driver;
-	public FarmerLandDetailsScreenPage(AndroidDriver driver) {
+	public FarmerLandDetailsScreen(AndroidDriver driver) {
 		this.driver=driver;
 		PageFactory.initElements(driver, this);
 	}

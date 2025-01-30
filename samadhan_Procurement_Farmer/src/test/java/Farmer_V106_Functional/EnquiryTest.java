@@ -14,23 +14,23 @@ import GenericUtilities.BaseClass_Farmer;
 import io.appium.java_client.AppiumBy;
 import io.appium.java_client.android.AndroidDriver;
 
-public class Enquiry extends BaseClass_Farmer{
+public class EnquiryTest extends BaseClass_Farmer{
 //This is to verify that user is able to raise a new enquiry
 	@Test
 	public void raiseNewEnquiry() {
-		dutil.implicitWait(10);
-		hp.getHambergerTab().click();
-		htp.getEnquiriestab().click();
-		ep.getPluseBtn().click();
-		nep.getLandIdTxtFld().click();
-		nep.getFirstLandId().click();
-		nep.getPlantationId().click();
-		nep.getFirstplatId().click();
-		nep.getRemarkTxtFld().sendKeys("Please visit");
+		driverUtility.implicitWait(10);
+		homeScreen.getHambergerTab().click();
+		hambergerTabScreen.getEnquiriestab().click();
+		enquiryScreen.getPluseBtn().click();
+		newEnquiryScreen.getLandIdTxtFld().click();
+		newEnquiryScreen.getFirstLandId().click();
+		newEnquiryScreen.getPlantationId().click();
+		newEnquiryScreen.getFirstplatId().click();
+		newEnquiryScreen.getRemarkTxtFld().sendKeys("Please visit");
 		sdriver.findElement(AppiumBy.androidUIAutomator(
 			    "new UiScrollable(new UiSelector()).scrollIntoView(new UiSelector().text(\"Submit\"))"
 			));
-		nep.getFirstcameraoption().click();
+		newEnquiryScreen.getFirstcameraoption().click();
 //		WebElement secCam=sdriver.findElement(AppiumBy.xpath("(//android.widget.TextView[@text=\"Capture Image\"])[2]"));
 //		dutil.switchContext("com.gavl.oilpalm.samadhan");
 //		dutil.explicitWait(10, secCam);
@@ -68,6 +68,6 @@ public class Enquiry extends BaseClass_Farmer{
 //			    "new UiScrollable(new UiSelector()).scrollIntoView(new UiSelector().text(\"Submit\"))"
 //			));
 
-		nep.getSubmitBtn().click();
+		newEnquiryScreen.getSubmitBtn().click();
 	}
 }

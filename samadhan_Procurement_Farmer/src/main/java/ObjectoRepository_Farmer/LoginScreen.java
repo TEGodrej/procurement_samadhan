@@ -6,10 +6,10 @@ import org.openqa.selenium.support.PageFactory;
 
 import io.appium.java_client.android.AndroidDriver;
 
-public class LoginPage {
+public class LoginScreen {
 
 	AndroidDriver driver;
-	public LoginPage(AndroidDriver driver) {
+	public LoginScreen(AndroidDriver driver) {
 		this.driver=driver;
 		PageFactory.initElements(driver, this);
 	}

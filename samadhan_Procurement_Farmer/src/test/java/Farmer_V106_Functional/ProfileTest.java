@@ -5,15 +5,17 @@ import org.openqa.selenium.WebElement;
 import org.testng.annotations.Test;
 import GenericUtilities.BaseClass_Farmer;
 import io.appium.java_client.AppiumBy;
-
-public class Profile extends BaseClass_Farmer {
+/*
+ * @author Testing Engineer
+ */
+public class ProfileTest extends BaseClass_Farmer {
 // This is to check whether generate farmer code is matching or not.
 	@Test
-	public void ViewFarmerProfile() {
+	public void viewFarmerProfile() {
 		String ExpectedFarmerCode="1123041331";
-		dutil.implicitWait(10);
-		hp.getHambergerTab().click();
-		htp.getProfile().click();
+		driverUtility.implicitWait(10);
+		homeScreen.getHambergerTab().click();
+		hambergerTabScreen.getProfile().click();
 		WebElement FarmerCode=sdriver.findElement(AppiumBy.xpath("//android.widget.TextView[@text=\"1123041331\"]"));
 		String actualcode= FarmerCode.getText();
 		
@@ -26,11 +28,11 @@ public class Profile extends BaseClass_Farmer {
 	
 //	This is to verify users bank details
 	@Test
-	public void VerifyBankDetail() {
+	public void verifyBankDetailOfUser() {
 		String expectedAccountNo="52369874123";
-		dutil.implicitWait(10);
-		hp.getHambergerTab().click();
-		htp.getProfile().click();
+		driverUtility.implicitWait(10);
+		homeScreen.getHambergerTab().click();
+		hambergerTabScreen.getProfile().click();
 		WebElement bankBtn=sdriver.findElement(AppiumBy.xpath("//android.widget.Button[@content-desc=\"0, Bank Details\"]"));
 		bankBtn.click();
 		WebElement AccountNo =sdriver.findElement(AppiumBy.xpath("//android.widget.TextView[@text=\"52369874123\"]"));
@@ -46,11 +48,11 @@ public class Profile extends BaseClass_Farmer {
 	 * This is to verify that user should be able to see his RFID card details
 	 */
 	@Test
-	public void VerifyRFIDcard() {
-		dutil.implicitWait(5);
-		hp.getHambergerTab().click();
-		htp.getProfile().click();
-		mpp.getRFIDdetail().click();
+	public void verifyRFIDcardDetailIsPresent() {
+		driverUtility.implicitWait(5);
+		homeScreen.getHambergerTab().click();
+		hambergerTabScreen.getProfile().click();
+		myProfileScreen.getRFIDdetail().click();
 		WebElement cardNumber=sdriver.findElement(AppiumBy.xpath("//android.widget.TextView[@text=\"456457676\"]"));
 		if(cardNumber.isDisplayed()) {
 			assertTrue(true);
@@ -64,10 +66,10 @@ public class Profile extends BaseClass_Farmer {
 	 */
 	@Test
 	public void verifyUserIsAbleToChangeProfileImageThroughCamera() {
-		dutil.implicitWait(10);
-		hp.getHambergerTab().click();
-		htp.getProfile().click();
-		mpp.getprofilepicIcon().click();
-		ppp.getCameraTab().click();
+		driverUtility.implicitWait(10);
+		homeScreen.getHambergerTab().click();
+		hambergerTabScreen.getProfile().click();
+		myProfileScreen.getprofilepicIcon().click();
+		profilePictureScreen.getCameraTab().click();
 	}
 }
