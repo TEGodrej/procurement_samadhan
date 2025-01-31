@@ -17,19 +17,21 @@ public class FFBHarvestingTest extends BaseClass_Farmer {
  */
 	@Test
 	public void RecordHarvest() {
+		String count="290";
 		driverUtility.implicitWait(10);
 		homeScreen.getHambergerTab().click();
-		hambergerTabScreen.getFFBharvesttab().click();
+		hamburgerTabScreen.getFFBharvesttab().click();
 		ffbSupplyScreen.getrecordharvestingbtn().click();
 		farmerLandDetailScreen.getfirstlandinfo().click();
 		plantationDetailScreen.getplantationId().click();
 		plantationDetailScreen.getrecordharvestbtn().click();
 		recordHarvestScreen.getdateTextFeild().click();
 
-		WebElement date=sdriver.findElement(AppiumBy.xpath("//android.widget.TextView[@text=\"17\"]"));
-		gestureUtility.click(date);
+//		WebElement date=sdriver.findElement(AppiumBy.xpath("//android.widget.TextView[@text=\"17\"]"));
+		recordHarvestScreen.getDate().click();
+//		gestureUtility.click(date);
 		recordHarvestScreen.getsaveBtn().click();
-		recordHarvestScreen.getFFBcountTextfeild().sendKeys("290");
+		recordHarvestScreen.getFFBcountTextfeild().sendKeys(count);
 		recordHarvestScreen.getcaptureimageTab().click();
 		WebElement submitBtn=  recordHarvestScreen.getsubmitBtn();
 		driverUtility.explicitWait(5, submitBtn);
@@ -46,12 +48,9 @@ public class FFBHarvestingTest extends BaseClass_Farmer {
 		String expectedharvestId="589";
 		driverUtility.implicitWait(10);
 		homeScreen.getHambergerTab().click();
-		hambergerTabScreen.getFFBharvesttab().click();
-		WebElement harvest=sdriver.findElement(AppiumBy.xpath("//android.view.ViewGroup[@resource-id=\"card\"]/android.view.ViewGroup"));
-		harvest.click();
-		WebElement harvestId=sdriver.findElement(AppiumBy.xpath("//android.widget.TextView[@text=\"589\"]"));
-		String actualharvestid=harvestId.getText();
-		
+		hamburgerTabScreen.getFFBharvesttab().click();
+		recordHarvestScreen.getHarvest().click();
+		String actualharvestid=recordHarvestScreen.getHarvestId().getText();
 		if(actualharvestid.equals(expectedharvestId)) {
 			assertTrue(true);
 		}else {
@@ -65,7 +64,7 @@ public class FFBHarvestingTest extends BaseClass_Farmer {
 	public void RecordHarvestWithoutEnteringDate() {
 		driverUtility.implicitWait(10);
 		homeScreen.getHambergerTab().click();
-		hambergerTabScreen.getFFBharvesttab().click();
+		hamburgerTabScreen.getFFBharvesttab().click();
 		ffbSupplyScreen.getrecordharvestingbtn().click();
 		farmerLandDetailScreen.getfirstlandinfo().click();
 		plantationDetailScreen.getplantationId().click();
@@ -83,27 +82,28 @@ public class FFBHarvestingTest extends BaseClass_Farmer {
 	}
 	/*
 	 *This is to verify that if user do not upload picture they should not be able to record the harvest
-	 *Date xpath should be changed every time before execution
+	 *Date xpath should be changed every time before execution from POM
 	 */
 	@Test
 	public void recordHarvestWithoutUploadingPicture() {
+		String count="234";
 		driverUtility.implicitWait(10);
 		homeScreen.getHambergerTab().click();
-		hambergerTabScreen.getFFBharvesttab().click();
+		hamburgerTabScreen.getFFBharvesttab().click();
 		ffbSupplyScreen.getrecordharvestingbtn().click();
 		farmerLandDetailScreen.getfirstlandinfo().click();
 		plantationDetailScreen.getplantationId().click();
 		plantationDetailScreen.getrecordharvestbtn().click();
 		recordHarvestScreen.getdateTextFeild().click();
-		WebElement date=sdriver.findElement(AppiumBy.xpath("//android.widget.TextView[@text=\"17\"]"));
-		gestureUtility.click(date);
+//		WebElement date=sdriver.findElement(AppiumBy.xpath("//android.widget.TextView[@text=\"17\"]"));
+//		gestureUtility.click(date);
+		recordHarvestScreen.getDate().click();
 		recordHarvestScreen.getsaveBtn().click();
-		recordHarvestScreen.getFFBcountTextfeild().sendKeys("234");
+		recordHarvestScreen.getFFBcountTextfeild().sendKeys(count);
 		WebElement submitBtn=  recordHarvestScreen.getsubmitBtn();
 		driverUtility.explicitWait(5, submitBtn);
 		submitBtn.click();
-		WebElement ImageErrorMsg=sdriver.findElement(AppiumBy.xpath("//android.widget.TextView[@text=\"Please upload file.\"]"));
-		if(ImageErrorMsg.isDisplayed()) {
+		if(recordHarvestScreen.getImageErrorMsg().isDisplayed()) {
 			assertTrue(true);
 		}else {
 			System.out.println("Message did not displayed: Case Fails");

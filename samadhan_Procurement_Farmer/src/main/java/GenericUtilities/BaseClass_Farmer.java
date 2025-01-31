@@ -11,7 +11,7 @@ import ObjectoRepository_Farmer.deliveryTimeScreen;
 import ObjectoRepository_Farmer.EnquiriesScreen;
 import ObjectoRepository_Farmer.FFBsupplyScreen;
 import ObjectoRepository_Farmer.FarmerLandDetailsScreen;
-import ObjectoRepository_Farmer.HambergerTabScreen;
+import ObjectoRepository_Farmer.HamburgerTabScreen;
 import ObjectoRepository_Farmer.HomeScreen;
 import ObjectoRepository_Farmer.LoginScreen;
 import ObjectoRepository_Farmer.MyLandDetailsScreen;
@@ -35,7 +35,7 @@ public class BaseClass_Farmer {
 	AndroidDriver driver;
 
 	public static HomeScreen homeScreen;
-	public static HambergerTabScreen hambergerTabScreen;
+	public static HamburgerTabScreen hamburgerTabScreen;
 	public static MyLandDetailsScreen myLandDetailScreen;
 	public static RecordHarvestingScreen recordHarvestScreen;
 	public static DriverUtility driverUtility;
@@ -83,7 +83,7 @@ public class BaseClass_Farmer {
 			driver.activateApp("com.gavl.oilpalm.samadhan");
 //			dutil.implicitWait(10);
 			homeScreen= new HomeScreen(driver);
-			hambergerTabScreen=new HambergerTabScreen(driver);
+			hamburgerTabScreen=new HamburgerTabScreen(driver);
 			myLandDetailScreen=new MyLandDetailsScreen(driver);
 			recordHarvestScreen=new RecordHarvestingScreen(driver);
 			driverUtility=new DriverUtility(driver);

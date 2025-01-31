@@ -1,10 +1,10 @@
 package Farmer_V106_Functional;
 
 import static org.testng.Assert.assertTrue;
-import org.openqa.selenium.WebElement;
+
 import org.testng.annotations.Test;
+
 import GenericUtilities.BaseClass_Farmer;
-import io.appium.java_client.AppiumBy;
 /*
  * @author Testing Engineer
  */
@@ -15,9 +15,8 @@ public class ProfileTest extends BaseClass_Farmer {
 		String ExpectedFarmerCode="1123041331";
 		driverUtility.implicitWait(10);
 		homeScreen.getHambergerTab().click();
-		hambergerTabScreen.getProfile().click();
-		WebElement FarmerCode=sdriver.findElement(AppiumBy.xpath("//android.widget.TextView[@text=\"1123041331\"]"));
-		String actualcode= FarmerCode.getText();
+		hamburgerTabScreen.getProfile().click();
+		String actualcode= myProfileScreen.getFarmerCode().getText();
 		
 		if(actualcode.equals(ExpectedFarmerCode)) {
 			assertTrue(true, "Code is matched :Pass");
@@ -32,11 +31,9 @@ public class ProfileTest extends BaseClass_Farmer {
 		String expectedAccountNo="52369874123";
 		driverUtility.implicitWait(10);
 		homeScreen.getHambergerTab().click();
-		hambergerTabScreen.getProfile().click();
-		WebElement bankBtn=sdriver.findElement(AppiumBy.xpath("//android.widget.Button[@content-desc=\"0, Bank Details\"]"));
-		bankBtn.click();
-		WebElement AccountNo =sdriver.findElement(AppiumBy.xpath("//android.widget.TextView[@text=\"52369874123\"]"));
-		String actualAccountNo = AccountNo.getText();
+		hamburgerTabScreen.getProfile().click();
+		myProfileScreen.getBankTab().click();
+		String actualAccountNo = myProfileScreen.getAccountNumber().getText();
 		if(actualAccountNo.equals(expectedAccountNo)) {
 			assertTrue(true);
 		}else {
@@ -51,10 +48,9 @@ public class ProfileTest extends BaseClass_Farmer {
 	public void verifyRFIDcardDetailIsPresent() {
 		driverUtility.implicitWait(5);
 		homeScreen.getHambergerTab().click();
-		hambergerTabScreen.getProfile().click();
+		hamburgerTabScreen.getProfile().click();
 		myProfileScreen.getRFIDdetail().click();
-		WebElement cardNumber=sdriver.findElement(AppiumBy.xpath("//android.widget.TextView[@text=\"456457676\"]"));
-		if(cardNumber.isDisplayed()) {
+		if(myProfileScreen.getCardNumber().isDisplayed()) {
 			assertTrue(true);
 		}else {
 			System.out.println("Card does not displayed");
@@ -68,7 +64,7 @@ public class ProfileTest extends BaseClass_Farmer {
 	public void verifyUserIsAbleToChangeProfileImageThroughCamera() {
 		driverUtility.implicitWait(10);
 		homeScreen.getHambergerTab().click();
-		hambergerTabScreen.getProfile().click();
+		hamburgerTabScreen.getProfile().click();
 		myProfileScreen.getprofilepicIcon().click();
 		profilePictureScreen.getCameraTab().click();
 	}

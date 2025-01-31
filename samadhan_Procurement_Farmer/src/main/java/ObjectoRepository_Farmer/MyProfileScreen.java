@@ -14,21 +14,49 @@ public class MyProfileScreen {
 		PageFactory.initElements(driver, this);
 	}
 
-	@FindBy(xpath = "//android.widget.TextView[@text=\"Personal Info\"]")
+	@FindBy(xpath = "//android.widget.TextView[@text='Personal Info']")
 	private WebElement personalInfo;
 	
-	@FindBy(xpath = "//android.widget.TextView[@text=\"Bank Details\"]")
+	@FindBy(xpath = "//android.widget.TextView[@text='Bank Details']")
 	private WebElement bankDetail;
 	
-	@FindBy(xpath = "//android.widget.TextView[@text=\"RFID Card Details\"]")
+	@FindBy(xpath = "//android.widget.TextView[@text='RFID Card Details']")
 	private WebElement RFIDdetail;
 	
-	@FindBy(xpath = "//android.widget.TextView[@text=\"Family Group Mapping\"]")
+	@FindBy(xpath = "//android.widget.TextView[@text='Family Group Mapping']")
 	private WebElement familyGroupMap;
 	
 	@FindBy(xpath = "//android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[1]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.ImageView")
 	private WebElement profilepicIcon;
 	
+	@FindBy(xpath = "//android.widget.TextView[@text='1123041331']")
+	private WebElement farmerCode;
+	
+	@FindBy(xpath = "//android.widget.Button[@content-desc='0, Bank Details']")
+	private WebElement bankTab;
+	
+	@FindBy(xpath = "//android.widget.TextView[@text='52369874123']")
+	private WebElement accountNumber;
+	
+	@FindBy(xpath = "//android.widget.TextView[@text='456457676']")
+	private WebElement cardNumber;
+	
+	public WebElement getFarmerCode() {
+		return farmerCode;
+	}
+
+	public WebElement getBankTab() {
+		return bankTab;
+	}
+
+	public WebElement getAccountNumber() {
+		return accountNumber;
+	}
+
+	public WebElement getCardNumber() {
+		return cardNumber;
+	}
+
 	public WebElement getprofilepicIcon() {
 		return profilepicIcon;
 	}

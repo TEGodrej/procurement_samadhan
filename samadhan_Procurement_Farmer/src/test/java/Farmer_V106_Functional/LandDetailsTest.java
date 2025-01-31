@@ -6,7 +6,6 @@ import org.openqa.selenium.WebElement;
 import org.testng.annotations.Test;
 
 import GenericUtilities.BaseClass_Farmer;
-import io.appium.java_client.AppiumBy;
 /*
  * @author Testing Engineer
  * This is to verify the Land Details Functionality
@@ -17,7 +16,7 @@ public class LandDetailsTest extends BaseClass_Farmer{
 	public void verifyFarmerIsAbleToSeelandDetail() {
 		driverUtility.implicitWait(10);
 		homeScreen.getHambergerTab().click();
-	    hambergerTabScreen.getMylandtab().click();
+		hamburgerTabScreen.getMylandtab().click();
 
 	    driverUtility.implicitWait(10);
 	    
@@ -34,17 +33,17 @@ public class LandDetailsTest extends BaseClass_Farmer{
  */	
 	@Test
 	public void RecordHarvestThroughMyLandDetail() {
+		String count="250";
 		driverUtility.implicitWait(10);
 		homeScreen.getHambergerTab().click();
-		hambergerTabScreen.getMylandtab().click();
+		hamburgerTabScreen.getMylandtab().click();
 		myLandDetailScreen.getFirstLandId().click();
 		myLandDetailScreen.getPlantationId().click();
 		myLandDetailScreen.getRecordHarvesting().click();
 		recordHarvestScreen.getdateTextFeild().click();
-		WebElement date=sdriver.findElement(AppiumBy.xpath("//android.view.ViewGroup[@content-desc=\"17\"]"));
-		gestureUtility.click(date);
+		recordHarvestScreen.getDate().click();
 		recordHarvestScreen.getsaveBtn().click();
-		recordHarvestScreen.getFFBcountTextfeild().sendKeys("250");
+		recordHarvestScreen.getFFBcountTextfeild().sendKeys(count);
 		recordHarvestScreen.getcaptureimageTab().click();
 		WebElement submitBtn=  recordHarvestScreen.getsubmitBtn();
 		driverUtility.explicitWait(5, submitBtn);
@@ -58,24 +57,24 @@ public class LandDetailsTest extends BaseClass_Farmer{
 	 */
 	@Test
 	public void verifyTheRecordedHarvestPresentOnFFBHarvest() {
+		String count="278";
 		driverUtility.implicitWait(10);
 		homeScreen.getHambergerTab().click();
-		hambergerTabScreen.getMylandtab().click();
+		hamburgerTabScreen.getMylandtab().click();
 		myLandDetailScreen.getFirstLandId().click();
 		myLandDetailScreen.getPlantationId().click();
 		myLandDetailScreen.getRecordHarvesting().click();
 		recordHarvestScreen.getdateTextFeild().click();
-		WebElement date=sdriver.findElement(AppiumBy.xpath("//android.view.ViewGroup[@content-desc=\"17\"]"));
-		gestureUtility.click(date);
+		recordHarvestScreen.getDate().click();
 		recordHarvestScreen.getsaveBtn().click();
-		recordHarvestScreen.getFFBcountTextfeild().sendKeys("269");
+		recordHarvestScreen.getFFBcountTextfeild().sendKeys(count);
 		recordHarvestScreen.getcaptureimageTab().click();
 		WebElement submitBtn=recordHarvestScreen.getsubmitBtn();
 		driverUtility.explicitWait(5, submitBtn);
 		submitBtn.click();
 		recordHarvestScreen.getokayBtn().click();
 		myLandDetailScreen.gethamberTab().click();
-		hambergerTabScreen.getFFBharvesttab().click();
+		hamburgerTabScreen.getFFBharvesttab().click();
 		
 	}
 	
@@ -86,18 +85,18 @@ public class LandDetailsTest extends BaseClass_Farmer{
 	
 	@Test
 	public void verifyUserNotBeAbleToRecordHarvestWithoutEnteringDate() {
+		String count="278";
 		driverUtility.implicitWait(10);
 		homeScreen.getHambergerTab().click();
-		hambergerTabScreen.getMylandtab().click();
+		hamburgerTabScreen.getMylandtab().click();
 		myLandDetailScreen.getFirstLandId().click();
 		myLandDetailScreen.getPlantationId().click();
 		myLandDetailScreen.getRecordHarvesting().click();
-		recordHarvestScreen.getFFBcountTextfeild().sendKeys("269");
+		recordHarvestScreen.getFFBcountTextfeild().sendKeys(count);
 		WebElement submitBtn=recordHarvestScreen.getsubmitBtn();
 		driverUtility.explicitWait(5, submitBtn);
 		submitBtn.click();
-		WebElement ErrorMsg=sdriver.findElement(AppiumBy.xpath("//android.widget.TextView[@text=\"Select harvesting date.\"]"));
-		if(ErrorMsg.isDisplayed()) {
+		if(recordHarvestScreen.getHarvestDateErrorMsg().isDisplayed()) {
 			assertTrue(true);
 		}else {
 			assertTrue(false, "Message did not displayed: Case Fails");
@@ -112,19 +111,17 @@ public class LandDetailsTest extends BaseClass_Farmer{
 	public void verifyUserNotBeAbleToRecordHarvestWithoutEnteringFFBcount() {
 		driverUtility.implicitWait(10);
 		homeScreen.getHambergerTab().click();
-		hambergerTabScreen.getMylandtab().click();
+		hamburgerTabScreen.getMylandtab().click();
 		myLandDetailScreen.getFirstLandId().click();
 		myLandDetailScreen.getPlantationId().click();
 		myLandDetailScreen.getRecordHarvesting().click();
 		recordHarvestScreen.getdateTextFeild().click();
-		WebElement date=sdriver.findElement(AppiumBy.xpath("//android.view.ViewGroup[@content-desc=\"17\"]"));
-		gestureUtility.click(date);
+		recordHarvestScreen.getDate().click();
 		recordHarvestScreen.getsaveBtn().click();
 		WebElement submitBtn=recordHarvestScreen.getsubmitBtn();
 		driverUtility.explicitWait(5, submitBtn);
 		submitBtn.click();
-		WebElement ErrorMsg=sdriver.findElement(AppiumBy.xpath("//android.widget.TextView[@text=\"Enter FFB count.\"]"));
-		if(ErrorMsg.isDisplayed()) {
+		if(recordHarvestScreen.getFfbCountErrorMsg().isDisplayed()) {
 			assertTrue(true);
 		}else {
 			assertTrue(false, "Message did not displayed: Case Fails");
@@ -137,20 +134,19 @@ public class LandDetailsTest extends BaseClass_Farmer{
  */	
 	@Test
 	public void verifyUserNotBeAbleToRecordHarvestWithoutUploadingImageInLandDetail() {
+		String count="278";
 		driverUtility.implicitWait(10);
 		homeScreen.getHambergerTab().click();
-		hambergerTabScreen.getMylandtab().click();
+		hamburgerTabScreen.getMylandtab().click();
 		myLandDetailScreen.getFirstLandId().click();
 		myLandDetailScreen.getPlantationId().click();
 		myLandDetailScreen.getRecordHarvesting().click();
 		recordHarvestScreen.getdateTextFeild().click();
-		WebElement date=sdriver.findElement(AppiumBy.xpath("//android.widget.TextView[@text=\"15\"]"));
-		date.click();
+		recordHarvestScreen.getDate().click();
 		recordHarvestScreen.getsaveBtn().click();
-		recordHarvestScreen.getFFBcountTextfeild().sendKeys("898");
+		recordHarvestScreen.getFFBcountTextfeild().sendKeys(count);
 		recordHarvestScreen.getsubmitBtn().click();
-		WebElement ErrorMsg=sdriver.findElement(AppiumBy.xpath("//android.widget.TextView[@text=\"Please upload file.\"]"));
-		if(ErrorMsg.isDisplayed()) {
+		if(recordHarvestScreen.getImageErrorMsg().isDisplayed()) {
 			assertTrue(true);
 		}else {
 			assertTrue(false, "Message did not displayed: Case Fails");

@@ -31,6 +31,13 @@ public class selectLandScreen {
 	@FindBy(xpath = "//android.widget.TextView[@resource-id='button-text']")
 	private WebElement nextBtn;
 	
+	@FindBy(xpath = "//android.widget.TextView[@text='Please Select land.']")
+	private WebElement errorMsg;
+	
+	public WebElement getErrorMsg() {
+		return errorMsg;
+	}
+
 	public WebElement getbackarrowbtn() {
 		return backarrowbtn;
 	}

@@ -72,6 +72,26 @@ public class deliveryTimeScreen {
 	
 	@FindBy(xpath = "//android.widget.Button[@content-desc=\"Ok\"]")
 	private WebElement okBtn;
+	
+	@FindBy(xpath = "(//android.widget.TextView[@text='Upcoming Slot!'])[1]")
+	private WebElement text;
+	
+	@FindBy(xpath = "//android.widget.TextView[@text='Please select slot.']")
+	private WebElement errorMessage;
+	
+	
+
+	public WebElement getOkBtn() {
+		return okBtn;
+	}
+
+	public WebElement getText() {
+		return text;
+	}
+
+	public WebElement getErrorMessage() {
+		return errorMessage;
+	}
 
 	public WebElement getFirsttimeslot() {
 		return firsttimeslot;

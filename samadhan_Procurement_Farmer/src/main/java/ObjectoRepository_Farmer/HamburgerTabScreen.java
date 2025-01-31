@@ -6,10 +6,10 @@ import org.openqa.selenium.support.PageFactory;
 
 import io.appium.java_client.android.AndroidDriver;
 
-public class HambergerTabScreen {
+public class HamburgerTabScreen {
 	
 	AndroidDriver driver;
-	public HambergerTabScreen(AndroidDriver driver) {
+	public HamburgerTabScreen(AndroidDriver driver) {
 		this.driver=driver;
 		PageFactory.initElements(driver, this);
 	}
