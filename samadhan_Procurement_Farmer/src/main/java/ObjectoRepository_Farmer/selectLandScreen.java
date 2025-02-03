@@ -14,7 +14,7 @@ public class selectLandScreen {
 	}
 
 	@FindBy(xpath = "//android.widget.Button[@content-desc='CC Slot Booking, back']/android.widget.ImageView")
-	private WebElement backarrowbtn;
+	private WebElement backArrowbutton;
 	
 	@FindBy(xpath = "//android.view.ViewGroup[@content-desc='Andhra Pradesh & Telangana']")
 	private WebElement SelectStateDropDown;
@@ -26,13 +26,13 @@ public class selectLandScreen {
 	private WebElement landId;
 	
 	@FindBy(xpath = "//android.widget.EditText")
-	private WebElement kgtextfld;
+	private WebElement kgtextfield;
 	
 	@FindBy(xpath = "//android.widget.TextView[@resource-id='button-text']")
-	private WebElement nextBtn;
+	private WebElement nextButton;
 	
-	public WebElement getbackarrowbtn() {
-		return backarrowbtn;
+	public WebElement getbackArrowbutton() {
+		return backArrowbutton;
 	}
 	
 	public WebElement getselectStateDropdown() {
@@ -47,12 +47,12 @@ public class selectLandScreen {
 		return landId;
 	}
 	
-	public WebElement getkgtextfld() {
-		return kgtextfld;
+	public WebElement getkgtextfield() {
+		return kgtextfield;
 	}
 	
-	public WebElement getnextBtn() {
-		return nextBtn;
+	public WebElement getnextButton() {
+		return nextButton;
 	}
 	
 

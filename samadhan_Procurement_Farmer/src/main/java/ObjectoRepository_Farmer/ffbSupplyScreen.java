@@ -6,18 +6,18 @@ import org.openqa.selenium.support.PageFactory;
 
 import io.appium.java_client.android.AndroidDriver;
 
-public class FFBsupplyScreen {
+public class ffbSupplyScreen {
 	
 	AndroidDriver driver;
-	public FFBsupplyScreen(AndroidDriver driver) {
+	public ffbSupplyScreen(AndroidDriver driver) {
 		this.driver=driver;
 		PageFactory.initElements(driver, this);
 	}
 
 	@FindBy(xpath = "//android.widget.TextView[@resource-id='button-text']")
-	private WebElement recordHarvestingbtn;
+	private WebElement recordHarvestingButton;
 	
-	public WebElement getrecordharvestingbtn() {
-		return recordHarvestingbtn;
+	public WebElement getrecordharvestingButton() {
+		return recordHarvestingButton;
 	}
 }

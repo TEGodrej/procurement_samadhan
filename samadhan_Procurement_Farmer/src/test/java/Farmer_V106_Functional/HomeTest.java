@@ -23,6 +23,6 @@ public class HomeTest extends BaseClass_Farmer {
     @Test
     public void FFBPricing() {
         driverUtility.implicitWait(10);
-        assertTrue(homeScreen.getFFBprice().isDisplayed(), "The Element is visible");
+        assertTrue(homeScreen.getffbPrice().isDisplayed(), "The Element is visible");
     }
 }

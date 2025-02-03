@@ -19,9 +19,9 @@ public class EnquiryTest extends BaseClass_Farmer{
 	@Test
 	public void raiseNewEnquiry() {
 		driverUtility.implicitWait(10);
-		homeScreen.getHambergerTab().click();
-		hambergerTabScreen.getEnquiriestab().click();
-		enquiryScreen.getPluseBtn().click();
+		homeScreen.gethamburgerTab().click();
+		hambergerTabScreen.getenquiriesTab().click();
+		enquiryScreen.getPluseButton().click();
 		newEnquiryScreen.getLandIdTxtFld().click();
 		newEnquiryScreen.getFirstLandId().click();
 		newEnquiryScreen.getPlantationId().click();
@@ -68,6 +68,6 @@ public class EnquiryTest extends BaseClass_Farmer{
 //			    "new UiScrollable(new UiSelector()).scrollIntoView(new UiSelector().text(\"Submit\"))"
 //			));
 
-		newEnquiryScreen.getSubmitBtn().click();
+		newEnquiryScreen.getsubmitButton().click();
 	}
 }

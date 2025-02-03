@@ -6,33 +6,33 @@ import org.openqa.selenium.support.PageFactory;
 
 import io.appium.java_client.android.AndroidDriver;
 
-public class FarmerLandDetailsScreen {
+public class farmerLandDetailsScreen {
 	
 	AndroidDriver driver;
-	public FarmerLandDetailsScreen(AndroidDriver driver) {
+	public farmerLandDetailsScreen(AndroidDriver driver) {
 		this.driver=driver;
 		PageFactory.initElements(driver, this);
 	}
 
 	@FindBy(xpath = "//android.widget.ImageView")
-	private WebElement backArrowBtn;
+	private WebElement backArrowButton;
 	
 	@FindBy(xpath = "//android.widget.TextView[@text=\"LAND ID: 12345718\"]")
-	private WebElement firstlandinfo;
+	private WebElement firstLandInfo;
 	
 	@FindBy(xpath = "//android.widget.TextView[@text=\"LAND ID: 12345785\"]")
-	private WebElement secondlandinfo;
+	private WebElement secondLandInfo;
 	
-	public WebElement getbackArrowBtn() {
-		return backArrowBtn;
+	public WebElement getbackArrowButton() {
+		return backArrowButton;
 	}
 	
-	public WebElement getfirstlandinfo() {
-		return firstlandinfo;
+	public WebElement getfirstLandInfo() {
+		return firstLandInfo;
 	}
 	
-	public WebElement getsecondlandinfo() {
-		return secondlandinfo;
+	public WebElement getssecondLandInfo() {
+		return secondLandInfo;
 	}
 	
 }

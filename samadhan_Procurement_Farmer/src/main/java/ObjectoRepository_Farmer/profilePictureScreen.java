@@ -21,7 +21,7 @@ public class profilePictureScreen {
 	private WebElement cameraTab;
 	
 	@FindBy(xpath = "//com.horcrux.svg.PathView")
-	private WebElement cancelBtn;
+	private WebElement cancelButton;
 
 	public WebElement getGalleryTab() {
 		return galleryTab;
@@ -32,7 +32,7 @@ public class profilePictureScreen {
 	}
 
 	public WebElement getCancelBtn() {
-		return cancelBtn;
+		return cancelButton;
 	}
 	
 	

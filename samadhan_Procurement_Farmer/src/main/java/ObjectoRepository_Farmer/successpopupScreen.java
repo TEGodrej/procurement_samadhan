@@ -14,17 +14,17 @@ public class successpopupScreen {
 	}
 
 	@FindBy(xpath = "//android.widget.TextView[@resource-id=\"button-text\"]")
-	private WebElement okbtn;
+	private WebElement okButton;
 	
 	@FindBy(xpath = "//com.horcrux.svg.PathView")
-	private WebElement crossbtn;
+	private WebElement crossButton;
 	
-	public WebElement getokbtn() {
-		return okbtn;
+	public WebElement getokButton() {
+		return okButton;
 	}
 	
-	public WebElement getcrossbtn() {
-		return crossbtn;
+	public WebElement getcrossButton() {
+		return crossButton;
 	}
 	
 }

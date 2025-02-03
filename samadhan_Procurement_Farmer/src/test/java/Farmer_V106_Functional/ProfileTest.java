@@ -14,7 +14,7 @@ public class ProfileTest extends BaseClass_Farmer {
 	public void viewFarmerProfile() {
 		String ExpectedFarmerCode="1123041331";
 		driverUtility.implicitWait(10);
-		homeScreen.getHambergerTab().click();
+		homeScreen.gethamburgerTab().click();
 		hambergerTabScreen.getProfile().click();
 		WebElement FarmerCode=sdriver.findElement(AppiumBy.xpath("//android.widget.TextView[@text=\"1123041331\"]"));
 		String actualcode= FarmerCode.getText();
@@ -31,7 +31,7 @@ public class ProfileTest extends BaseClass_Farmer {
 	public void verifyBankDetailOfUser() {
 		String expectedAccountNo="52369874123";
 		driverUtility.implicitWait(10);
-		homeScreen.getHambergerTab().click();
+		homeScreen.gethamburgerTab().click();
 		hambergerTabScreen.getProfile().click();
 		WebElement bankBtn=sdriver.findElement(AppiumBy.xpath("//android.widget.Button[@content-desc=\"0, Bank Details\"]"));
 		bankBtn.click();
@@ -50,7 +50,7 @@ public class ProfileTest extends BaseClass_Farmer {
 	@Test
 	public void verifyRFIDcardDetailIsPresent() {
 		driverUtility.implicitWait(5);
-		homeScreen.getHambergerTab().click();
+		homeScreen.gethamburgerTab().click();
 		hambergerTabScreen.getProfile().click();
 		myProfileScreen.getRFIDdetail().click();
 		WebElement cardNumber=sdriver.findElement(AppiumBy.xpath("//android.widget.TextView[@text=\"456457676\"]"));
@@ -67,7 +67,7 @@ public class ProfileTest extends BaseClass_Farmer {
 	@Test
 	public void verifyUserIsAbleToChangeProfileImageThroughCamera() {
 		driverUtility.implicitWait(10);
-		homeScreen.getHambergerTab().click();
+		homeScreen.gethamburgerTab().click();
 		hambergerTabScreen.getProfile().click();
 		myProfileScreen.getprofilepicIcon().click();
 		profilePictureScreen.getCameraTab().click();

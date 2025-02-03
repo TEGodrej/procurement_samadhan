@@ -16,8 +16,8 @@ public class LandDetailsTest extends BaseClass_Farmer{
 	@Test
 	public void verifyFarmerIsAbleToSeelandDetail() {
 		driverUtility.implicitWait(10);
-		homeScreen.getHambergerTab().click();
-	    hambergerTabScreen.getMylandtab().click();
+		homeScreen.gethamburgerTab().click();
+	    hambergerTabScreen.getmyLandTab().click();
 
 	    driverUtility.implicitWait(10);
 	    
@@ -35,8 +35,8 @@ public class LandDetailsTest extends BaseClass_Farmer{
 	@Test
 	public void RecordHarvestThroughMyLandDetail() {
 		driverUtility.implicitWait(10);
-		homeScreen.getHambergerTab().click();
-		hambergerTabScreen.getMylandtab().click();
+		homeScreen.gethamburgerTab().click();
+		hambergerTabScreen.getmyLandTab().click();
 		myLandDetailScreen.getFirstLandId().click();
 		myLandDetailScreen.getPlantationId().click();
 		myLandDetailScreen.getRecordHarvesting().click();
@@ -59,8 +59,8 @@ public class LandDetailsTest extends BaseClass_Farmer{
 	@Test
 	public void verifyTheRecordedHarvestPresentOnFFBHarvest() {
 		driverUtility.implicitWait(10);
-		homeScreen.getHambergerTab().click();
-		hambergerTabScreen.getMylandtab().click();
+		homeScreen.gethamburgerTab().click();
+		hambergerTabScreen.getmyLandTab().click();
 		myLandDetailScreen.getFirstLandId().click();
 		myLandDetailScreen.getPlantationId().click();
 		myLandDetailScreen.getRecordHarvesting().click();
@@ -75,7 +75,7 @@ public class LandDetailsTest extends BaseClass_Farmer{
 		submitBtn.click();
 		recordHarvestScreen.getokayBtn().click();
 		myLandDetailScreen.gethamberTab().click();
-		hambergerTabScreen.getFFBharvesttab().click();
+		hambergerTabScreen.getffbHarvestTab().click();
 		
 	}
 	
@@ -87,8 +87,8 @@ public class LandDetailsTest extends BaseClass_Farmer{
 	@Test
 	public void verifyUserNotBeAbleToRecordHarvestWithoutEnteringDate() {
 		driverUtility.implicitWait(10);
-		homeScreen.getHambergerTab().click();
-		hambergerTabScreen.getMylandtab().click();
+		homeScreen.gethamburgerTab().click();
+		hambergerTabScreen.getmyLandTab().click();
 		myLandDetailScreen.getFirstLandId().click();
 		myLandDetailScreen.getPlantationId().click();
 		myLandDetailScreen.getRecordHarvesting().click();
@@ -111,8 +111,8 @@ public class LandDetailsTest extends BaseClass_Farmer{
 	@Test
 	public void verifyUserNotBeAbleToRecordHarvestWithoutEnteringFFBcount() {
 		driverUtility.implicitWait(10);
-		homeScreen.getHambergerTab().click();
-		hambergerTabScreen.getMylandtab().click();
+		homeScreen.gethamburgerTab().click();
+		hambergerTabScreen.getmyLandTab().click();
 		myLandDetailScreen.getFirstLandId().click();
 		myLandDetailScreen.getPlantationId().click();
 		myLandDetailScreen.getRecordHarvesting().click();
@@ -138,8 +138,8 @@ public class LandDetailsTest extends BaseClass_Farmer{
 	@Test
 	public void verifyUserNotBeAbleToRecordHarvestWithoutUploadingImageInLandDetail() {
 		driverUtility.implicitWait(10);
-		homeScreen.getHambergerTab().click();
-		hambergerTabScreen.getMylandtab().click();
+		homeScreen.gethamburgerTab().click();
+		hambergerTabScreen.getmyLandTab().click();
 		myLandDetailScreen.getFirstLandId().click();
 		myLandDetailScreen.getPlantationId().click();
 		myLandDetailScreen.getRecordHarvesting().click();

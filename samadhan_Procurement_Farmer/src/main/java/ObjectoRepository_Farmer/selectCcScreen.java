@@ -22,21 +22,39 @@ public class selectCcScreen {
 	private WebElement secondCenter;
 	
 	@FindBy(xpath = "//android.widget.TextView[@text='Book a Slot']")
-	private WebElement bookaSlotbtn;
+	private WebElement bookaSlotbutton;
 	
 	
-	public WebElement getfirstCenter() {
+	
+	
+	public GestureUtility getGutil() {
+		return gutil;
+	}
+
+
+
+
+	public WebElement getFirstCenter() {
 		return firstCenter;
 	}
-	
-	public WebElement getsecondCenter() {
+
+
+
+
+	public WebElement getSecondCenter() {
 		return secondCenter;
 	}
-	
-	public WebElement getbookaSlotbtn() {
-		return bookaSlotbtn;
+
+
+
+
+	public WebElement getBookaSlotbutton() {
+		return bookaSlotbutton;
 	}
-	
+
+
+
+
 	public void clickOnElement(WebElement ele) {
 		gutil.click(ele);
 	}

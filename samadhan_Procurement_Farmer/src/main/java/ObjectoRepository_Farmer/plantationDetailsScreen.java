@@ -14,16 +14,16 @@ public class plantationDetailsScreen {
 	}
 
 	@FindBy(xpath = "//android.widget.ImageView")
-	private WebElement backarrowbtn;
+	private WebElement backArrowButton;
 	
 	@FindBy(xpath = "//android.widget.TextView[@text=\"12345718\"]")
 	private WebElement plantationId;
 	
 	@FindBy(xpath = "//android.widget.TextView[@text='Record Harvesting']")
-	private WebElement recordharvestbtn;
+	private WebElement recordHarvestButton;
 	
 	public WebElement getbackarrowbtn() {
-		return backarrowbtn;
+		return backArrowButton;
 	}
 	
 	public WebElement getplantationId() {
@@ -31,6 +31,6 @@ public class plantationDetailsScreen {
 	}
 	
 	public WebElement getrecordharvestbtn() {
-		return recordharvestbtn;
+		return recordHarvestButton;
 	}
 }

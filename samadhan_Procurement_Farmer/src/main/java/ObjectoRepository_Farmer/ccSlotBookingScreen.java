@@ -18,10 +18,10 @@ public class ccSlotBookingScreen {
 	}
 			
 	@FindBy(xpath = "//android.widget.TextView[@resource-id='button-text']")
-	private WebElement bookAslotbtn;
+	private WebElement bookAslotbutton;
 	
-	public WebElement getbookAslotbtn() {
-		return bookAslotbtn;
+	public WebElement getbookAslotbutton() {
+		return bookAslotbutton;
 	}
 	
 	public void slotbook(WebElement bookAslotbtn) {

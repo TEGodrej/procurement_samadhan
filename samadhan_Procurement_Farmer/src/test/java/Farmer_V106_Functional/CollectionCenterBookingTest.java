@@ -18,22 +18,22 @@ public class CollectionCenterBookingTest extends BaseClass_Farmer{
 	public void bookCC() {
 		String Expectedtext="Upcoming Slot";
 		driverUtility.implicitWait(10);
-		homeScreen.getHambergerTab().click();
-		hambergerTabScreen.getCCslottab().click();
-		slotBookingScreen.getbookAslotbtn().click();
+		homeScreen.gethamburgerTab().click();
+		hambergerTabScreen.getccSlotTab().click();
+		slotBookingScreen.getbookAslotbutton().click();
 		selectLandScreen.getlandId().click();
-		selectLandScreen.getkgtextfld().sendKeys("290");
-		selectLandScreen.getnextBtn().click();
-		selectCcScreen.getsecondCenter().click();
-		selectCcScreen.getbookaSlotbtn().click();
+		selectLandScreen.getkgtextfield().sendKeys("290");
+		selectLandScreen.getnextButton().click();
+		selectCcScreen.getSecondCenter().click();
+		selectCcScreen.getBookaSlotbutton().click();
 		
 //		sdriver.findElement(AppiumBy.androidUIAutomator(
 //			    "new UiScrollable(new UiSelector()).scrollIntoView(new UiSelector().text(\"7:30 PM - 8:30 PM \"))"));
-		WebElement time=deliveryTimeScreen.getThirteenthtimeslot();
+		WebElement time=deliveryTimeScreen.getTimeSlot();
 //		gutil.scroll(time, true, 0, 0, 0, 0, 0, "up");
 		time.click();
-		deliveryTimeScreen.getConfirmbtn().click();
-		deliveryTimeScreen.getokBtn().click();
+		deliveryTimeScreen.getconfirmButton().click();
+		deliveryTimeScreen.getokButton().click();
 		WebElement Text=sdriver.findElement(AppiumBy.xpath("(//android.widget.TextView[@text=\"Upcoming Slot!\"])[1]"));
 		String ActualText=Text.getText();
 		if(ActualText.equals(Expectedtext)) {
@@ -50,11 +50,11 @@ public class CollectionCenterBookingTest extends BaseClass_Farmer{
 	@Test
 	public void verifyUserIsAbleToBookCcWithoutWeight() {
 		driverUtility.implicitWait(10);
-		homeScreen.getHambergerTab().click();
-		hambergerTabScreen.getCCslottab().click();
-		slotBookingScreen.getbookAslotbtn().click();
+		homeScreen.gethamburgerTab().click();
+		hambergerTabScreen.getccSlotTab().click();
+		slotBookingScreen.getbookAslotbutton().click();
 		selectLandScreen.getlandId().click();
-		selectLandScreen.getnextBtn().click();
+		selectLandScreen.getnextButton().click();
 		WebElement ErrorMsg=sdriver.findElement(AppiumBy.xpath("//android.widget.TextView[@text=\"Please Select land.\"]"));
 		if(ErrorMsg.isDisplayed()) {
 			assertTrue(true);
@@ -69,15 +69,15 @@ public class CollectionCenterBookingTest extends BaseClass_Farmer{
 	@Test
 	public void VerifyUserAbleTOBookSlotWithoutSelectingDate() {
 		driverUtility.implicitWait(10);
-		homeScreen.getHambergerTab().click();
-		hambergerTabScreen.getCCslottab().click();
-		slotBookingScreen.getbookAslotbtn().click();
+		homeScreen.gethamburgerTab().click();
+		hambergerTabScreen.getccSlotTab().click();
+		slotBookingScreen.getbookAslotbutton().click();
 		selectLandScreen.getlandId().click();
-		selectLandScreen.getkgtextfld().sendKeys("285");
-		selectLandScreen.getnextBtn().click();
-		selectCcScreen.getsecondCenter().click();
-		selectCcScreen.getbookaSlotbtn().click();
-		deliveryTimeScreen.getConfirmbtn().click();
+		selectLandScreen.getkgtextfield().sendKeys("285");
+		selectLandScreen.getnextButton().click();
+		selectCcScreen.getSecondCenter().click();
+		selectCcScreen.getBookaSlotbutton().click();
+		deliveryTimeScreen.getconfirmButton().click();
 		WebElement ErrorMsg=sdriver.findElement(AppiumBy.xpath("//android.widget.TextView[@text=\"Please select slot.\"]"));
 		if(ErrorMsg.isDisplayed()) {
 			assertTrue(true);

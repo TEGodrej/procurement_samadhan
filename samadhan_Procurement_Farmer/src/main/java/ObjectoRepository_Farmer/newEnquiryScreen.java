@@ -26,10 +26,10 @@ public class newEnquiryScreen {
 	private WebElement plantationId;
 	
 	@FindBy(xpath = "(//android.view.ViewGroup[@content-desc=\"12345718\"])[2]")
-	private WebElement firstplatId;
+	private WebElement firstPlantationId;
 	
 	@FindBy(xpath = "//android.widget.TextView[@text=\"Field Visit\"]")
-	private WebElement FeildVisitTxtFld;
+	private WebElement feildVisitTxtField;
 	
 	@FindBy(xpath = "//android.widget.TextView[@text=\"Product Issue\"]")
 	private WebElement productIssue;
@@ -38,16 +38,16 @@ public class newEnquiryScreen {
 	private WebElement infrastructureIssue;
 	
 	@FindBy(xpath = "//android.widget.EditText")
-	private WebElement remarkTxtFld;
+	private WebElement remarkTextField;
 	
 	@FindBy(xpath = "(//android.view.ViewGroup[@content-desc=\"Capture Image, Open Camera & Take Photo\"])[1]")
-	private WebElement firstcameraoption;
+	private WebElement firstCameraOption;
 	
 	@FindBy(xpath = "(//android.view.ViewGroup[@content-desc=\"Capture Image, Open Camera & Take Photo\"])[2]")
-	private WebElement secondcameraoption;
+	private WebElement secondCameraOption;
 	
 	@FindBy(xpath = "//android.widget.Button[@content-desc=\"Submit\"]")
-	private WebElement submitBtn;
+	private WebElement submitButton;
 
 	public WebElement getLandIdTxtFld() {
 		return landIdTxtFld;
@@ -66,11 +66,11 @@ public class newEnquiryScreen {
 	}
 
 	public WebElement getFirstplatId() {
-		return firstplatId;
+		return firstPlantationId;
 	}
 
 	public WebElement getFeildVisitTxtFld() {
-		return FeildVisitTxtFld;
+		return feildVisitTxtField;
 	}
 
 	public WebElement getProductIssue() {
@@ -82,19 +82,19 @@ public class newEnquiryScreen {
 	}
 
 	public WebElement getRemarkTxtFld() {
-		return remarkTxtFld;
+		return remarkTextField;
 	}
 
 	public WebElement getFirstcameraoption() {
-		return firstcameraoption;
+		return firstCameraOption;
 	}
 
 	public WebElement getSecondcameraoption() {
-		return secondcameraoption;
+		return secondCameraOption;
 	}
 
-	public WebElement getSubmitBtn() {
-		return submitBtn;
+	public WebElement getsubmitButton() {
+		return submitButton;
 	}
 	
 	

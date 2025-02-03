@@ -18,10 +18,10 @@ public class FFBHarvestingTest extends BaseClass_Farmer {
 	@Test
 	public void RecordHarvest() {
 		driverUtility.implicitWait(10);
-		homeScreen.getHambergerTab().click();
-		hambergerTabScreen.getFFBharvesttab().click();
-		ffbSupplyScreen.getrecordharvestingbtn().click();
-		farmerLandDetailScreen.getfirstlandinfo().click();
+		homeScreen.gethamburgerTab().click();
+		hambergerTabScreen.getffbHarvestTab().click();
+		ffbSupplyScreen.getrecordharvestingButton().click();
+		farmerLandDetailScreen.getfirstLandInfo().click();
 		plantationDetailScreen.getplantationId().click();
 		plantationDetailScreen.getrecordharvestbtn().click();
 		recordHarvestScreen.getdateTextFeild().click();
@@ -45,8 +45,8 @@ public class FFBHarvestingTest extends BaseClass_Farmer {
 	public void verifyEnteredDetail() {
 		String expectedharvestId="589";
 		driverUtility.implicitWait(10);
-		homeScreen.getHambergerTab().click();
-		hambergerTabScreen.getFFBharvesttab().click();
+		homeScreen.gethamburgerTab().click();
+		hambergerTabScreen.getffbHarvestTab().click();
 		WebElement harvest=sdriver.findElement(AppiumBy.xpath("//android.view.ViewGroup[@resource-id=\"card\"]/android.view.ViewGroup"));
 		harvest.click();
 		WebElement harvestId=sdriver.findElement(AppiumBy.xpath("//android.widget.TextView[@text=\"589\"]"));
@@ -64,10 +64,10 @@ public class FFBHarvestingTest extends BaseClass_Farmer {
 	@Test
 	public void RecordHarvestWithoutEnteringDate() {
 		driverUtility.implicitWait(10);
-		homeScreen.getHambergerTab().click();
-		hambergerTabScreen.getFFBharvesttab().click();
-		ffbSupplyScreen.getrecordharvestingbtn().click();
-		farmerLandDetailScreen.getfirstlandinfo().click();
+		homeScreen.gethamburgerTab().click();
+		hambergerTabScreen.getffbHarvestTab().click();
+		ffbSupplyScreen.getrecordharvestingButton().click();
+		farmerLandDetailScreen.getfirstLandInfo().click();
 		plantationDetailScreen.getplantationId().click();
 		plantationDetailScreen.getrecordharvestbtn().click();
 		recordHarvestScreen.getFFBcountTextfeild().sendKeys("234");
@@ -88,10 +88,10 @@ public class FFBHarvestingTest extends BaseClass_Farmer {
 	@Test
 	public void recordHarvestWithoutUploadingPicture() {
 		driverUtility.implicitWait(10);
-		homeScreen.getHambergerTab().click();
-		hambergerTabScreen.getFFBharvesttab().click();
-		ffbSupplyScreen.getrecordharvestingbtn().click();
-		farmerLandDetailScreen.getfirstlandinfo().click();
+		homeScreen.gethamburgerTab().click();
+		hambergerTabScreen.getffbHarvestTab().click();
+		ffbSupplyScreen.getrecordharvestingButton().click();
+		farmerLandDetailScreen.getfirstLandInfo().click();
 		plantationDetailScreen.getplantationId().click();
 		plantationDetailScreen.getrecordharvestbtn().click();
 		recordHarvestScreen.getdateTextFeild().click();

@@ -6,42 +6,42 @@ import org.openqa.selenium.support.PageFactory;
 
 import io.appium.java_client.android.AndroidDriver;
 
-public class HomeScreen {
+public class homeScreen {
 	AndroidDriver driver;
-	public HomeScreen(AndroidDriver driver) {
+	public homeScreen(AndroidDriver driver) {
 		this.driver=driver;
 		PageFactory.initElements(driver, this);
 	}
 
 	@FindBy(xpath = "//android.widget.FrameLayout[@resource-id=\"android:id/content\"]/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup[1]/android.view.ViewGroup/com.horcrux.svg.SvgView")
-	private WebElement HambergerTab;
+	private WebElement hamburgerTab;
 	
 	@FindBy(xpath = "//android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[1]/android.view.ViewGroup/android.view.View")
 	private WebElement weatherTab;
 	
 	@FindBy(xpath = "//android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.View")
-	private WebElement AmatureTab;
+	private WebElement amatureTab;
 	
 	@FindBy(xpath = "//android.widget.TextView[@text=\"Amateur\"]")
-	private WebElement AmatureText;
+	private WebElement amatureText;
 	
 	@FindBy(xpath = "//android.widget.ScrollView/android.view.ViewGroup/android.view.View")
-	private WebElement FFBprice;
+	private WebElement ffbPrice;
 	
 	@FindBy(xpath = "//android.widget.TextView[@text='Home']")
-	private WebElement HomeButton;
+	private WebElement homeButton;
 	
 	@FindBy(xpath = "//android.widget.TextView[@text='Crop Status']")
-	private WebElement CropStatusbtn;
+	private WebElement cropStatusButton;
 	
 	@FindBy(xpath = "//android.widget.TextView[@text='Community']")
-	private WebElement communitybtn;
+	private WebElement communityButton;
 	
 	@FindBy(xpath = "//android.widget.TextView[@text='Payments']")
-	private WebElement paymentbtn;
+	private WebElement paymentButton;
 
-	public WebElement getHambergerTab() {
-		return HambergerTab;
+	public WebElement gethamburgerTab() {
+		return hamburgerTab;
 	}
 
 	public WebElement getWeatherTab() {
@@ -49,31 +49,31 @@ public class HomeScreen {
 	}
 
 	public WebElement getAmatureTab() {
-		return AmatureTab;
+		return amatureTab;
 	}
 	
 	public WebElement getAmatureText() {
-		return AmatureText;
+		return amatureText;
 	}
 
-	public WebElement getFFBprice() {
-		return FFBprice;
+	public WebElement getffbPrice() {
+		return ffbPrice;
 	}
 
-	public WebElement getHomeButton() {
-		return HomeButton;
+	public WebElement gethomeButton() {
+		return homeButton;
 	}
 
 	public WebElement getCropStatusbtn() {
-		return CropStatusbtn;
+		return cropStatusButton;
 	}
 
 	public WebElement getCommunitybtn() {
-		return communitybtn;
+		return communityButton;
 	}
 
 	public WebElement getPaymentbtn() {
-		return paymentbtn;
+		return paymentButton;
 	}
 	
 	
