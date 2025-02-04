@@ -4,11 +4,12 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import GenericUtilities.BaseClass_Farmer;
 import io.appium.java_client.android.AndroidDriver;
 
-public class homeScreen {
+public class HomeScreen extends BaseClass_Farmer{
 	AndroidDriver driver;
-	public homeScreen(AndroidDriver driver) {
+	public HomeScreen(AndroidDriver driver) {
 		this.driver=driver;
 		PageFactory.initElements(driver, this);
 	}
@@ -76,5 +77,13 @@ public class homeScreen {
 		return paymentButton;
 	}
 	
+	public void clickOnElement(WebElement element) {
+		gestureUtility.click(element);
+	}
+	
+	public void scrollToElement(String text) {
+		gestureUtility.scrollIntoView(text);
+		
+	}
 	
 }

@@ -6,9 +6,10 @@ import org.openqa.selenium.remote.RemoteWebElement;
 
 import com.google.common.collect.ImmutableMap;
 
+import io.appium.java_client.AppiumBy;
 import io.appium.java_client.android.AndroidDriver;
 
-public class GestureUtility {
+public class GestureUtility extends BaseClass_Farmer{
  AndroidDriver driver;
  
  	public GestureUtility(AndroidDriver driver) {
@@ -61,6 +62,11 @@ public class GestureUtility {
 			 canScrollMore = (Boolean) ((JavascriptExecutor) driver).executeScript("mobile: scrollGesture", ImmutableMap.of(
 			    "left", left, "top", top, "width", width, "height", height,
 			    "direction", dir,"percent", percentage));
+		}
+		
+		public void scrollIntoView(String text) {
+			sdriver.findElement(AppiumBy.androidUIAutomator(
+				    "new UiScrollable(new UiSelector()).scrollIntoView(new UiSelector().text(text))"));
 		}
 }
 

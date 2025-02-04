@@ -6,10 +6,10 @@ import org.openqa.selenium.support.PageFactory;
 
 import io.appium.java_client.android.AndroidDriver;
 
-public class ffbSupplyScreen {
+public class FFBsupplyScreen {
 	
 	AndroidDriver driver;
-	public ffbSupplyScreen(AndroidDriver driver) {
+	public FFBsupplyScreen(AndroidDriver driver) {
 		this.driver=driver;
 		PageFactory.initElements(driver, this);
 	}
@@ -20,4 +20,6 @@ public class ffbSupplyScreen {
 	public WebElement getrecordharvestingButton() {
 		return recordHarvestingButton;
 	}
+	
+	
 }

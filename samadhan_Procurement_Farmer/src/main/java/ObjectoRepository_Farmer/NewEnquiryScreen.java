@@ -6,9 +6,9 @@ import org.openqa.selenium.support.PageFactory;
 
 import io.appium.java_client.android.AndroidDriver;
 
-public class newEnquiryScreen {
+public class NewEnquiryScreen {
 	AndroidDriver driver;
-	public newEnquiryScreen(AndroidDriver driver) {
+	public NewEnquiryScreen(AndroidDriver driver) {
 		this.driver=driver;
 		PageFactory.initElements(driver, this);
 	}

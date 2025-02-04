@@ -4,12 +4,13 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import GenericUtilities.BaseClass_Farmer;
 import io.appium.java_client.android.AndroidDriver;
 
-public class hamburgerTabScreen {
+public class HamburgerTabScreen extends BaseClass_Farmer{
 	
 	AndroidDriver driver;
-	public hamburgerTabScreen(AndroidDriver driver) {
+	public HamburgerTabScreen(AndroidDriver driver) {
 		this.driver=driver;
 		PageFactory.initElements(driver, this);
 	}
@@ -126,5 +127,8 @@ public class hamburgerTabScreen {
 		return logoutButton;
 	}
 	
+	public void clickOnElement(WebElement element) {
+		gestureUtility.click(element);
+	}
 	
 }

@@ -7,23 +7,23 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 
-import ObjectoRepository_Farmer.deliveryTimeScreen;
-import ObjectoRepository_Farmer.enquiriesScreen;
-import ObjectoRepository_Farmer.ffbSupplyScreen;
-import ObjectoRepository_Farmer.farmerLandDetailsScreen;
-import ObjectoRepository_Farmer.hamburgerTabScreen;
-import ObjectoRepository_Farmer.homeScreen;
-import ObjectoRepository_Farmer.loginScreen;
-import ObjectoRepository_Farmer.myLandDetailsScreen;
-import ObjectoRepository_Farmer.myProfileScreen;
-import ObjectoRepository_Farmer.recordHarvestingScreen;
-import ObjectoRepository_Farmer.ccSlotBookingScreen;
-import ObjectoRepository_Farmer.newEnquiryScreen;
-import ObjectoRepository_Farmer.plantationDetailsScreen;
-import ObjectoRepository_Farmer.profilePictureScreen;
-import ObjectoRepository_Farmer.selectCcScreen;
-import ObjectoRepository_Farmer.selectLandScreen;
-import ObjectoRepository_Farmer.successpopupScreen;
+import ObjectoRepository_Farmer.DeliveryTimeScreen;
+import ObjectoRepository_Farmer.EnquiriesScreen;
+import ObjectoRepository_Farmer.FFBsupplyScreen;
+import ObjectoRepository_Farmer.FarmerLandDetailsScreen;
+import ObjectoRepository_Farmer.HamburgerTabScreen;
+import ObjectoRepository_Farmer.HomeScreen;
+import ObjectoRepository_Farmer.LoginScreen;
+import ObjectoRepository_Farmer.MyLandDetailsScreen;
+import ObjectoRepository_Farmer.MyProfileScreen;
+import ObjectoRepository_Farmer.RecordHarvestingScreen;
+import ObjectoRepository_Farmer.CCslotBookingScreen;
+import ObjectoRepository_Farmer.NewEnquiryScreen;
+import ObjectoRepository_Farmer.PlantationDetailsScreen;
+import ObjectoRepository_Farmer.ProfilePictureScreen;
+import ObjectoRepository_Farmer.SelectCcScreen;
+import ObjectoRepository_Farmer.SelectLandScreen;
+import ObjectoRepository_Farmer.SuccessPopUpScreen;
 import io.appium.java_client.android.AndroidDriver;
 
 /*
@@ -34,26 +34,27 @@ public class BaseClass_Farmer {
 	public static AndroidDriver sdriver;
 	AndroidDriver driver;
 
-	public static homeScreen homeScreen;
-	public static hamburgerTabScreen hambergerTabScreen;
-	public static myLandDetailsScreen myLandDetailScreen;
-	public static recordHarvestingScreen recordHarvestScreen;
+	public static HomeScreen homeScreen;
+	public static HamburgerTabScreen hambergerTabScreen;
+	public static MyLandDetailsScreen myLandDetailScreen;
+	public static RecordHarvestingScreen recordHarvestScreen;
 	public static DriverUtility driverUtility;
 //	public FileUtility futil;
 	public static GestureUtility gestureUtility;
-	public static loginScreen loginScreen;
-	public static ffbSupplyScreen ffbSupplyScreen;
-	public static farmerLandDetailsScreen farmerLandDetailScreen;
-	public static plantationDetailsScreen plantationDetailScreen;
-	public static ccSlotBookingScreen slotBookingScreen;
-	public static selectLandScreen selectLandScreen;
-	public static successpopupScreen successPopupScreen;
-	public static selectCcScreen selectCcScreen;
-	public static deliveryTimeScreen deliveryTimeScreen;
-	public static myProfileScreen myProfileScreen;
-	public static enquiriesScreen enquiryScreen;
-	public static newEnquiryScreen newEnquiryScreen;
-	public static profilePictureScreen profilePictureScreen;
+	public static LoginScreen loginScreen;
+	public static FFBsupplyScreen ffbSupplyScreen;
+	public static FarmerLandDetailsScreen farmerLandDetailScreen;
+	public static PlantationDetailsScreen plantationDetailScreen;
+	public static CCslotBookingScreen slotBookingScreen;
+	public static SelectLandScreen selectLandScreen;
+	public static SuccessPopUpScreen successPopupScreen;
+	public static SelectCcScreen selectCcScreen;
+	public static DeliveryTimeScreen deliveryTimeScreen;
+	public static MyProfileScreen myProfileScreen;
+	public static EnquiriesScreen enquiryScreen;
+	public static NewEnquiryScreen newEnquiryScreen;
+	public static ProfilePictureScreen profilePictureScreen;
+
 	
 
 		@BeforeClass
@@ -82,26 +83,26 @@ public class BaseClass_Farmer {
 			
 			driver.activateApp("com.gavl.oilpalm.samadhan");
 //			dutil.implicitWait(10);
-			homeScreen= new homeScreen(driver);
-			hambergerTabScreen=new hamburgerTabScreen(driver);
-			myLandDetailScreen=new myLandDetailsScreen(driver);
-			recordHarvestScreen=new recordHarvestingScreen(driver);
+			homeScreen= new HomeScreen(driver);
+			hambergerTabScreen=new HamburgerTabScreen(driver);
+			myLandDetailScreen=new MyLandDetailsScreen(driver);
+			recordHarvestScreen=new RecordHarvestingScreen(driver);
 			driverUtility=new DriverUtility(driver);
 //			 futil=new FileUtility();
 			gestureUtility=new GestureUtility(driver);
-			loginScreen=new loginScreen(driver);
-			ffbSupplyScreen=new ffbSupplyScreen(driver);
-			farmerLandDetailScreen=new farmerLandDetailsScreen(driver);
-			plantationDetailScreen=new plantationDetailsScreen(driver);
-			slotBookingScreen= new ccSlotBookingScreen(driver);
-			selectLandScreen=new selectLandScreen(driver);
-			successPopupScreen=new successpopupScreen(driver);
-			selectCcScreen=new selectCcScreen(driver);
-			deliveryTimeScreen=new deliveryTimeScreen(driver);
-			myProfileScreen=new myProfileScreen(driver);
-			enquiryScreen= new enquiriesScreen(driver);
-			newEnquiryScreen=new newEnquiryScreen(driver);
-			profilePictureScreen=new profilePictureScreen(driver);
+			loginScreen=new LoginScreen(driver);
+			ffbSupplyScreen=new FFBsupplyScreen(driver);
+			farmerLandDetailScreen=new FarmerLandDetailsScreen(driver);
+			plantationDetailScreen=new PlantationDetailsScreen(driver);
+			slotBookingScreen= new CCslotBookingScreen(driver);
+			selectLandScreen=new SelectLandScreen(driver);
+			successPopupScreen=new SuccessPopUpScreen(driver);
+			selectCcScreen=new SelectCcScreen(driver);
+			deliveryTimeScreen=new DeliveryTimeScreen(driver);
+			myProfileScreen=new MyProfileScreen(driver);
+			enquiryScreen= new EnquiriesScreen(driver);
+			newEnquiryScreen=new NewEnquiryScreen(driver);
+			profilePictureScreen=new ProfilePictureScreen(driver);
 		}
 		
 		@AfterClass

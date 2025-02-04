@@ -4,11 +4,12 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import GenericUtilities.BaseClass_Farmer;
 import io.appium.java_client.android.AndroidDriver;
 
-public class deliveryTimeScreen {
+public class DeliveryTimeScreen extends BaseClass_Farmer{
 	AndroidDriver driver;
-	public deliveryTimeScreen(AndroidDriver driver) {
+	public DeliveryTimeScreen(AndroidDriver driver) {
 		this.driver=driver;
 		PageFactory.initElements(driver, this);
 	}
@@ -48,5 +49,12 @@ public class deliveryTimeScreen {
 		return okButton;
 	}
 	
+	public void selectTime(WebElement element) {
+		gestureUtility.click(element);
+	}
+	
+	public void clickOnElement(WebElement element) {
+		gestureUtility.click(element);
+	}
 	
 }

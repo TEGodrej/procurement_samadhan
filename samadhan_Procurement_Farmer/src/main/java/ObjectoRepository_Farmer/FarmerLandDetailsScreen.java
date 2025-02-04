@@ -4,12 +4,13 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import GenericUtilities.BaseClass_Farmer;
 import io.appium.java_client.android.AndroidDriver;
 
-public class farmerLandDetailsScreen {
+public class FarmerLandDetailsScreen extends BaseClass_Farmer{
 	
 	AndroidDriver driver;
-	public farmerLandDetailsScreen(AndroidDriver driver) {
+	public FarmerLandDetailsScreen(AndroidDriver driver) {
 		this.driver=driver;
 		PageFactory.initElements(driver, this);
 	}
@@ -33,6 +34,10 @@ public class farmerLandDetailsScreen {
 	
 	public WebElement getssecondLandInfo() {
 		return secondLandInfo;
+	}
+	
+	public void clickOnElement(WebElement element) {
+		gestureUtility.click(element);
 	}
 	
 }

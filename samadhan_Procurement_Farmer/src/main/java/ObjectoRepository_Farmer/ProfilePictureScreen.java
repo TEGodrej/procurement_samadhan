@@ -6,10 +6,10 @@ import org.openqa.selenium.support.PageFactory;
 
 import io.appium.java_client.android.AndroidDriver;
 
-public class profilePictureScreen {
+public class ProfilePictureScreen {
 	
 	AndroidDriver driver;
-	public profilePictureScreen(AndroidDriver driver) {
+	public ProfilePictureScreen(AndroidDriver driver) {
 		this.driver=driver;
 		PageFactory.initElements(driver, this);
 	}
