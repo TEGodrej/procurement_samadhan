@@ -29,7 +29,7 @@ public class GestureUtility extends BaseClass_Farmer{
 					"elementId",((RemoteWebElement)element).getId()));
 		}
 		
-		public void dragNdrop(WebElement element,int x, int y) {
+		public void dragAndDrop(WebElement element,int x, int y) {
 			((JavascriptExecutor) driver).executeScript("mobile: dragGesture", ImmutableMap.of(
 			    "elementId", ((RemoteWebElement) element).getId(),"endX", 100,"endY", 100));
 		}

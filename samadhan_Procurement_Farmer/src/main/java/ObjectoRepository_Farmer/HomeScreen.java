@@ -21,7 +21,7 @@ public class HomeScreen extends BaseClass_Farmer{
 	private WebElement weatherTab;
 	
 	@FindBy(xpath = "//android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup/android.view.View")
-	private WebElement amatureTab;
+	private WebElement amateurTab;
 	
 	@FindBy(xpath = "//android.widget.TextView[@text=\"Amateur\"]")
 	private WebElement amatureText;
@@ -50,7 +50,7 @@ public class HomeScreen extends BaseClass_Farmer{
 	}
 
 	public WebElement getAmatureTab() {
-		return amatureTab;
+		return amateurTab;
 	}
 	
 	public WebElement getAmatureText() {
