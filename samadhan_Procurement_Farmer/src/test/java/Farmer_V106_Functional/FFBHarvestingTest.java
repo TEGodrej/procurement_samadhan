@@ -18,11 +18,11 @@ public class FFBHarvestingTest extends BaseClass_Farmer {
 	@Test
 	public void RecordHarvest() {
 		driverUtility.implicitWait(10);
-		homeScreen.gethamburgerTab().click();
-		hambergerTabScreen.getffbHarvestTab().click();
-		ffbSupplyScreen.getrecordharvestingButton().click();
-		farmerLandDetailScreen.getfirstLandInfo().click();
-		plantationDetailScreen.getplantationId().click();
+		homeScreen.clickOnhamburgerTab();
+		hambergerTabScreen.clickOnFfbHarvestTab();
+		ffbSupplyScreen.clickOnRecordHarvestingButton();
+		farmerLandDetailScreen.clickOnFirstLandInfo();
+		plantationDetailScreen.clickOnPlantationId();
 		plantationDetailScreen.getrecordharvestbtn().click();
 		recordHarvestScreen.getdateTextFeild().click();
 

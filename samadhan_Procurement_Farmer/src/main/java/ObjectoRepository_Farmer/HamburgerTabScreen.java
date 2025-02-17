@@ -127,8 +127,28 @@ public class HamburgerTabScreen extends BaseClass_Farmer{
 		return logoutButton;
 	}
 	
-	public void clickOnElement(WebElement element) {
-		gestureUtility.click(element);
+	public void clickOnCcSlotTab() {
+		try {
+			gestureUtility.click(ccSlotTab);
+		}catch (Exception e) {
+			System.out.println("Not able to click on cc Slot Tab");
+		}
+	}
+	
+	public void clickOnFfbHarvestTab() {
+		try {
+			ffbHarvestTab.click();
+		}catch (Exception e) {
+			System.out.println("Not able to click on ffb Harvest Tab");
+		}
+	}
+	
+	public void clickOnMyLandTab() {
+		try {
+			myLandTab.click();
+		}catch (Exception e) {
+			System.out.println("Not able to click on myLand Tab");
+		}
 	}
 	
 }

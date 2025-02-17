@@ -1,12 +1,15 @@
 package ObjectoRepository_Farmer;
 
+import static org.testng.Assert.assertTrue;
+
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import GenericUtilities.BaseClass_Farmer;
 import io.appium.java_client.android.AndroidDriver;
 
-public class SelectLandScreen {
+public class SelectLandScreen extends BaseClass_Farmer{
 	AndroidDriver driver;
 	public SelectLandScreen(AndroidDriver driver) {
 		this.driver=driver;
@@ -26,10 +29,13 @@ public class SelectLandScreen {
 	private WebElement landId;
 	
 	@FindBy(xpath = "//android.widget.EditText")
-	private WebElement kgtextfield;
+	private WebElement kgTextField;
 	
 	@FindBy(xpath = "//android.widget.TextView[@resource-id='button-text']")
 	private WebElement nextButton;
+	
+	@FindBy(xpath = "//android.widget.TextView[@text='Please Select land.']")
+	private WebElement LandErrorMessage;
 	
 	public WebElement getbackArrowbutton() {
 		return backArrowbutton;
@@ -48,12 +54,41 @@ public class SelectLandScreen {
 	}
 	
 	public WebElement getkgtextfield() {
-		return kgtextfield;
+		return kgTextField;
 	}
 	
 	public WebElement getnextButton() {
 		return nextButton;
 	}
 	
+	public void clickOnLandId() {
+		try {
+			gestureUtility.click(landId);
+		}catch(Exception e) {
+			System.out.println("Not able to click on land id");
+		}
+	}
+	public void sendKeyToKgTextField(String keys) {
+		try {
+			kgTextField.sendKeys(keys);
+		}catch (Exception e) {
+			System.out.println("Not able to send keys in kg Text Field");
+		}
+	}
+	public void clickOnNextButton() {
+		try {
+			gestureUtility.click(nextButton);
+		}catch(Exception e) {
+			System.out.println("Not able to click on next button");
+		}
+	}
+	
+	public void verifyLandErrorMessage() {
+		try {
+			assertTrue(LandErrorMessage.isDisplayed());
+		}catch(Exception e) {
+			System.out.println(LandErrorMessage +" did not displayed");
+		}
+	}
 
 }

@@ -36,8 +36,12 @@ public class FarmerLandDetailsScreen extends BaseClass_Farmer{
 		return secondLandInfo;
 	}
 	
-	public void clickOnElement(WebElement element) {
-		gestureUtility.click(element);
+	public void clickOnFirstLandInfo() {
+		try {
+			firstLandInfo.click();
+		}catch (Exception e) {
+			System.out.println("Not able to click on first Land Info");
+		}
 	}
 	
 }

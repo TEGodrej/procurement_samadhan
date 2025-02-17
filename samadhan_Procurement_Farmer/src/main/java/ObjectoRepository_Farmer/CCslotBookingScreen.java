@@ -23,8 +23,8 @@ public class CCslotBookingScreen extends BaseClass_Farmer{
 		return bookAslotbutton;
 	}
 	
-	public void slotbook(WebElement element) {
-	    gestureUtility.click(element);
+	public void clickOnBookAslotbutton() {
+	    gestureUtility.click(bookAslotbutton);
 	}
 	
 	

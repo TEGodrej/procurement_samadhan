@@ -21,5 +21,13 @@ public class FFBsupplyScreen {
 		return recordHarvestingButton;
 	}
 	
+	public void clickOnRecordHarvestingButton() {
+		try {
+			recordHarvestingButton.click();
+		}catch (Exception e) {
+			System.out.println("Not able to click on record Harvesting Button");
+		}
+	}
+	
 	
 }

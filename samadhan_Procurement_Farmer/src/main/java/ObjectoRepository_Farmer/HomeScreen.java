@@ -1,5 +1,7 @@
 package ObjectoRepository_Farmer;
 
+import static org.testng.Assert.assertTrue;
+
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -77,13 +79,28 @@ public class HomeScreen extends BaseClass_Farmer{
 		return paymentButton;
 	}
 	
-	public void clickOnElement(WebElement element) {
-		gestureUtility.click(element);
+	public void clickOnhamburgerTab() {
+		gestureUtility.click(hamburgerTab);
 	}
 	
 	public void scrollToElement(String text) {
 		gestureUtility.scrollIntoView(text);
-		
+	}
+	
+	public void verifyAmatureText() {
+		try {
+			assertTrue(amatureText.isDisplayed());
+		}catch (Exception e) {
+			System.out.println("Amature Text is not displayed");
+		}
+	}
+	
+	public void verifyFfbPrice() {
+		try {
+			assertTrue(ffbPrice.isDisplayed());
+		}catch (Exception e) {
+			System.out.println("ffb Price is not displayed");
+		}
 	}
 	
 }

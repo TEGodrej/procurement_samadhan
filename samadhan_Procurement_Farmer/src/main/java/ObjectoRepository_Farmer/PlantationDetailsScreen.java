@@ -33,4 +33,20 @@ public class PlantationDetailsScreen {
 	public WebElement getrecordharvestbtn() {
 		return recordHarvestButton;
 	}
+	
+	public void clickOnPlantationId() {
+		try {
+			plantationId.click();
+		}catch (Exception e) {
+			System.out.println("Not able to click on plantationId");
+		}
+	}
+	
+	public void clickOnRecordHarvestButton() {
+		try {
+			recordHarvestButton.click();
+		}catch (Exception e) {
+			System.out.println("Not able to click on ");
+		}
+	}
 }

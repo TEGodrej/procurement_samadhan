@@ -67,18 +67,18 @@ public class BaseClass_Farmer {
 //			String appactivty=futil.getDataFromProperty("appActivity");
 //			String apppackage=futil.getDataFromProperty("appPackage");
 			
-			DesiredCapabilities dc=new DesiredCapabilities();
-			dc.setCapability("platformName", "android");
-			dc.setCapability("deviceName", "Redmi A2");
-			dc.setCapability("automationName", "Uiautomator2");
-			dc.setCapability("UDID", "WKAQCYCQKROVDE4L");
-			dc.setCapability("noReset", true);
+			DesiredCapabilities desiredCapability=new DesiredCapabilities();
+			desiredCapability.setCapability("platformName", "android");
+			desiredCapability.setCapability("deviceName", "Redmi A2");
+			desiredCapability.setCapability("automationName", "Uiautomator2");
+			desiredCapability.setCapability("UDID", "WKAQCYCQKROVDE4L");
+			desiredCapability.setCapability("noReset", true);
 			
 //			dc.setCapability("appActivity", "com.godrejsamadhanmobile.MainActivity");
 //			dc.setCapability("appPackage", "com.gavl.oilpalm.samadhan");
 			
 			URL url= URI.create("http://localhost:4723").toURL();
-			driver=new AndroidDriver(url, dc);
+			driver=new AndroidDriver(url, desiredCapability);
 			sdriver=driver;
 			
 			driver.activateApp("com.gavl.oilpalm.samadhan");

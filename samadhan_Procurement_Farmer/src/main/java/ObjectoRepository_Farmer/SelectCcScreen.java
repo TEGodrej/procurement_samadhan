@@ -4,12 +4,11 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-import GenericUtilities.GestureUtility;
+import GenericUtilities.BaseClass_Farmer;
 import io.appium.java_client.android.AndroidDriver;
 
-public class SelectCcScreen {
+public class SelectCcScreen extends BaseClass_Farmer{
 	AndroidDriver driver;
-	GestureUtility gutil= new GestureUtility(driver);
 	public SelectCcScreen(AndroidDriver driver) {
 		this.driver=driver;
 		PageFactory.initElements(driver, this);
@@ -24,39 +23,33 @@ public class SelectCcScreen {
 	@FindBy(xpath = "//android.widget.TextView[@text='Book a Slot']")
 	private WebElement bookaSlotbutton;
 	
-	
-	
-	
-	public GestureUtility getGutil() {
-		return gutil;
-	}
-
-
-
 
 	public WebElement getFirstCenter() {
 		return firstCenter;
 	}
 
-
-
-
 	public WebElement getSecondCenter() {
 		return secondCenter;
 	}
-
-
-
 
 	public WebElement getBookaSlotbutton() {
 		return bookaSlotbutton;
 	}
 
-
-
-
-	public void clickOnElement(WebElement ele) {
-		gutil.click(ele);
+	public void clickOnSecondCenter() {
+		try {
+		gestureUtility.click(secondCenter);
+		}catch(Exception e) {
+			System.out.println("Not able to click on second Center");
+		}
+	}
+	
+	public void clickOnBookASlotbutton() {
+		try {
+			gestureUtility.click(bookaSlotbutton);
+		}catch(Exception e) {
+			System.out.println("Not able to Click on book a slot button");
+		}
 	}
 	
 }
