@@ -68,6 +68,72 @@ public class GestureUtility extends BaseClass_Farmer{
 			sdriver.findElement(AppiumBy.androidUIAutomator(
 				    "new UiScrollable(new UiSelector()).scrollIntoView(new UiSelector().text(text))"));
 		}
+		
+		public void clickByAxes(int x, int y) {
+			driver.executeScript("mobile: clickGesture", ImmutableMap.of("x",x,"y",y));
+		}
+		
+		public void doubleClickByAxes(int x, int y) {
+			driver.executeScript("mobile: doubleClickGesture", ImmutableMap.of("x",x,"y",y));
+		}
+		
+		public void longClickByAxes(int x,int y) {
+			driver.executeScript("mobile: longClickGesture", ImmutableMap.of("x",x,"y",y));
+		}
+		
+		public void pinchOpenByAxes(int startX, int startY, int endX, int endY, double percentage) {
+		    ((JavascriptExecutor) driver).executeScript("mobile: pinchOpenGesture", ImmutableMap.of(
+		        "startX", startX,
+		        "startY", startY,
+		        "endX", endX,
+		        "endY", endY,
+		        "percent", percentage
+		    ));
+		}
+		
+		public void scrollByAxes(int startX, int startY, int endX, int endY, String dir, double percentage) {
+		    @SuppressWarnings("unused")
+		    boolean canScrollMore = (Boolean) ((JavascriptExecutor) driver).executeScript("mobile: scrollGesture", ImmutableMap.of(
+		        "startX", startX, 
+		        "startY", startY, 
+		        "endX", endX, 
+		        "endY", endY,
+		        "direction", dir, 
+		        "percent", percentage
+		    ));
+		}
+		
+		public void swipe(int startX, int startY, int endX, int endY, String dir, double percentage) {
+		    ((JavascriptExecutor) driver).executeScript("mobile: swipeGesture", ImmutableMap.of(
+		        "startX", startX, 
+		        "startY", startY, 
+		        "endX", endX, 
+		        "endY", endY,
+		        "direction", dir,
+		        "percent", percentage
+		    ));
+		}
+		
+		public void fling(int startX, int startY, String dir, int speed) {
+		    ((JavascriptExecutor) driver).executeScript("mobile: flingGesture", ImmutableMap.of(
+		        "startX", startX, 
+		        "startY", startY, 
+		        "direction", dir,
+		        "speed", speed
+		    ));
+		}
+		
+		public void pinchCloseByAxes(int startX, int startY, int endX, int endY, double percentage) {
+		    ((JavascriptExecutor) driver).executeScript("mobile: pinchCloseGesture", ImmutableMap.of(
+		        "startX", startX,
+		        "startY", startY,
+		        "endX", endX,
+		        "endY", endY,
+		        "percent", percentage
+		    ));
+		}
+
+
 }
 
 

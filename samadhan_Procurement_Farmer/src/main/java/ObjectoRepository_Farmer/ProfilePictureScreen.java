@@ -34,6 +34,12 @@ public class ProfilePictureScreen {
 	public WebElement getCancelBtn() {
 		return cancelButton;
 	}
-	
+	public void clickOnCameraTab() {
+		try {
+			cameraTab.click();
+		}catch (Exception e) {
+			System.out.println("Not able to click on camera");
+		}
+	}
 	
 }

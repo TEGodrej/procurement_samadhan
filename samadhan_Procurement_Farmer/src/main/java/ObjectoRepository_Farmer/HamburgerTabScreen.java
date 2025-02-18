@@ -1,5 +1,7 @@
 package ObjectoRepository_Farmer;
 
+import static org.testng.Assert.assertTrue;
+
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -66,6 +68,15 @@ public class HamburgerTabScreen extends BaseClass_Farmer{
 	
 	@FindBy(xpath = "//android.widget.TextView[@text='Logout']")
 	private WebElement logoutButton;
+	
+	@FindBy(xpath = "//android.widget.TextView[@text='1123041331']")
+	private WebElement farmerCode;
+	
+	@FindBy(xpath = "//android.widget.Button[@content-desc='0, Bank Details']")
+	private WebElement bankDetails;
+	
+	@FindBy(xpath = "//android.widget.TextView[@text='52369874123']")
+	private WebElement accountNumber;
 
 	public WebElement getProfile() {
 		return profile;
@@ -150,5 +161,37 @@ public class HamburgerTabScreen extends BaseClass_Farmer{
 			System.out.println("Not able to click on myLand Tab");
 		}
 	}
+	public void clickOnProfile() {
+		try {
+			profile.click();
+		}catch (Exception e) {
+			System.out.println("Not able to click on profile");
+		}
+	}
+	
+	public void verifyFarmerCode() {
+		try {
+			assertTrue(farmerCode.isDisplayed());
+		}catch (Exception e) {
+			System.out.println("farmerCode is not displayed");
+		}
+	}
+	public void clickOnBankDetails() {
+		try {
+			bankDetails.click();
+		}catch (Exception e) {
+			System.out.println("Not able to click on bank Details");
+		}
+	}
+	
+	public void verifyAccountNumber() {
+		try {
+			assertTrue(accountNumber.isDisplayed());
+		}catch (Exception e) {
+			System.out.println("account Number is not displayed");
+		}
+	
+	}
+	
 	
 }

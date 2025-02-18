@@ -27,10 +27,13 @@ public class MyProfileScreen {
 	private WebElement familyGroupMap;
 	
 	@FindBy(xpath = "//android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[1]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.ImageView")
-	private WebElement profilepicIcon;
+	private WebElement profilePictureIcon;
+	
+	@FindBy(xpath = "//android.widget.TextView[@text='456457676']")
+	private WebElement rfidCardNumber;
 	
 	public WebElement getprofilepicIcon() {
-		return profilepicIcon;
+		return profilePictureIcon;
 	}
 
 	public WebElement getPersonalInfo() {
@@ -49,6 +52,25 @@ public class MyProfileScreen {
 		return familyGroupMap;
 	}
 	
-	
-	
+	public void clickOnRFIDDetail() {
+		try {
+			RFIDdetail.click();
+		}catch (Exception e) {
+			System.out.println("Not able to click on RFID detail");
+		}
+	}
+	public void verifyRfidCardNumber() {
+		try {
+			rfidCardNumber.click();
+		}catch (Exception e) {
+			System.out.println("rfid CardNumber is not displayed");
+		}
+	}
+	public void clickOnProfilePictureIcon() {
+		try {
+			profilePictureIcon.click();
+		}catch (Exception e) {
+			System.out.println("Not able to click on profile Picture Icon");
+		}
+	}
 }

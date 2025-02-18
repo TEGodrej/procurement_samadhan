@@ -20,7 +20,7 @@ public class EnquiryTest extends BaseClass_Farmer{
 	public void raiseNewEnquiry() {
 		driverUtility.implicitWait(10);
 		homeScreen.gethamburgerTab().click();
-		hambergerTabScreen.getenquiriesTab().click();
+		hamburgerTabScreen.getenquiriesTab().click();
 		enquiryScreen.getPluseButton().click();
 		newEnquiryScreen.getLandIdTxtFld().click();
 		newEnquiryScreen.getFirstLandId().click();

@@ -35,7 +35,7 @@ public class BaseClass_Farmer {
 	AndroidDriver driver;
 
 	public static HomeScreen homeScreen;
-	public static HamburgerTabScreen hambergerTabScreen;
+	public static HamburgerTabScreen hamburgerTabScreen;
 	public static MyLandDetailsScreen myLandDetailScreen;
 	public static RecordHarvestingScreen recordHarvestScreen;
 	public static DriverUtility driverUtility;
@@ -84,7 +84,7 @@ public class BaseClass_Farmer {
 			driver.activateApp("com.gavl.oilpalm.samadhan");
 //			dutil.implicitWait(10);
 			homeScreen= new HomeScreen(driver);
-			hambergerTabScreen=new HamburgerTabScreen(driver);
+			hamburgerTabScreen=new HamburgerTabScreen(driver);
 			myLandDetailScreen=new MyLandDetailsScreen(driver);
 			recordHarvestScreen=new RecordHarvestingScreen(driver);
 			driverUtility=new DriverUtility(driver);

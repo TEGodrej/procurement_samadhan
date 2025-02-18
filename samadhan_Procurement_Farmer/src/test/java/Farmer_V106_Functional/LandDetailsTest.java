@@ -13,7 +13,7 @@ public class LandDetailsTest extends BaseClass_Farmer{
 	public void verifyFarmerIsAbleToSeelandDetail() {
 		driverUtility.implicitWait(10);
 		homeScreen.clickOnhamburgerTab();
-	    hambergerTabScreen.clickOnMyLandTab();
+		hamburgerTabScreen.clickOnMyLandTab();
 
 	    driverUtility.implicitWait(10);
 	    
@@ -29,7 +29,7 @@ public class LandDetailsTest extends BaseClass_Farmer{
 		String ffbCount="250";
 		driverUtility.implicitWait(10);
 		homeScreen.clickOnhamburgerTab();
-		hambergerTabScreen.clickOnMyLandTab();
+		hamburgerTabScreen.clickOnMyLandTab();
 		myLandDetailScreen.clickOnFirstLandId();
 		myLandDetailScreen.clickOnPlantationId();
 		myLandDetailScreen.clickOnRecordHarvesting();
@@ -53,7 +53,7 @@ public class LandDetailsTest extends BaseClass_Farmer{
 		String ffbCount="250";
 		driverUtility.implicitWait(10);
 		homeScreen.clickOnhamburgerTab();
-		hambergerTabScreen.clickOnMyLandTab();
+		hamburgerTabScreen.clickOnMyLandTab();
 		myLandDetailScreen.clickOnFirstLandId();
 		myLandDetailScreen.clickOnPlantationId();
 		myLandDetailScreen.clickOnRecordHarvesting();
@@ -65,7 +65,7 @@ public class LandDetailsTest extends BaseClass_Farmer{
 		recordHarvestScreen.clickOnSubmitButton();
 		recordHarvestScreen.clickOnOkayButton();
 		myLandDetailScreen.clickOnHamburgerTab();
-		hambergerTabScreen.clickOnFfbHarvestTab();
+		hamburgerTabScreen.clickOnFfbHarvestTab();
 		
 	}
 	
@@ -79,7 +79,7 @@ public class LandDetailsTest extends BaseClass_Farmer{
 		String ffbCount="250";
 		driverUtility.implicitWait(10);
 		homeScreen.clickOnhamburgerTab();
-		hambergerTabScreen.clickOnMyLandTab();
+		hamburgerTabScreen.clickOnMyLandTab();
 		myLandDetailScreen.clickOnFirstLandId();
 		myLandDetailScreen.clickOnPlantationId();
 		myLandDetailScreen.clickOnRecordHarvesting();
@@ -96,7 +96,7 @@ public class LandDetailsTest extends BaseClass_Farmer{
 	public void verifyUserNotBeAbleToRecordHarvestWithoutEnteringFFBcount() {
 		driverUtility.implicitWait(10);
 		homeScreen.clickOnhamburgerTab();
-		hambergerTabScreen.clickOnMyLandTab();
+		hamburgerTabScreen.clickOnMyLandTab();
 		myLandDetailScreen.clickOnFirstLandId();
 		myLandDetailScreen.clickOnPlantationId();
 		myLandDetailScreen.clickOnRecordHarvesting();
@@ -116,7 +116,7 @@ public class LandDetailsTest extends BaseClass_Farmer{
 		String ffbCount="250";
 		driverUtility.implicitWait(10);
 		homeScreen.clickOnhamburgerTab();
-		hambergerTabScreen.clickOnMyLandTab();
+		hamburgerTabScreen.clickOnMyLandTab();
 		myLandDetailScreen.clickOnFirstLandId();
 		myLandDetailScreen.clickOnPlantationId();
 		myLandDetailScreen.clickOnRecordHarvesting();

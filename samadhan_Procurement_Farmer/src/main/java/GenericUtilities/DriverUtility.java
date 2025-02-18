@@ -113,4 +113,12 @@ public class DriverUtility {
 		wait.until(ExpectedConditions.visibilityOf(element));
 		
 	}
+	public void threadWait(int time) {
+		try {
+			Thread.sleep(Duration.ofSeconds(time));
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
 }

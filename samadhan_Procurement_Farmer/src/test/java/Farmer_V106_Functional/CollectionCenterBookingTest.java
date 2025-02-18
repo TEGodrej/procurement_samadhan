@@ -16,7 +16,7 @@ public class CollectionCenterBookingTest extends BaseClass_Farmer{
 		String time="12:30 PM - 1:30PM";
 		driverUtility.implicitWait(10);
 		homeScreen.clickOnhamburgerTab();
-		hambergerTabScreen.clickOnCcSlotTab();
+		hamburgerTabScreen.clickOnCcSlotTab();
 		slotBookingScreen.clickOnBookAslotbutton();
 		selectLandScreen.clickOnLandId();
 		selectLandScreen.sendKeyToKgTextField(weight);
@@ -39,7 +39,7 @@ public class CollectionCenterBookingTest extends BaseClass_Farmer{
 	public void verifyUserIsAbleToBookCcWithoutWeight() {
 		driverUtility.implicitWait(10);
 		homeScreen.clickOnhamburgerTab();
-		hambergerTabScreen.clickOnCcSlotTab();
+		hamburgerTabScreen.clickOnCcSlotTab();
 		slotBookingScreen.clickOnBookAslotbutton();
 		selectLandScreen.clickOnLandId();
 		selectLandScreen.clickOnNextButton();
@@ -54,7 +54,7 @@ public class CollectionCenterBookingTest extends BaseClass_Farmer{
 		String weight="234";
 		driverUtility.implicitWait(10);
 		homeScreen.clickOnhamburgerTab();
-		hambergerTabScreen.clickOnCcSlotTab();
+		hamburgerTabScreen.clickOnCcSlotTab();
 		slotBookingScreen.clickOnBookAslotbutton();
 		selectLandScreen.clickOnLandId();
 		selectLandScreen.sendKeyToKgTextField(weight);

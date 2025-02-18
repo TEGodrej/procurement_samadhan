@@ -19,7 +19,7 @@ public class FFBHarvestingTest extends BaseClass_Farmer {
 	public void RecordHarvest() {
 		driverUtility.implicitWait(10);
 		homeScreen.clickOnhamburgerTab();
-		hambergerTabScreen.clickOnFfbHarvestTab();
+		hamburgerTabScreen.clickOnFfbHarvestTab();
 		ffbSupplyScreen.clickOnRecordHarvestingButton();
 		farmerLandDetailScreen.clickOnFirstLandInfo();
 		plantationDetailScreen.clickOnPlantationId();
@@ -46,7 +46,7 @@ public class FFBHarvestingTest extends BaseClass_Farmer {
 		String expectedharvestId="589";
 		driverUtility.implicitWait(10);
 		homeScreen.gethamburgerTab().click();
-		hambergerTabScreen.getffbHarvestTab().click();
+		hamburgerTabScreen.getffbHarvestTab().click();
 		WebElement harvest=sdriver.findElement(AppiumBy.xpath("//android.view.ViewGroup[@resource-id=\"card\"]/android.view.ViewGroup"));
 		harvest.click();
 		WebElement harvestId=sdriver.findElement(AppiumBy.xpath("//android.widget.TextView[@text=\"589\"]"));
@@ -65,7 +65,7 @@ public class FFBHarvestingTest extends BaseClass_Farmer {
 	public void RecordHarvestWithoutEnteringDate() {
 		driverUtility.implicitWait(10);
 		homeScreen.gethamburgerTab().click();
-		hambergerTabScreen.getffbHarvestTab().click();
+		hamburgerTabScreen.getffbHarvestTab().click();
 		ffbSupplyScreen.getrecordharvestingButton().click();
 		farmerLandDetailScreen.getfirstLandInfo().click();
 		plantationDetailScreen.getplantationId().click();
@@ -89,7 +89,7 @@ public class FFBHarvestingTest extends BaseClass_Farmer {
 	public void recordHarvestWithoutUploadingPicture() {
 		driverUtility.implicitWait(10);
 		homeScreen.gethamburgerTab().click();
-		hambergerTabScreen.getffbHarvestTab().click();
+		hamburgerTabScreen.getffbHarvestTab().click();
 		ffbSupplyScreen.getrecordharvestingButton().click();
 		farmerLandDetailScreen.getfirstLandInfo().click();
 		plantationDetailScreen.getplantationId().click();
