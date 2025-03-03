@@ -45,5 +45,10 @@
     <maven.compiler.target>11</maven.compiler.target>
     <maven.compiler.source>11</maven.compiler.source>
    </properties>
+  	<dependency>
+  		<groupId>Agrovet.Samadhan.Operator</groupId>
+  		<artifactId>Agrovet.Samadhan.Operator</artifactId>
+  		<version>0.0.1-SNAPSHOT</version>
+  	</dependency>
   </dependencies>
 </project>
