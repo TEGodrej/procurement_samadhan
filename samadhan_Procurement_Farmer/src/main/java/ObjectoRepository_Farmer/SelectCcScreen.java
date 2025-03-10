@@ -38,7 +38,8 @@ public class SelectCcScreen extends BaseClass_Farmer{
 
 	public void clickOnSecondCenter() {
 		try {
-		gestureUtility.click(secondCenter);
+//		gestureUtility.click(secondCenter);
+		secondCenter.click();
 		}catch(Exception e) {
 			System.out.println("Not able to click on second Center");
 		}
@@ -46,7 +47,8 @@ public class SelectCcScreen extends BaseClass_Farmer{
 	
 	public void clickOnBookASlotbutton() {
 		try {
-			gestureUtility.click(bookaSlotbutton);
+//			gestureUtility.click(bookaSlotbutton);
+			bookaSlotbutton.click();
 		}catch(Exception e) {
 			System.out.println("Not able to Click on book a slot button");
 		}

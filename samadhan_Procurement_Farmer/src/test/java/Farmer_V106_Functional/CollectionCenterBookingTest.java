@@ -1,21 +1,27 @@
 package Farmer_V106_Functional;
 
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
 import GenericUtilities.BaseClass_Farmer;
+import GenericUtilities.ListenerUtility;
 /*
  * @author Testing Engineer
  */
+@Listeners(ListenerUtility.class)
 public class CollectionCenterBookingTest extends BaseClass_Farmer{
 /*
  *This is to verify that user should be able to book slot 
  */
 	@Test
 	public void verifyUserIsAbleToBookCc() {
-		String weight="290";
-		String time="12:30 PM - 1:30PM";
 		driverUtility.implicitWait(10);
+//		String weight="290";
+		String weight=excelutility.readDataFromExcel("TestData", 0, 0);
+//		String time="12:30 PM - 1:30PM";
+		driverUtility.implicitWait(20);
 		homeScreen.clickOnhamburgerTab();
+		driverUtility.threadWait(2);
 		hamburgerTabScreen.clickOnCcSlotTab();
 		slotBookingScreen.clickOnBookAslotbutton();
 		selectLandScreen.clickOnLandId();
@@ -23,8 +29,8 @@ public class CollectionCenterBookingTest extends BaseClass_Farmer{
 		selectLandScreen.clickOnNextButton();
 		selectCcScreen.clickOnSecondCenter();
 		selectCcScreen.clickOnBookASlotbutton();
-		
-		deliveryTimeScreen.scrollToTimeSlot(time);
+		driverUtility.threadWait(2);
+		deliveryTimeScreen.clickOnMonth();
 		deliveryTimeScreen.clickOnTimeSlot();
 		deliveryTimeScreen.clickOnConfirmButton();
 		deliveryTimeScreen.clickOnOkButton();
@@ -51,7 +57,8 @@ public class CollectionCenterBookingTest extends BaseClass_Farmer{
 	 */
 	@Test
 	public void VerifyUserAbleToBookSlotWithoutSelectingDate() {
-		String weight="234";
+//		String weight="234";
+		String weight=excelutility.readDataFromExcel("TestData", 0, 0);
 		driverUtility.implicitWait(10);
 		homeScreen.clickOnhamburgerTab();
 		hamburgerTabScreen.clickOnCcSlotTab();
@@ -61,7 +68,6 @@ public class CollectionCenterBookingTest extends BaseClass_Farmer{
 		selectLandScreen.clickOnNextButton();
 		selectCcScreen.clickOnSecondCenter();
 		selectCcScreen.clickOnBookASlotbutton();
-		
 		deliveryTimeScreen.clickOnConfirmButton();
 		deliveryTimeScreen.verifyTimeSlotErrorMessage();
 	}

@@ -16,7 +16,7 @@ public class PlantationDetailsScreen {
 	@FindBy(xpath = "//android.widget.ImageView")
 	private WebElement backArrowButton;
 	
-	@FindBy(xpath = "//android.widget.TextView[@text=\"12345718\"]")
+	@FindBy(xpath = "//android.widget.TextView[@text=\"12345862\"]")
 	private WebElement plantationId;
 	
 	@FindBy(xpath = "//android.widget.TextView[@text='Record Harvesting']")

@@ -25,7 +25,7 @@ public class SelectLandScreen extends BaseClass_Farmer{
 	@FindBy(xpath = "//android.widget.Button[@content-desc='0, LandIDLMAAS01070004, HATHYADKA, Assam, Maharashtra']/android.view.ViewGroup/android.view.ViewGroup")
 	private WebElement maharashtra;
 	
-	@FindBy(xpath = "//android.widget.Button[@content-desc=\"0, LandID12345718, HATHYADKA, West Godavari(AP), Andhra Pradesh & Telangana\"]")
+	@FindBy(xpath = "//android.widget.TextView[@text='LandID12345862']")
 	private WebElement landId;
 	
 	@FindBy(xpath = "//android.widget.EditText")
@@ -63,7 +63,8 @@ public class SelectLandScreen extends BaseClass_Farmer{
 	
 	public void clickOnLandId() {
 		try {
-			gestureUtility.click(landId);
+//			gestureUtility.click(landId);
+			landId.click();
 		}catch(Exception e) {
 			System.out.println("Not able to click on land id");
 		}
@@ -77,7 +78,8 @@ public class SelectLandScreen extends BaseClass_Farmer{
 	}
 	public void clickOnNextButton() {
 		try {
-			gestureUtility.click(nextButton);
+//			gestureUtility.click(nextButton);
+			nextButton.click();
 		}catch(Exception e) {
 			System.out.println("Not able to click on next button");
 		}

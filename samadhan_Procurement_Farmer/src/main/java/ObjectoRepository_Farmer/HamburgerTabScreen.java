@@ -17,7 +17,7 @@ public class HamburgerTabScreen extends BaseClass_Farmer{
 		PageFactory.initElements(driver, this);
 	}
 
-	@FindBy(xpath = "//android.widget.TextView[@text='NANDAMURI GANESH']")
+	@FindBy(xpath = "//android.widget.TextView[@text=\"Divya Prakash Amar\"]")
 	private WebElement profile;
 	
 	@FindBy(xpath = "//android.view.ViewGroup[@content-desc='Home']")
@@ -69,14 +69,14 @@ public class HamburgerTabScreen extends BaseClass_Farmer{
 	@FindBy(xpath = "//android.widget.TextView[@text='Logout']")
 	private WebElement logoutButton;
 	
-	@FindBy(xpath = "//android.widget.TextView[@text='1123041331']")
+	@FindBy(xpath = "//android.widget.TextView[@text=\"9252051234\"]")
 	private WebElement farmerCode;
 	
 	@FindBy(xpath = "//android.widget.Button[@content-desc='0, Bank Details']")
 	private WebElement bankDetails;
 	
-	@FindBy(xpath = "//android.widget.TextView[@text='52369874123']")
-	private WebElement accountNumber;
+	@FindBy(xpath = "//android.widget.TextView[@text=\"TEST ICICI BANK\"]")
+	private WebElement bankName;
 
 	public WebElement getProfile() {
 		return profile;
@@ -140,7 +140,8 @@ public class HamburgerTabScreen extends BaseClass_Farmer{
 	
 	public void clickOnCcSlotTab() {
 		try {
-			gestureUtility.click(ccSlotTab);
+//			gestureUtility.click(ccSlotTab);
+			ccSlotTab.click();
 		}catch (Exception e) {
 			System.out.println("Not able to click on cc Slot Tab");
 		}
@@ -184,9 +185,9 @@ public class HamburgerTabScreen extends BaseClass_Farmer{
 		}
 	}
 	
-	public void verifyAccountNumber() {
+	public void verifyBankName() {
 		try {
-			assertTrue(accountNumber.isDisplayed());
+			assertTrue(bankName.isDisplayed());
 		}catch (Exception e) {
 			System.out.println("account Number is not displayed");
 		}

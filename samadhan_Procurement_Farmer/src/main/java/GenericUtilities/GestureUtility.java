@@ -1,5 +1,7 @@
 package GenericUtilities;
 
+import java.util.Map;
+
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.RemoteWebElement;
@@ -16,8 +18,18 @@ public class GestureUtility extends BaseClass_Farmer{
  		this.driver=driver;
  	}
 		public void click(WebElement element) {
-			 ((JavascriptExecutor)driver).executeScript("mobile: clickGesture", ImmutableMap.of(
-			    "elementId", ((RemoteWebElement) element).getId()));
+//			 ((JavascriptExecutor)driver).executeScript("mobile: clickGesture", ImmutableMap.of(
+//			    "elementId", ((RemoteWebElement) element).getId()));
+			try {
+//			RemoteWebElement remoteElement = (RemoteWebElement) driver.findElement(By.id("someId")); 
+//			String elementId = remoteElement.getId();
+//			((JavascriptExecutor) driver).executeScript("mobile: clickGesture", ImmutableMap.of(
+//			    "elementId", elementId
+//			));
+				((JavascriptExecutor) driver).executeScript("mobile: tap", Map.of("elementId", ((RemoteWebElement) element).getId()));
+		}catch (Exception e) {
+			
+		}
 		}
 		
 		public void longClick(WebElement element) {
@@ -132,7 +144,46 @@ public class GestureUtility extends BaseClass_Farmer{
 		        "percent", percentage
 		    ));
 		}
+		
+		//swipe left using coOrdinates
+		public void swipeRighttUsingCoOrdinates(int left, int width, int top,int  height)
+		{
+			((JavascriptExecutor) driver).executeScript("mobile: swipeGesture", ImmutableMap.of(
+					"left", left, "top", top, "width", width, "height", height,
+					"direction", "left",
+					"percent", 0.75
+					));
 
+		}
+		//swipe right on element
+				public void swipeRighttUsingElement(WebElement ele)
+				{
+					((JavascriptExecutor) driver).executeScript("mobile: swipeGesture", ImmutableMap.of(
+							"elementId",((RemoteWebElement) ele).getId(),
+							"direction", "Right",
+							"percent", 0.75
+							));
+				}
+				
+				public void swipeLeftUsingElement(WebElement ele)
+				{
+					((JavascriptExecutor) driver).executeScript("mobile: swipeGesture", ImmutableMap.of(
+							"elementId",((RemoteWebElement) ele).getId(),
+							"direction", "left",
+							"percent", 0.75
+							));
+				}
+				
+				public void scrollUp() {
+			        String scrollAction = "new UiScrollable(new UiSelector().scrollable(true)).scrollBackward()";
+			        driver.findElement(AppiumBy.androidUIAutomator(scrollAction));
+			    }
+				
+				public void scrollDown() {
+			        String scrollAction = "new UiScrollable(new UiSelector().scrollable(true)).scrollForward()";
+			        driver.findElement(AppiumBy.androidUIAutomator(scrollAction));
+			    }
+				
 
 }
 

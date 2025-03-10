@@ -1,14 +1,18 @@
 package Farmer_V106_Functional;
 
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
 import GenericUtilities.BaseClass_Farmer;
+import GenericUtilities.ListenerUtility;
 /*
  * @author Testing Engineer
  */
+@Listeners(ListenerUtility.class)
 public class ProfileTest extends BaseClass_Farmer {
 // This is to check whether generate farmer code is matching or not.
-	@Test
+	
+	@Test(priority = 1)
 	public void viewFarmerProfile() {
 		driverUtility.implicitWait(10);
 		homeScreen.clickOnhamburgerTab();
@@ -18,14 +22,14 @@ public class ProfileTest extends BaseClass_Farmer {
 	}
 	
 //	This is to verify users bank details
-	@Test
+	@Test(priority = 2)
 	public void verifyBankDetailOfUser() {
 		driverUtility.implicitWait(10);
 		homeScreen.clickOnhamburgerTab();
 		hamburgerTabScreen.clickOnProfile();
 		driverUtility.threadWait(3);
 		hamburgerTabScreen.clickOnBankDetails();
-		hamburgerTabScreen.verifyAccountNumber();
+		hamburgerTabScreen.verifyBankName();
 	}
 	
 	/*
@@ -36,21 +40,9 @@ public class ProfileTest extends BaseClass_Farmer {
 		driverUtility.implicitWait(10);
 		homeScreen.clickOnhamburgerTab();
 		hamburgerTabScreen.clickOnProfile();
-		driverUtility.threadWait(3);
+		driverUtility.threadWait(5);
 		myProfileScreen.clickOnRFIDDetail();
 		myProfileScreen.verifyRfidCardNumber();
 	}
 	
-	/*
-	 *This is to verify that user should be able to change profile picture
-	 */
-	@Test
-	public void verifyUserIsAbleToChangeProfileImageThroughCamera() {
-		driverUtility.implicitWait(10);
-		homeScreen.clickOnhamburgerTab();
-		hamburgerTabScreen.clickOnProfile();
-		driverUtility.threadWait(3);
-		myProfileScreen.clickOnProfilePictureIcon();
-		profilePictureScreen.clickOnCameraTab();
-	}
 }

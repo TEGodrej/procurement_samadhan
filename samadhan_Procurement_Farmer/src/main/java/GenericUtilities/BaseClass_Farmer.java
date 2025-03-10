@@ -3,10 +3,12 @@ package GenericUtilities;
 import java.io.IOException;
 import java.net.URI;
 import java.net.URL;
+
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 
+import ObjectoRepository_Farmer.CCslotBookingScreen;
 import ObjectoRepository_Farmer.DeliveryTimeScreen;
 import ObjectoRepository_Farmer.EnquiriesScreen;
 import ObjectoRepository_Farmer.FFBsupplyScreen;
@@ -16,11 +18,10 @@ import ObjectoRepository_Farmer.HomeScreen;
 import ObjectoRepository_Farmer.LoginScreen;
 import ObjectoRepository_Farmer.MyLandDetailsScreen;
 import ObjectoRepository_Farmer.MyProfileScreen;
-import ObjectoRepository_Farmer.RecordHarvestingScreen;
-import ObjectoRepository_Farmer.CCslotBookingScreen;
 import ObjectoRepository_Farmer.NewEnquiryScreen;
 import ObjectoRepository_Farmer.PlantationDetailsScreen;
 import ObjectoRepository_Farmer.ProfilePictureScreen;
+import ObjectoRepository_Farmer.RecordHarvestingScreen;
 import ObjectoRepository_Farmer.SelectCcScreen;
 import ObjectoRepository_Farmer.SelectLandScreen;
 import ObjectoRepository_Farmer.SuccessPopUpScreen;
@@ -54,6 +55,7 @@ public class BaseClass_Farmer {
 	public static EnquiriesScreen enquiryScreen;
 	public static NewEnquiryScreen newEnquiryScreen;
 	public static ProfilePictureScreen profilePictureScreen;
+	public static ExcelUtility  excelutility;
 
 	
 
@@ -80,15 +82,16 @@ public class BaseClass_Farmer {
 			URL url= URI.create("http://localhost:4723").toURL();
 			driver=new AndroidDriver(url, desiredCapability);
 			sdriver=driver;
+//			driver = new AndroidDriver<>(new URL("http://localhost:4723/wd/hub"), capabilities);
 			
 			driver.activateApp("com.gavl.oilpalm.samadhan");
-//			dutil.implicitWait(10);
+			System.out.println("app is launched");
+//			driverUtility.implicitWait(10);
 			homeScreen= new HomeScreen(driver);
 			hamburgerTabScreen=new HamburgerTabScreen(driver);
 			myLandDetailScreen=new MyLandDetailsScreen(driver);
 			recordHarvestScreen=new RecordHarvestingScreen(driver);
 			driverUtility=new DriverUtility(driver);
-//			 futil=new FileUtility();
 			gestureUtility=new GestureUtility(driver);
 			loginScreen=new LoginScreen(driver);
 			ffbSupplyScreen=new FFBsupplyScreen(driver);
@@ -103,8 +106,9 @@ public class BaseClass_Farmer {
 			enquiryScreen= new EnquiriesScreen(driver);
 			newEnquiryScreen=new NewEnquiryScreen(driver);
 			profilePictureScreen=new ProfilePictureScreen(driver);
+			excelutility = new ExcelUtility();
+			driverUtility.implicitWait(10);
 		}
-		
 		@AfterClass
 		public void closeApp() throws IOException {
 			driver.terminateApp("com.gavl.oilpalm.samadhan");

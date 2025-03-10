@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<suite name="Suite">
+  <test thread-count="5" name="Test">
+    <classes>
+      <class name="Farmer_V106_Functional.CollectionCenterBookingTest">
+      <methods>
+          <include name="verifyUserIsAbleToBookCcWithoutWeight" />
+          <include name="VerifyUserAbleToBookSlotWithoutSelectingDate" />
+        </methods>
+        </class>
+    </classes>
+  </test> <!-- Test -->
+</suite> <!-- Suite -->

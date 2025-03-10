@@ -18,7 +18,7 @@ public class FarmerLandDetailsScreen extends BaseClass_Farmer{
 	@FindBy(xpath = "//android.widget.ImageView")
 	private WebElement backArrowButton;
 	
-	@FindBy(xpath = "//android.widget.TextView[@text=\"LAND ID: 12345718\"]")
+	@FindBy(xpath = "//android.widget.TextView[@text=\"LAND ID: 12345862\"]")
 	private WebElement firstLandInfo;
 	
 	@FindBy(xpath = "//android.widget.TextView[@text=\"LAND ID: 12345785\"]")

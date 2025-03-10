@@ -7,6 +7,7 @@ import org.openqa.selenium.support.FindBy;
 //import org.openqa.selenium.support.FindBys;
 import org.openqa.selenium.support.PageFactory;
 
+import io.appium.java_client.AppiumBy;
 import io.appium.java_client.android.AndroidDriver;
 
 public class RecordHarvestingScreen {
@@ -40,8 +41,12 @@ public class RecordHarvestingScreen {
 	@FindBy(xpath = "//android.widget.Button[@content-desc=\"Okay\"]")
 	private WebElement okayButton;
 	
-	@FindBy(xpath = "//android.view.ViewGroup[@content-desc='17']")
-	private WebElement date;
+//	String Date="28";
+//	public void date() {
+//		driver.findElement(AppiumBy.xpath("//android.view.ViewGroup[@content-desc='"+ Date+"']"));
+//	}
+//	@FindBy(xpath = "//android.view.ViewGroup[@content-desc='28']")
+//	private WebElement date;
 	
 	@FindBy(xpath = "//android.widget.TextView[@text='Select harvesting date.']")
 	private WebElement dateErrorMessage;
@@ -54,6 +59,28 @@ public class RecordHarvestingScreen {
 	
 //	@FindBys({@FindBy(xpath = "//android.widget.TextView[@text='Submit']"),@FindBy(xpath = "//android.widget.Button[@content-desc=\"Submit\"]")})
 //	private WebElement submitBtn;
+	
+	@FindBy(xpath = "//android.widget.TextView[@text='Select harvesting date.']")
+	private WebElement warningMessage;
+	
+	String Date="28";
+	public void date() {
+		WebElement date1 = driver.findElement(AppiumBy.xpath("//android.widget.TextView[@text='"+Date+"']"));
+		date1.click();
+	}
+	
+	@FindBy(xpath = "//android.view.ViewGroup[@resource-id='card']/android.view.ViewGroup'")
+	private WebElement harvest;
+	
+	String id="589";
+	public void verifyHarvestId() {
+		try {
+			WebElement harvestId = driver.findElement(AppiumBy.xpath("//android.widget.TextView[@text='"+id+"']"));
+			assertTrue(harvestId.isDisplayed());
+		}catch (Exception e) {
+			System.out.println("harvestId is not displayed");
+		}
+	}
 	
 	public WebElement getbackArrow() {
 		return backArrow;
@@ -92,13 +119,13 @@ public class RecordHarvestingScreen {
 			System.out.println("Not able to click on date Text Feild ");
 		}
 	}
-	public void clickOnDate() {
-		try {
-			date.click();
-		}catch (Exception e) {
-			System.out.println("not able to click on date");
-		}
-	}
+//	public void clickOnDate() {
+//		try {
+//			date.click();
+//		}catch (Exception e) {
+//			System.out.println("not able to click on date");
+//		}
+//	}
 	public void clickOnSaveButton() {
 		try {
 			saveButton.click();
@@ -155,6 +182,22 @@ public class RecordHarvestingScreen {
 			assertTrue(fileErrorMessage.isDisplayed());
 		}catch (Exception e) {
 			System.out.println("file Error Message is not displayed");
+		}
+	}
+	
+	public void verifyWarningMessage() {
+		try {
+			assertTrue(warningMessage.isDisplayed());
+		}catch (Exception e) {
+			System.out.println("warning message is not displayed");
+		}
+	}
+	
+	public void ClickOnHarvest() {
+		try {
+			harvest.click();
+		}catch (Exception e) {
+			System.out.println("Not able to click on harvest Id");
 		}
 	}
 }

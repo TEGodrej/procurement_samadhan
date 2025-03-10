@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<suite name="Suite">
+  <test thread-count="1" name="Test">
+    <classes>
+      <class name="Farmer_V106_Functional.HomeTest"/>
+      <class name="Farmer_V106_Functional.ProfileTest"/>
+    </classes>
+  </test> <!-- Test -->
+</suite> <!-- Suite -->

@@ -4,9 +4,10 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import GenericUtilities.BaseClass_Farmer;
 import io.appium.java_client.android.AndroidDriver;
 
-public class MyProfileScreen {
+public class MyProfileScreen extends BaseClass_Farmer{
 	AndroidDriver driver;
 	
 	public MyProfileScreen(AndroidDriver driver) {
@@ -20,8 +21,8 @@ public class MyProfileScreen {
 	@FindBy(xpath = "//android.widget.TextView[@text=\"Bank Details\"]")
 	private WebElement bankDetail;
 	
-	@FindBy(xpath = "//android.widget.TextView[@text=\"RFID Card Details\"]")
-	private WebElement RFIDdetail;
+	@FindBy(xpath = "//android.widget.TextView[@text='RFID Card Details']")
+	private WebElement RfidCardDetails;
 	
 	@FindBy(xpath = "//android.widget.TextView[@text=\"Family Group Mapping\"]")
 	private WebElement familyGroupMap;
@@ -29,32 +30,19 @@ public class MyProfileScreen {
 	@FindBy(xpath = "//android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[1]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.ImageView")
 	private WebElement profilePictureIcon;
 	
-	@FindBy(xpath = "//android.widget.TextView[@text='456457676']")
+	@FindBy(xpath = "//android.widget.TextView[@text=\"26516919\"]")
 	private WebElement rfidCardNumber;
 	
-	public WebElement getprofilepicIcon() {
-		return profilePictureIcon;
-	}
+	
+	
 
-	public WebElement getPersonalInfo() {
-		return personalInfo;
-	}
-
-	public WebElement getBankDetail() {
-		return bankDetail;
-	}
-
-	public WebElement getRFIDdetail() {
-		return RFIDdetail;
-	}
-
-	public WebElement getFamilyGroupMap() {
-		return familyGroupMap;
-	}
+	
 	
 	public void clickOnRFIDDetail() {
 		try {
-			RFIDdetail.click();
+			gestureUtility.swipeLeftUsingElement(bankDetail);
+			driverUtility.threadWait(4);
+			RfidCardDetails.click();
 		}catch (Exception e) {
 			System.out.println("Not able to click on RFID detail");
 		}

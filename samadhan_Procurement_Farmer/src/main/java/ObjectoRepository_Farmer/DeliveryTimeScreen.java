@@ -16,7 +16,7 @@ public class DeliveryTimeScreen extends BaseClass_Farmer{
 		PageFactory.initElements(driver, this);
 	}
 
-	@FindBy(xpath = "//android.widget.TextView[@text=\"7:30 AM - 8:30 AM \"]")
+	@FindBy(xpath = "//android.widget.TextView[@text='12:30 PM - 1:30 PM ']")
 	private WebElement timeSlot;
 	
 	@FindBy(xpath = "//android.widget.TextView[@text='Confirm']")
@@ -36,6 +36,9 @@ public class DeliveryTimeScreen extends BaseClass_Farmer{
 	
 	@FindBy(xpath = "//android.widget.TextView[@text='Please select slot.']")
 	private WebElement timeSlotErrorMessage;
+	
+	@FindBy(xpath = "//android.view.ViewGroup[@content-desc='MAR']/android.view.View")
+	private WebElement month;
 
 	public WebElement getTimeSlot() {
 		return timeSlot;
@@ -75,7 +78,8 @@ public class DeliveryTimeScreen extends BaseClass_Farmer{
 	
 	public void clickOnTimeSlot() {
 		try {
-			gestureUtility.click(timeSlot);
+//			gestureUtility.click(timeSlot);
+			timeSlot.click();
 		}catch(Exception e) {
 			System.out.println("Not able to click on time slot");
 		}
@@ -83,7 +87,8 @@ public class DeliveryTimeScreen extends BaseClass_Farmer{
 	
 	public void clickOnConfirmButton() {
 		try {
-			gestureUtility.click(confirmButton);
+//			gestureUtility.click(confirmButton);
+			confirmButton.click();
 		}catch (Exception e) {
 			System.out.println("Not able to click on confirm Button");
 		}
@@ -91,7 +96,8 @@ public class DeliveryTimeScreen extends BaseClass_Farmer{
 	
 	public void clickOnOkButton() {
 		try {
-			gestureUtility.click(okButton);
+//			gestureUtility.click(okButton);
+			okButton.click();
 		}catch (Exception e) {
 			System.out.println("Not able to click On ok button");
 		}
@@ -109,6 +115,15 @@ public class DeliveryTimeScreen extends BaseClass_Farmer{
 			assertTrue(timeSlotErrorMessage.isDisplayed());
 		}catch (Exception e) {
 			System.out.println(timeSlotErrorMessage+" is not displayed");
+		}
+	}
+	
+	public void clickOnMonth() {
+		try {
+			month.click();
+			System.out.println("clicked on" + month.getText());
+		}catch (Exception e) {
+//			System.out.println("not able to click on month");
 		}
 	}
 }

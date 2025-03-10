@@ -80,7 +80,12 @@ public class HomeScreen extends BaseClass_Farmer{
 	}
 	
 	public void clickOnhamburgerTab() {
-		gestureUtility.click(hamburgerTab);
+		try {
+//		gestureUtility.click(hamburgerTab);
+			hamburgerTab.click();
+		}catch (Exception e) {
+			System.out.println(hamburgerTab.isDisplayed() +"==> hamburgerTab is not clicked");
+		}
 	}
 	
 	public void scrollToElement(String text) {

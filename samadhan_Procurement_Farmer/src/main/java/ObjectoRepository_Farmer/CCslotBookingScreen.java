@@ -24,7 +24,8 @@ public class CCslotBookingScreen extends BaseClass_Farmer{
 	}
 	
 	public void clickOnBookAslotbutton() {
-	    gestureUtility.click(bookAslotbutton);
+//	    gestureUtility.click(bookAslotbutton);
+	    bookAslotbutton.click();
 	}
 	
 	
