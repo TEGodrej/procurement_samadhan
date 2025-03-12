@@ -17,7 +17,7 @@ public class SelectCcScreen extends BaseClass_Farmer{
 	@FindBy(xpath = "//android.widget.TextView[@text=\"GAVL Office Shamal\"]")
 	private WebElement firstCenter;
 	
-	@FindBy(xpath = "//android.widget.TextView[@text=\"GAVL Divyaprakash Shamal\"]")
+	@FindBy(xpath = "//android.widget.TextView[@text=\"TADIKALAPUDI\"]")
 	private WebElement secondCenter;
 	
 	@FindBy(xpath = "//android.widget.TextView[@text='Book a Slot']")

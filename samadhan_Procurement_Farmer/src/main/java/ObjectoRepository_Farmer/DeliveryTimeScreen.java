@@ -7,6 +7,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 import GenericUtilities.BaseClass_Farmer;
+import io.appium.java_client.AppiumBy;
 import io.appium.java_client.android.AndroidDriver;
 
 public class DeliveryTimeScreen extends BaseClass_Farmer{
@@ -40,25 +41,27 @@ public class DeliveryTimeScreen extends BaseClass_Farmer{
 	@FindBy(xpath = "//android.view.ViewGroup[@content-desc='MAR']/android.view.View")
 	private WebElement month;
 
-	public WebElement getTimeSlot() {
-		return timeSlot;
+	public void clickOnTimeSlot() {//android.view.ViewGroup[@content-desc="5:00 PM - 6:00 PM , Available - 4500 kg"]
+		String slot="5:00 PM - 6:00 PM , Available - 4500 kg";
+		WebElement timeslot = driver.findElement(AppiumBy.xpath("//android.view.ViewGroup[@content-desc='"+slot+"']"));
+		timeslot.click();
 	}
 
-	public WebElement getconfirmButton() {
-		return confirmButton;
-	}
-
-	public WebElement getcancelButton() {
-		return cancelButton;
-	}
-
-	public WebElement getbackArrow() {
-		return backArrow;
-	}
-	
-	public WebElement getokButton() {
-		return okButton;
-	}
+//	public WebElement getconfirmButton() {
+//		return confirmButton;
+//	}
+//
+//	public WebElement getcancelButton() {
+//		return cancelButton;
+//	}
+//
+//	public WebElement getbackArrow() {
+//		return backArrow;
+//	}
+//	
+//	public WebElement getokButton() {
+//		return okButton;
+//	}
 	
 	public void selectTime(WebElement element) {
 		gestureUtility.click(element);
@@ -76,14 +79,14 @@ public class DeliveryTimeScreen extends BaseClass_Farmer{
 		}
 	}
 	
-	public void clickOnTimeSlot() {
-		try {
+//	public void clickOnTimeSlot() {
+//		try {
 //			gestureUtility.click(timeSlot);
-			timeSlot.click();
-		}catch(Exception e) {
-			System.out.println("Not able to click on time slot");
-		}
-	}
+//			timeSlot.click();
+//		}catch(Exception e) {
+//			System.out.println("Not able to click on time slot");
+//		}
+//	}
 	
 	public void clickOnConfirmButton() {
 		try {

@@ -25,7 +25,7 @@ public class SelectLandScreen extends BaseClass_Farmer{
 	@FindBy(xpath = "//android.widget.Button[@content-desc='0, LandIDLMAAS01070004, HATHYADKA, Assam, Maharashtra']/android.view.ViewGroup/android.view.ViewGroup")
 	private WebElement maharashtra;
 	
-	@FindBy(xpath = "//android.widget.TextView[@text='LandID12345862']")
+	@FindBy(xpath = "//android.widget.TextView[@text='LandIDa03H4000002Hhae']")
 	private WebElement landId;
 	
 	@FindBy(xpath = "//android.widget.EditText")
@@ -87,7 +87,12 @@ public class SelectLandScreen extends BaseClass_Farmer{
 	
 	public void verifyLandErrorMessage() {
 		try {
-			assertTrue(LandErrorMessage.isDisplayed());
+			if(LandErrorMessage.isDisplayed()){
+				assertTrue(true);
+			}else if (!LandErrorMessage.isDisplayed()) {
+				assertTrue(false);
+			}
+//			assertTrue(LandErrorMessage.isDisplayed());
 		}catch(Exception e) {
 			System.out.println(LandErrorMessage +" did not displayed");
 		}

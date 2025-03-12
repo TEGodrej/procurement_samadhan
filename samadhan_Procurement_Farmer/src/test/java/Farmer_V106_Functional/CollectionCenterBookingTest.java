@@ -16,9 +16,8 @@ public class CollectionCenterBookingTest extends BaseClass_Farmer{
 	@Test
 	public void verifyUserIsAbleToBookCc() {
 		driverUtility.implicitWait(10);
-//		String weight="290";
-		String weight=excelutility.readDataFromExcel("TestData", 0, 0);
-//		String time="12:30 PM - 1:30PM";
+		String weight="290";
+//		String weight=excelutility.readDataFromExcel("TestData", 0, 0);
 		driverUtility.implicitWait(20);
 		homeScreen.clickOnhamburgerTab();
 		driverUtility.threadWait(2);
@@ -31,6 +30,8 @@ public class CollectionCenterBookingTest extends BaseClass_Farmer{
 		selectCcScreen.clickOnBookASlotbutton();
 		driverUtility.threadWait(2);
 		deliveryTimeScreen.clickOnMonth();
+		driverUtility.threadWait(2);
+//		gestureUtility.scrollDown();
 		deliveryTimeScreen.clickOnTimeSlot();
 		deliveryTimeScreen.clickOnConfirmButton();
 		deliveryTimeScreen.clickOnOkButton();
