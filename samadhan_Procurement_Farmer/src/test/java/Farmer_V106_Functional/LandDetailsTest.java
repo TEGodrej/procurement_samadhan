@@ -4,12 +4,11 @@ import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
 import GenericUtilities.BaseClass_Farmer;
-import GenericUtilities.ListenerUtility;
 /*
  * @author Testing Engineer
  * This is to verify the Land Details Functionality
  */
-@Listeners(ListenerUtility.class)
+@Listeners(GenericUtilities.ExtentReportsListner.class)
 public class LandDetailsTest extends BaseClass_Farmer{
 
 	@Test
@@ -30,7 +29,7 @@ public class LandDetailsTest extends BaseClass_Farmer{
 	@Test
 	public void RecordHarvestThroughMyLandDetail() {
 //		String ffbCount="250";
-		String ffbCount=excelutility.readDataFromExcel("TestData", 0, 0);
+		String ffbCount=excelutility.readDataFromExcel("TestData", 3, 1);
 		driverUtility.implicitWait(10);
 		homeScreen.clickOnhamburgerTab();
 		hamburgerTabScreen.clickOnMyLandTab();
@@ -55,7 +54,7 @@ public class LandDetailsTest extends BaseClass_Farmer{
 	@Test
 	public void verifyTheRecordedHarvestPresentOnFFBHarvest() {
 //		String ffbCount="250";
-		String ffbCount=excelutility.readDataFromExcel("TestData", 0, 0);
+		String ffbCount=excelutility.readDataFromExcel("TestData", 3, 1);
 		driverUtility.implicitWait(10);
 		homeScreen.clickOnhamburgerTab();
 		hamburgerTabScreen.clickOnMyLandTab();
@@ -82,7 +81,7 @@ public class LandDetailsTest extends BaseClass_Farmer{
 	@Test
 	public void verifyUserNotBeAbleToRecordHarvestWithoutEnteringDate() {
 //		String ffbCount="250";
-		String ffbCount=excelutility.readDataFromExcel("TestData", 0, 0);
+		String ffbCount=excelutility.readDataFromExcel("TestData", 3, 1);
 		driverUtility.implicitWait(10);
 		homeScreen.clickOnhamburgerTab();
 		hamburgerTabScreen.clickOnMyLandTab();
@@ -120,7 +119,7 @@ public class LandDetailsTest extends BaseClass_Farmer{
 	@Test
 	public void verifyUserNotBeAbleToRecordHarvestWithoutUploadingImageInLandDetail() {
 //		String ffbCount="250";
-		String ffbCount=excelutility.readDataFromExcel("TestData", 0, 0);
+		String ffbCount=excelutility.readDataFromExcel("TestData", 3, 1);
 		driverUtility.implicitWait(10);
 		homeScreen.clickOnhamburgerTab();
 		hamburgerTabScreen.clickOnMyLandTab();

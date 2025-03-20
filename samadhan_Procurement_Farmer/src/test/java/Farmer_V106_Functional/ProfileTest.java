@@ -4,11 +4,10 @@ import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
 import GenericUtilities.BaseClass_Farmer;
-import GenericUtilities.ListenerUtility;
 /*
  * @author Testing Engineer
  */
-@Listeners(ListenerUtility.class)
+@Listeners(GenericUtilities.ExtentReportsListner.class)
 public class ProfileTest extends BaseClass_Farmer {
 // This is to check whether generate farmer code is matching or not.
 	
@@ -35,7 +34,7 @@ public class ProfileTest extends BaseClass_Farmer {
 	/*
 	 * This is to verify that user should be able to see his RFID card details
 	 */
-	@Test
+	@Test(priority = 3)
 	public void verifyRFIDcardDetailIsPresent() {
 		driverUtility.implicitWait(10);
 		homeScreen.clickOnhamburgerTab();

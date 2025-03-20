@@ -5,8 +5,8 @@
     <classes>
       <class name="Farmer_V106_Functional.CollectionCenterBookingTest">
         <methods>
-          <include name="verifyUserIsAbleToBookCcWithoutWeight"/>
           <include name="startApp"/>
+          <include name="verifyUserIsAbleToBookCc"/>
         </methods>
       </class> <!-- Farmer_V106_Functional.CollectionCenterBookingTest -->
     </classes>

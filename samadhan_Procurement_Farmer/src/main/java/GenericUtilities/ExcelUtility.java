@@ -43,6 +43,7 @@ import java.io.IOException;
 	            // Get the value from the cell
 	            String value = cell.getStringCellValue();
 	            System.out.println("Value from row " + rowNum + ", column " + columnNum + ": " + value);
+	            return value;
 	        } catch (IOException e) {
 	            e.printStackTrace();
 	        } finally {

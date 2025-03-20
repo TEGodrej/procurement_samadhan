@@ -2,16 +2,16 @@
 <testng-results ignored="2" total="3" passed="0" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-03-11T17:06:36 IST" name="Default suite" finished-at="2025-03-11T17:07:07 IST" duration-ms="31392">
+  <suite started-at="2025-03-13T13:32:59 IST" name="Default suite" finished-at="2025-03-13T13:33:31 IST" duration-ms="31372">
     <groups>
     </groups>
-    <test started-at="2025-03-11T17:06:36 IST" name="Default test" finished-at="2025-03-11T17:07:07 IST" duration-ms="31392">
+    <test started-at="2025-03-13T13:32:59 IST" name="Default test" finished-at="2025-03-13T13:33:31 IST" duration-ms="31372">
       <class name="Farmer_V106_Functional.CollectionCenterBookingTest">
-        <test-method is-config="true" signature="startApp()[pri:0, instance:Farmer_V106_Functional.CollectionCenterBookingTest@399c4be1]" started-at="2025-03-11T17:06:36 IST" name="startApp" finished-at="2025-03-11T17:06:43 IST" duration-ms="7956" status="PASS">
+        <test-method is-config="true" signature="startApp()[pri:0, instance:Farmer_V106_Functional.CollectionCenterBookingTest@399c4be1]" started-at="2025-03-13T13:32:59 IST" name="startApp" finished-at="2025-03-13T13:33:06 IST" duration-ms="6735" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- startApp -->
-        <test-method signature="verifyUserIsAbleToBookCcWithoutWeight()[pri:0, instance:Farmer_V106_Functional.CollectionCenterBookingTest@399c4be1]" started-at="2025-03-11T17:06:43 IST" name="verifyUserIsAbleToBookCcWithoutWeight" finished-at="2025-03-11T17:07:05 IST" duration-ms="21608" status="FAIL">
+        <test-method signature="verifyUserIsAbleToBookCc()[pri:0, instance:Farmer_V106_Functional.CollectionCenterBookingTest@399c4be1]" started-at="2025-03-13T13:33:06 IST" name="verifyUserIsAbleToBookCc" finished-at="2025-03-13T13:33:29 IST" duration-ms="22905" status="FAIL">
           <exception class="org.openqa.selenium.NoSuchElementException">
             <message>
               <![CDATA[An element could not be located on the page using the given search parameters.
@@ -19,9 +19,9 @@ For documentation on this error, please visit: https://www.selenium.dev/document
 Build info: version: '4.29.0', revision: '5fc1ec94cb'
 System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.5'
 Driver info: io.appium.java_client.android.AndroidDriver
-Command: [eb1f87b9-8f09-40d4-8a1c-63c62a643325, findElement {using=xpath, value=//android.widget.TextView[@resource-id='button-text']}]
+Command: [0da53874-9d8f-421c-84eb-99ecd835cee0, findElement {value=//android.widget.TextView[@resource-id='button-text'], using=xpath}]
 Capabilities {appium:UDID: WKAQCYCQKROVDE4L, appium:automationName: Uiautomator2, appium:databaseEnabled: false, appium:desired: {UDID: WKAQCYCQKROVDE4L, automationName: Uiautomator2, deviceName: Redmi A2, noReset: true, platformName: ANDROID}, appium:deviceApiLevel: 33, appium:deviceManufacturer: Xiaomi, appium:deviceModel: 23028RN4DI, appium:deviceName: WKAQCYCQKROVDE4L, appium:deviceScreenDensity: 320, appium:deviceScreenSize: 720x1600, appium:deviceUDID: WKAQCYCQKROVDE4L, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:noReset: true, appium:pixelRatio: 2, appium:platformVersion: 13, appium:statBarHeight: 50, appium:takesScreenshot: true, appium:viewportRect: {height: 1550, left: 0, top: 50, width: 720}, appium:warnings: {}, appium:webStorageEnabled: false, platformName: ANDROID}
-Session ID: eb1f87b9-8f09-40d4-8a1c-63c62a643325]]>
+Session ID: 0da53874-9d8f-421c-84eb-99ecd835cee0]]>
             </message>
             <full-stacktrace>
               <![CDATA[org.openqa.selenium.NoSuchElementException: An element could not be located on the page using the given search parameters.
@@ -29,9 +29,9 @@ For documentation on this error, please visit: https://www.selenium.dev/document
 Build info: version: '4.29.0', revision: '5fc1ec94cb'
 System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.5'
 Driver info: io.appium.java_client.android.AndroidDriver
-Command: [eb1f87b9-8f09-40d4-8a1c-63c62a643325, findElement {using=xpath, value=//android.widget.TextView[@resource-id='button-text']}]
+Command: [0da53874-9d8f-421c-84eb-99ecd835cee0, findElement {value=//android.widget.TextView[@resource-id='button-text'], using=xpath}]
 Capabilities {appium:UDID: WKAQCYCQKROVDE4L, appium:automationName: Uiautomator2, appium:databaseEnabled: false, appium:desired: {UDID: WKAQCYCQKROVDE4L, automationName: Uiautomator2, deviceName: Redmi A2, noReset: true, platformName: ANDROID}, appium:deviceApiLevel: 33, appium:deviceManufacturer: Xiaomi, appium:deviceModel: 23028RN4DI, appium:deviceName: WKAQCYCQKROVDE4L, appium:deviceScreenDensity: 320, appium:deviceScreenSize: 720x1600, appium:deviceUDID: WKAQCYCQKROVDE4L, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:noReset: true, appium:pixelRatio: 2, appium:platformVersion: 13, appium:statBarHeight: 50, appium:takesScreenshot: true, appium:viewportRect: {height: 1550, left: 0, top: 50, width: 720}, appium:warnings: {}, appium:webStorageEnabled: false, platformName: ANDROID}
-Session ID: eb1f87b9-8f09-40d4-8a1c-63c62a643325
+Session ID: 0da53874-9d8f-421c-84eb-99ecd835cee0
 at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
 at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
 at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
@@ -49,7 +49,7 @@ at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(Def
 at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
 at jdk.proxy2/jdk.proxy2.$Proxy13.click(Unknown Source)
 at ObjectoRepository_Farmer.CCslotBookingScreen.clickOnBookAslotbutton(CCslotBookingScreen.java:28)
-at Farmer_V106_Functional.CollectionCenterBookingTest.verifyUserIsAbleToBookCcWithoutWeight(CollectionCenterBookingTest.java:50)
+at Farmer_V106_Functional.CollectionCenterBookingTest.verifyUserIsAbleToBookCc(CollectionCenterBookingTest.java:26)
 at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
 at java.base/java.lang.reflect.Method.invoke(Method.java:580)
 at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
@@ -81,7 +81,7 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
           </exception> <!-- org.openqa.selenium.NoSuchElementException -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- verifyUserIsAbleToBookCcWithoutWeight -->
+        </test-method> <!-- verifyUserIsAbleToBookCc -->
       </class> <!-- Farmer_V106_Functional.CollectionCenterBookingTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->

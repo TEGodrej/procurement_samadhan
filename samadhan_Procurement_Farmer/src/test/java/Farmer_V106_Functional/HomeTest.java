@@ -7,9 +7,8 @@ import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
 import GenericUtilities.BaseClass_Farmer;
-import GenericUtilities.ListenerUtility;
 
-@Listeners(ListenerUtility.class)
+@Listeners(GenericUtilities.ExtentReportsListner.class)
 public class HomeTest extends BaseClass_Farmer {
 
     @Test

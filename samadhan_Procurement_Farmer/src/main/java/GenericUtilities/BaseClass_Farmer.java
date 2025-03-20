@@ -109,10 +109,10 @@ public class BaseClass_Farmer {
 			excelutility = new ExcelUtility();
 			driverUtility.implicitWait(10);
 		}
-//		@AfterClass
-//		public void closeApp() throws IOException {
-//			driver.terminateApp("com.gavl.oilpalm.samadhan");
-//		}
+		@AfterClass
+		public void closeApp() throws IOException {
+			driver.terminateApp("com.gavl.oilpalm.samadhan");
+		}
 //		
 	}
 

@@ -4,11 +4,10 @@ import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
 import GenericUtilities.BaseClass_Farmer;
-import GenericUtilities.ListenerUtility;
 /*
  * @author Testing Engineer
  */
-@Listeners(ListenerUtility.class)
+@Listeners(GenericUtilities.ExtentReportsListner.class)
 public class FFBHarvestingTest extends BaseClass_Farmer {
 /*
  *This is verify user is able to record harvest or not 
@@ -16,6 +15,7 @@ public class FFBHarvestingTest extends BaseClass_Farmer {
  */
 	@Test
 	public void RecordHarvest() {
+		String ffbCount=excelutility.readDataFromExcel("TestData", 3, 1);
 		driverUtility.implicitWait(10);
 		homeScreen.clickOnhamburgerTab();
 		hamburgerTabScreen.clickOnFfbHarvestTab();
@@ -30,7 +30,7 @@ public class FFBHarvestingTest extends BaseClass_Farmer {
 		recordHarvestScreen.date();
 		recordHarvestScreen.clickOnSaveButton();
 //		recordHarvestScreen.getsaveBtn().click();
-		recordHarvestScreen.sendkeyToFfbCountTextFeild("290");
+		recordHarvestScreen.sendkeyToFfbCountTextFeild(ffbCount);
 		recordHarvestScreen.clickOnCaptureImageTab();
 		driverUtility.threadWait(8);
 //		WebElement submitBtn=  recordHarvestScreen.getsubmitBtn();
@@ -90,7 +90,7 @@ public class FFBHarvestingTest extends BaseClass_Farmer {
 	@Test
 	public void RecordHarvestWithoutEnteringDate() {
 //		String count="290";
-		String count=excelutility.readDataFromExcel("TestData", 0, 0);
+		String count=excelutility.readDataFromExcel("TestData", 5, 1);
 		driverUtility.implicitWait(10);
 		homeScreen.clickOnhamburgerTab();
 		hamburgerTabScreen.clickOnFfbHarvestTab();
@@ -116,6 +116,7 @@ public class FFBHarvestingTest extends BaseClass_Farmer {
 	 */
 	@Test
 	public void recordHarvestWithoutUploadingPicture() {
+		String ffbCount=excelutility.readDataFromExcel("TestData", 3, 1);
 		driverUtility.implicitWait(10);
 		homeScreen.clickOnhamburgerTab();
 		hamburgerTabScreen.clickOnFfbHarvestTab();
@@ -128,7 +129,7 @@ public class FFBHarvestingTest extends BaseClass_Farmer {
 //		gestureUtility.click(date);
 		recordHarvestScreen.date();
 		recordHarvestScreen.clickOnSaveButton();
-		recordHarvestScreen.sendkeyToFfbCountTextFeild("290");
+		recordHarvestScreen.sendkeyToFfbCountTextFeild(ffbCount);
 //		WebElement submitBtn=  recordHarvestScreen.getsubmitBtn();
 //		driverUtility.explicitWait(5, submitBtn);
 //		submitBtn.click();
