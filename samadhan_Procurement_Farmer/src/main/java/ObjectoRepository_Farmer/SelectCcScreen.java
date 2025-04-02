@@ -7,6 +7,9 @@ import org.openqa.selenium.support.PageFactory;
 import GenericUtilities.BaseClass_Farmer;
 import io.appium.java_client.android.AndroidDriver;
 
+/**
+ *@author DivyaPrakashAmar
+ */
 public class SelectCcScreen extends BaseClass_Farmer{
 	AndroidDriver driver;
 	public SelectCcScreen(AndroidDriver driver) {
@@ -23,19 +26,9 @@ public class SelectCcScreen extends BaseClass_Farmer{
 	@FindBy(xpath = "//android.widget.TextView[@text='Book a Slot']")
 	private WebElement bookaSlotbutton;
 	
-
-	public WebElement getFirstCenter() {
-		return firstCenter;
-	}
-
-	public WebElement getSecondCenter() {
-		return secondCenter;
-	}
-
-	public WebElement getBookaSlotbutton() {
-		return bookaSlotbutton;
-	}
-
+	/**
+	 *This method is use to Click On SecondCenter
+	 */
 	public void clickOnSecondCenter() {
 		try {
 //		gestureUtility.click(secondCenter);
@@ -45,10 +38,14 @@ public class SelectCcScreen extends BaseClass_Farmer{
 		}
 	}
 	
+	/**
+	 *This method is use to Click On BookASlot button
+	 */
 	public void clickOnBookASlotbutton() {
 		try {
 //			gestureUtility.click(bookaSlotbutton);
 			bookaSlotbutton.click();
+			System.out.println("Clicked on Book A Slot Button");
 		}catch(Exception e) {
 			System.out.println("Not able to Click on book a slot button");
 		}

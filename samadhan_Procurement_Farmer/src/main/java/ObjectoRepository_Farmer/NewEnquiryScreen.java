@@ -6,6 +6,9 @@ import org.openqa.selenium.support.PageFactory;
 
 import io.appium.java_client.android.AndroidDriver;
 
+/**
+ *@author DivyaPrakashAmar
+ */
 public class NewEnquiryScreen {
 	AndroidDriver driver;
 	public NewEnquiryScreen(AndroidDriver driver) {
@@ -49,53 +52,7 @@ public class NewEnquiryScreen {
 	@FindBy(xpath = "//android.widget.Button[@content-desc=\"Submit\"]")
 	private WebElement submitButton;
 
-	public WebElement getLandIdTxtFld() {
-		return landIdTxtFld;
-	}
 
-	public WebElement getFirstLandId() {
-		return firstLandId;
-	}
-
-	public WebElement getSecondLandId() {
-		return secondLandId;
-	}
-
-	public WebElement getPlantationId() {
-		return plantationId;
-	}
-
-	public WebElement getFirstplatId() {
-		return firstPlantationId;
-	}
-
-	public WebElement getFeildVisitTxtFld() {
-		return feildVisitTxtField;
-	}
-
-	public WebElement getProductIssue() {
-		return productIssue;
-	}
-
-	public WebElement getInfrastructureIssue() {
-		return infrastructureIssue;
-	}
-
-	public WebElement getRemarkTxtFld() {
-		return remarkTextField;
-	}
-
-	public WebElement getFirstcameraoption() {
-		return firstCameraOption;
-	}
-
-	public WebElement getSecondcameraoption() {
-		return secondCameraOption;
-	}
-
-	public WebElement getsubmitButton() {
-		return submitButton;
-	}
 	
 	
 	

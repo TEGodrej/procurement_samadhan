@@ -4,13 +4,15 @@ import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 import GenericUtilities.BaseClass_Farmer;
 
-/*
- * @author Testing Engineer
+/**
+ *@author DivyaPrakashAmar
  */
-
 @Listeners(GenericUtilities.ExtentReportsListner.class)
 public class LoginTest extends BaseClass_Farmer{
 
+	/**
+	 *This method is use to verify wheather user is able to Login
+	 */
 	@Test
 	public void verifyUserAbleToLogin() {
 //		String mobileNumber="9354029690";

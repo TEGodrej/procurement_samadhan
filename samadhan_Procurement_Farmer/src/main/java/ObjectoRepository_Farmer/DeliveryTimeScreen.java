@@ -10,6 +10,9 @@ import GenericUtilities.BaseClass_Farmer;
 import io.appium.java_client.AppiumBy;
 import io.appium.java_client.android.AndroidDriver;
 
+/**
+ *@author DivyaPrakashAmar
+ */
 public class DeliveryTimeScreen extends BaseClass_Farmer{
 	AndroidDriver driver;
 	public DeliveryTimeScreen(AndroidDriver driver) {
@@ -38,7 +41,7 @@ public class DeliveryTimeScreen extends BaseClass_Farmer{
 	@FindBy(xpath = "//android.widget.TextView[@text='Please select slot.']")
 	private WebElement timeSlotErrorMessage;
 	
-	@FindBy(xpath = "//android.view.ViewGroup[@content-desc='MAR']/android.view.View")
+	@FindBy(xpath = "//android.view.ViewGroup[@content-desc='APR']")
 	private WebElement month;
 
 	public void clickOnTimeSlot() {//android.view.ViewGroup[@content-desc="5:00 PM - 6:00 PM , Available - 4500 kg"]
@@ -46,31 +49,10 @@ public class DeliveryTimeScreen extends BaseClass_Farmer{
 		WebElement timeslot = driver.findElement(AppiumBy.xpath("//android.view.ViewGroup[@content-desc='"+slot+"']"));
 		timeslot.click();
 	}
-
-//	public WebElement getconfirmButton() {
-//		return confirmButton;
-//	}
-//
-//	public WebElement getcancelButton() {
-//		return cancelButton;
-//	}
-//
-//	public WebElement getbackArrow() {
-//		return backArrow;
-//	}
-//	
-//	public WebElement getokButton() {
-//		return okButton;
-//	}
 	
-	public void selectTime(WebElement element) {
-		gestureUtility.click(element);
-	}
-	
-	public void clickOnElement(WebElement element) {
-		gestureUtility.click(element);
-	}
-	
+	/**
+	 *This method is use to scroll the time screen
+	 */
 	public void scrollToTimeSlot(String time) {
 		try {
 			gestureUtility.scrollIntoView(time);
@@ -88,6 +70,9 @@ public class DeliveryTimeScreen extends BaseClass_Farmer{
 //		}
 //	}
 	
+	/**
+	 *This method is use to perfrom click action on ConfirmButton
+	 */
 	public void clickOnConfirmButton() {
 		try {
 //			gestureUtility.click(confirmButton);
@@ -97,6 +82,9 @@ public class DeliveryTimeScreen extends BaseClass_Farmer{
 		}
 	}
 	
+	/**
+	 *This method is use to perfrom click action on OkButton
+	 */
 	public void clickOnOkButton() {
 		try {
 //			gestureUtility.click(okButton);
@@ -106,6 +94,9 @@ public class DeliveryTimeScreen extends BaseClass_Farmer{
 		}
 	}
 	
+	/**
+	 *This method is use to verifyMessage
+	 */
 	public void verifyMessage() {
 		try {
 			assertTrue(ActualMessage.isDisplayed());
@@ -113,6 +104,10 @@ public class DeliveryTimeScreen extends BaseClass_Farmer{
 			System.out.println("Actual message is not displayed");
 		}
 	}
+	
+	/**
+	 *This method is use to verify TimeSlot ErrorMessage
+	 */
 	public void verifyTimeSlotErrorMessage() {
 		try {
 			assertTrue(timeSlotErrorMessage.isDisplayed());
@@ -121,12 +116,16 @@ public class DeliveryTimeScreen extends BaseClass_Farmer{
 		}
 	}
 	
+	/**
+	 *This method is use to perfrom click action on Month
+	 */
 	public void clickOnMonth() {
 		try {
+//			String Month = month.getText();
 			month.click();
-			System.out.println("clicked on" + month.getText());
+			System.out.println("Clicked on Month");
 		}catch (Exception e) {
-//			System.out.println("not able to click on month");
+			System.out.println("not able to click on month");
 		}
 	}
 }

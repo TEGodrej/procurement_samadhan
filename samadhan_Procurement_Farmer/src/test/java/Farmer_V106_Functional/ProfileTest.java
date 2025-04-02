@@ -4,13 +4,15 @@ import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
 import GenericUtilities.BaseClass_Farmer;
-/*
- * @author Testing Engineer
+
+/**
+ *@author DivyaPrakashAmar
  */
 @Listeners(GenericUtilities.ExtentReportsListner.class)
 public class ProfileTest extends BaseClass_Farmer {
-// This is to check whether generate farmer code is matching or not.
-	
+	/**
+	 *This is to check whether generate farmer code is matching or not.
+	 */
 	@Test(priority = 1)
 	public void viewFarmerProfile() {
 		driverUtility.implicitWait(10);
@@ -20,7 +22,9 @@ public class ProfileTest extends BaseClass_Farmer {
 		hamburgerTabScreen.verifyFarmerCode();
 	}
 	
-//	This is to verify users bank details
+	/**
+	 *This method is use to verify users bank details
+	 */
 	@Test(priority = 2)
 	public void verifyBankDetailOfUser() {
 		driverUtility.implicitWait(10);
@@ -31,8 +35,8 @@ public class ProfileTest extends BaseClass_Farmer {
 		hamburgerTabScreen.verifyBankName();
 	}
 	
-	/*
-	 * This is to verify that user should be able to see his RFID card details
+	/**
+	 * This method is to verify that user should be able to see his RFID card details
 	 */
 	@Test(priority = 3)
 	public void verifyRFIDcardDetailIsPresent() {

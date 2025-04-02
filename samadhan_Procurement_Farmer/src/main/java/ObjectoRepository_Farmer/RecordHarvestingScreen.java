@@ -7,10 +7,14 @@ import org.openqa.selenium.support.FindBy;
 //import org.openqa.selenium.support.FindBys;
 import org.openqa.selenium.support.PageFactory;
 
+import GenericUtilities.BaseClass_Farmer;
 import io.appium.java_client.AppiumBy;
 import io.appium.java_client.android.AndroidDriver;
 
-public class RecordHarvestingScreen {
+/**
+ *@author DivyaPrakashAmar
+ */
+public class RecordHarvestingScreen extends BaseClass_Farmer{
 	AndroidDriver driver;
 	public RecordHarvestingScreen(AndroidDriver driver) {
 		this.driver=driver;
@@ -41,13 +45,6 @@ public class RecordHarvestingScreen {
 	@FindBy(xpath = "//android.widget.Button[@content-desc=\"Okay\"]")
 	private WebElement okayButton;
 	
-//	String Date="28";
-//	public void date() {
-//		driver.findElement(AppiumBy.xpath("//android.view.ViewGroup[@content-desc='"+ Date+"']"));
-//	}
-//	@FindBy(xpath = "//android.view.ViewGroup[@content-desc='28']")
-//	private WebElement date;
-	
 	@FindBy(xpath = "//android.widget.TextView[@text='Select harvesting date.']")
 	private WebElement dateErrorMessage;
 	
@@ -57,14 +54,15 @@ public class RecordHarvestingScreen {
 	@FindBy(xpath = "//android.widget.TextView[@text='Please upload file.']")
 	private WebElement fileErrorMessage;
 	
-//	@FindBys({@FindBy(xpath = "//android.widget.TextView[@text='Submit']"),@FindBy(xpath = "//android.widget.Button[@content-desc=\"Submit\"]")})
-//	private WebElement submitBtn;
-	
 	@FindBy(xpath = "//android.widget.TextView[@text='Select harvesting date.']")
 	private WebElement warningMessage;
 	
-	String Date="28";
+	/**
+	 *This method is use to click on date
+	 */
+	
 	public void date() {
+		String Date=excelutility.readDataFromExcel("TestData", 1, 1);
 		WebElement date1 = driver.findElement(AppiumBy.xpath("//android.widget.TextView[@text='"+Date+"']"));
 		date1.click();
 	}
@@ -72,6 +70,9 @@ public class RecordHarvestingScreen {
 	@FindBy(xpath = "//android.view.ViewGroup[@resource-id='card']/android.view.ViewGroup'")
 	private WebElement harvest;
 	
+	/**
+	 *This method is use to verifyHarvestId
+	 */
 	String id="589";
 	public void verifyHarvestId() {
 		try {
@@ -82,36 +83,9 @@ public class RecordHarvestingScreen {
 		}
 	}
 	
-	public WebElement getbackArrow() {
-		return backArrow;
-	}
-	
-	public WebElement getselfHarvestRadioButton() {
-		return selfHarvestRadioButton;
-	}
-	
-	public WebElement getdateTextFeild() {
-		return dateTextFeild;
-	}
-	
-	public WebElement getFFBcountTextfeild() {
-		return ffbCountTextFeild;
-	}
-	
-	public WebElement getcaptureimageTab() {
-		return captureImageTab;
-	}
-	
-	public WebElement getsaveBtn() {
-		return saveButton;
-	}
-	public WebElement getsubmitBtn() {
-		return submitButton;
-	}
-	
-	public WebElement getokayBtn() {
-		return okayButton;
-	}
+	/**
+	 *This method is use to click On Date TextFeild
+	 */
 	public void clickOnDateTextFeild() {
 		try {
 			dateTextFeild.click();
@@ -119,13 +93,10 @@ public class RecordHarvestingScreen {
 			System.out.println("Not able to click on date Text Feild ");
 		}
 	}
-//	public void clickOnDate() {
-//		try {
-//			date.click();
-//		}catch (Exception e) {
-//			System.out.println("not able to click on date");
-//		}
-//	}
+	
+	/**
+	 *This method is use to click On SaveButton
+	 */
 	public void clickOnSaveButton() {
 		try {
 			saveButton.click();
@@ -133,6 +104,11 @@ public class RecordHarvestingScreen {
 			System.out.println("not able to click on save Button");
 		}
 	}
+	
+	/**
+	 *This method is use to sendkey To FFBCount TextFeild
+	 *@param key, takes key as parameter
+	 */
 	public void sendkeyToFfbCountTextFeild(String key) {
 		try {
 			ffbCountTextFeild.sendKeys(key);
@@ -140,6 +116,10 @@ public class RecordHarvestingScreen {
 			System.out.println("Not able to enter value in ffbCount TextFeild");
 		}
 	}
+	
+	/**
+	 *This method is use to click On CaptureImage Tab
+	 */
 	public void clickOnCaptureImageTab() {
 		try {
 			captureImageTab.click();
@@ -147,6 +127,10 @@ public class RecordHarvestingScreen {
 			System.out.println("Not able to click on capture image tab");
 		}
 	}
+	
+	/**
+	 *This method is use to click On SubmitButton
+	 */
 	public void clickOnSubmitButton() {
 		try {
 			submitButton.click();
@@ -155,6 +139,9 @@ public class RecordHarvestingScreen {
 		}
 	}
 	
+	/**
+	 *This method is use to click On OkayButton
+	 */
 	public void clickOnOkayButton() {
 		try {
 			okayButton.click();
@@ -162,6 +149,10 @@ public class RecordHarvestingScreen {
 			System.out.println("Not able to click on okay Button");
 		}
 	}
+	
+	/**
+	 *This method is use to verify Date ErrorMessage
+	 */
 	public void verifyDateErrorMessage() {
 		try {
 			assertTrue(dateErrorMessage.isDisplayed());
@@ -169,6 +160,10 @@ public class RecordHarvestingScreen {
 			System.out.println("date Error Message is not displayed");
 		}
 	}
+	
+	/**
+	 *This method is use to verify FFB ErrorMessage
+	 */
 	public void verifyFfbErrorMessage() {
 		try {
 			assertTrue(ffbErrorMessage.isDisplayed());
@@ -177,6 +172,9 @@ public class RecordHarvestingScreen {
 		}
 	}
 	
+	/**
+	 *This method is use to verify File ErrorMessage
+	 */
 	public void verifyFileErrorMessage() {
 		try {
 			assertTrue(fileErrorMessage.isDisplayed());
@@ -185,6 +183,9 @@ public class RecordHarvestingScreen {
 		}
 	}
 	
+	/**
+	 *This method is use to verify Warning Message
+	 */
 	public void verifyWarningMessage() {
 		try {
 			assertTrue(warningMessage.isDisplayed());
@@ -193,6 +194,9 @@ public class RecordHarvestingScreen {
 		}
 	}
 	
+	/**
+	 *This method is use to Click On Harvest
+	 */
 	public void ClickOnHarvest() {
 		try {
 			harvest.click();

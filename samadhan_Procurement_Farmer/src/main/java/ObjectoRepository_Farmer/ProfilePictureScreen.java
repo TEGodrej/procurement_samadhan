@@ -6,6 +6,9 @@ import org.openqa.selenium.support.PageFactory;
 
 import io.appium.java_client.android.AndroidDriver;
 
+/**
+ *@author DivyaPrakashAmar
+ */
 public class ProfilePictureScreen {
 	
 	AndroidDriver driver;
@@ -23,17 +26,9 @@ public class ProfilePictureScreen {
 	@FindBy(xpath = "//com.horcrux.svg.PathView")
 	private WebElement cancelButton;
 
-	public WebElement getGalleryTab() {
-		return galleryTab;
-	}
-
-	public WebElement getCameraTab() {
-		return cameraTab;
-	}
-
-	public WebElement getCancelBtn() {
-		return cancelButton;
-	}
+	/**
+	 *This method is use to click on camera Tab
+	 */
 	public void clickOnCameraTab() {
 		try {
 			cameraTab.click();

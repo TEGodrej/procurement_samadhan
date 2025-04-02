@@ -7,6 +7,9 @@ import org.openqa.selenium.support.PageFactory;
 import GenericUtilities.BaseClass_Farmer;
 import io.appium.java_client.android.AndroidDriver;
 
+/**
+ *@author DivyaPrakashAmar
+ */
 public class FarmerLandDetailsScreen extends BaseClass_Farmer{
 	
 	AndroidDriver driver;
@@ -36,6 +39,9 @@ public class FarmerLandDetailsScreen extends BaseClass_Farmer{
 		return secondLandInfo;
 	}
 	
+	/**
+	 *This method is use to perform click action on FirstLandInfo
+	 */
 	public void clickOnFirstLandInfo() {
 		try {
 			firstLandInfo.click();

@@ -7,6 +7,9 @@ import org.openqa.selenium.support.PageFactory;
 import GenericUtilities.BaseClass_Farmer;
 import io.appium.java_client.android.AndroidDriver;
 
+/**
+ *@author DivyaPrakashAmar
+ */
 public class CCslotBookingScreen extends BaseClass_Farmer{
 
 	AndroidDriver driver;
@@ -22,11 +25,17 @@ public class CCslotBookingScreen extends BaseClass_Farmer{
 	public WebElement getbookAslotbutton() {
 		return bookAslotbutton;
 	}
-	
+	/**
+	 * This method is use to click on BookSloButton
+	 * */
 	public void clickOnBookAslotbutton() {
+		try {
 //	    gestureUtility.click(bookAslotbutton);
 	    bookAslotbutton.click();
+	    System.out.println("Clicked on CC Slot Tab");
+	}catch (Exception e) {
+		System.out.println("Not able to click on CC Slot Tab");
 	}
 	
-	
+	}
 }

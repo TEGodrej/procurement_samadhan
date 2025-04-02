@@ -8,6 +8,9 @@ import org.openqa.selenium.support.PageFactory;
 
 import io.appium.java_client.android.AndroidDriver;
 
+/**
+ *@author DivyaPrakashAmar
+ */
 public class MyLandDetailsScreen {
 	AndroidDriver driver;
 	public MyLandDetailsScreen(AndroidDriver driver) {
@@ -33,29 +36,9 @@ public class MyLandDetailsScreen {
 	@FindBy(xpath = "//android.widget.FrameLayout[@resource-id=\"android:id/content\"]/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.widget.FrameLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[1]/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup[1]/android.view.ViewGroup/com.horcrux.svg.SvgView/com.horcrux.svg.GroupView/com.horcrux.svg.PathView")
 	private WebElement hamburgerTab;
 
-	public WebElement getFirstLandId() {
-		return firstLandId;
-	}
-
-	public WebElement getSecondLandId() {
-		return secondLandId;
-	}
-
-	public WebElement getBackArrow() {
-		return backArrow;
-	}
-
-	public WebElement getPlantationId() {
-		return plantationId;
-	}
-
-	public WebElement getRecordHarvesting() {
-		return recordHarvesting;
-	}
-	
-	public WebElement gethamberTab() {
-		return hamburgerTab;
-	}
+	/**
+	 *This method is use to perform click action on FirstLandId
+	 */
 	public void clickOnFirstLandId() {
 		try {
 			firstLandId.click();
@@ -63,6 +46,10 @@ public class MyLandDetailsScreen {
 			System.out.println("Not able to click on first LandId");
 		}
 	}
+	
+	/**
+	 *This method is use to perform click action on PlantationId
+	 */
 	public void clickOnPlantationId() {
 		try {
 			plantationId.click();
@@ -70,6 +57,9 @@ public class MyLandDetailsScreen {
 			System.out.println("Not able to click on plantationId");
 		}
 	}
+	/**
+	 *This method is use to perform click action on RecordHarvesting
+	 */
 	public void clickOnRecordHarvesting() {
 		try {
 			recordHarvesting.click();
@@ -77,6 +67,9 @@ public class MyLandDetailsScreen {
 			System.out.println("not able to click on record Harvesting");
 		}
 	}
+	/**
+	 *This method is use to perform click action on HamburgerTab
+	 */
 	public void clickOnHamburgerTab() {
 		try {
 			hamburgerTab.click();
@@ -84,6 +77,10 @@ public class MyLandDetailsScreen {
 			System.out.println("Not able to click on hamburger Tab");
 		}
 	}
+	
+	/**
+	 *This method is use to verify FirstLandId
+	 */
 	public void verifyFirstLandId() {
 		try {
 			assertTrue(firstLandId.isDisplayed());

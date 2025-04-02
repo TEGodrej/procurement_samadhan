@@ -6,6 +6,9 @@ import org.openqa.selenium.support.PageFactory;
 
 import io.appium.java_client.android.AndroidDriver;
 
+/**
+ *@author DivyaPrakashAmar
+ */
 public class PlantationDetailsScreen {
 	AndroidDriver driver;
 	public PlantationDetailsScreen(AndroidDriver driver) {
@@ -22,18 +25,10 @@ public class PlantationDetailsScreen {
 	@FindBy(xpath = "//android.widget.TextView[@text='Record Harvesting']")
 	private WebElement recordHarvestButton;
 	
-	public WebElement getbackarrowbtn() {
-		return backArrowButton;
-	}
 	
-	public WebElement getplantationId() {
-		return plantationId;
-	}
-	
-	public WebElement getrecordharvestbtn() {
-		return recordHarvestButton;
-	}
-	
+	/**
+	 *This method is use to perform click action on PlantationID
+	 */
 	public void clickOnPlantationId() {
 		try {
 			plantationId.click();
@@ -42,6 +37,9 @@ public class PlantationDetailsScreen {
 		}
 	}
 	
+	/**
+	 *This method is use to perform click action on RecordHarvest Button
+	 */
 	public void clickOnRecordHarvestButton() {
 		try {
 			recordHarvestButton.click();
@@ -49,4 +47,6 @@ public class PlantationDetailsScreen {
 			System.out.println("Not able to click on ");
 		}
 	}
+
+	
 }

@@ -18,23 +18,39 @@ import com.aventstack.extentreports.Status;
 import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 import com.aventstack.extentreports.reporter.configuration.Theme;
 
+/**
+ *@author DivyaPrakashAmar
+ */
 public class ExtentReportsListner implements ITestListener  {
 
 	ExtentReports extentreports;
 	ExtentTest extentTest;
+	
+	/**
+	 *This method is use to capture method name in extent report once execution starts
+	 *@param result , implements ITestResult interface
+	 */
 	@Override
 	public void onTestStart(ITestResult result) {
 		String methodName = result.getMethod().getMethodName();
 		 extentTest = extentreports.createTest(methodName);
 		
 	}
-
+	
+	/**
+	 *This method is use to capture method name in extent report once test successed
+	 *@param result , implements ITestResult interface
+	 */
 	@Override
 	public void onTestSuccess(ITestResult result) {
 		String methodName = result.getMethod().getMethodName();
 		extentTest.log(Status.PASS,methodName+"========Completed");
 	}
-
+	
+	/**
+	 *This method is use to capture method name as well as takes screenshot in extent report if method got failed
+	 *@param result , implements ITestResult interface
+	 */
 	@Override
 	public void onTestFailure(ITestResult result) {
 		String methodName = result.getMethod().getMethodName();
@@ -57,15 +73,21 @@ public class ExtentReportsListner implements ITestListener  {
 		extentTest.log(Status.FAIL, result.getThrowable());
 
 	}
-
 	
-
+	/**
+	 *This method is use to capture method name as well as takes screenshot in extent report if method got skipped
+	 *@param result , implements ITestResult interface
+	 */
 	@Override
 	public void onTestSkipped(ITestResult result) {
 		String methodName = result.getMethod().getMethodName();
 		extentTest.log(Status.SKIP,methodName+"========Skipped");
 	}
-
+	
+	/**
+	 * This method is use to capture meethod name when execution starts
+	 * @param context , implements ITestContext interface
+	 * */
 	@Override
 	public void onStart(ITestContext context) {
 		ExtentSparkReporter spark=new ExtentSparkReporter("./AdvanceReport/report.html");
@@ -78,10 +100,12 @@ public class ExtentReportsListner implements ITestListener  {
 		extentreports.attachReporter(spark);
 		extentreports.setSystemInfo("OS", "android");
 		extentreports.setSystemInfo("device", "Redmi A2");
-		
-
 	}
-
+	
+	/**
+	 *This method is use to flush the earlier generated extent report
+	 *@param context , implements ITestContext interface
+	 */
 	@Override
 	public void onFinish(ITestContext context) {
 		extentreports.flush();

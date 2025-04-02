@@ -1,0 +1,18 @@
+mainJSPath=C:\\Users\\testing.engineer\\AppData\\Roaming\\npm\\node_modules\\appium\\build\\lib\\main.js
+ipAddress=127.0.0.1
+portNumber=4723
+
+platformName=android
+deviceName=Redmi A2
+automationName=UiAutomator2
+UDID=WKAQCYCQKROVDE4L
+noReset=true
+appActivity=com.godrejsamadhanmobile.MainActivity
+appPackage=com.gavl.oilpalm.samadhan
+
+
+
+
+
+
+

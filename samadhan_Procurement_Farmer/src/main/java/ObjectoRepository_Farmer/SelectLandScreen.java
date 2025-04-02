@@ -9,6 +9,9 @@ import org.openqa.selenium.support.PageFactory;
 import GenericUtilities.BaseClass_Farmer;
 import io.appium.java_client.android.AndroidDriver;
 
+/**
+ *@author DivyaPrakashAmar
+ */
 public class SelectLandScreen extends BaseClass_Farmer{
 	AndroidDriver driver;
 	public SelectLandScreen(AndroidDriver driver) {
@@ -37,38 +40,24 @@ public class SelectLandScreen extends BaseClass_Farmer{
 	@FindBy(xpath = "//android.widget.TextView[@text='Please Select land.']")
 	private WebElement LandErrorMessage;
 	
-	public WebElement getbackArrowbutton() {
-		return backArrowbutton;
-	}
 	
-	public WebElement getselectStateDropdown() {
-		return SelectStateDropDown;
-	}
-	
-	public WebElement getmaharashtra() {
-		return maharashtra;
-	}
-	
-	public WebElement getlandId() {
-		return landId;
-	}
-	
-	public WebElement getkgtextfield() {
-		return kgTextField;
-	}
-	
-	public WebElement getnextButton() {
-		return nextButton;
-	}
-	
+	/**
+	 *This method is use to click on LandId
+	 */
 	public void clickOnLandId() {
 		try {
 //			gestureUtility.click(landId);
 			landId.click();
+			System.out.println("Clicked on landID");
 		}catch(Exception e) {
 			System.out.println("Not able to click on land id");
 		}
 	}
+	
+	/**
+	 *This method is use to sendKey To KgTextField
+	 *@param keys, takes string as a parameter
+	 */
 	public void sendKeyToKgTextField(String keys) {
 		try {
 			kgTextField.sendKeys(keys);
@@ -76,15 +65,23 @@ public class SelectLandScreen extends BaseClass_Farmer{
 			System.out.println("Not able to send keys in kg Text Field");
 		}
 	}
+	
+	/**
+	 *This method is use to click On NextButton
+	 */
 	public void clickOnNextButton() {
 		try {
 //			gestureUtility.click(nextButton);
 			nextButton.click();
+			System.out.println("Clicked on next button");
 		}catch(Exception e) {
 			System.out.println("Not able to click on next button");
 		}
 	}
 	
+	/**
+	 *This method is use to verify LandErrorMessage
+	 */
 	public void verifyLandErrorMessage() {
 		try {
 			if(LandErrorMessage.isDisplayed()){

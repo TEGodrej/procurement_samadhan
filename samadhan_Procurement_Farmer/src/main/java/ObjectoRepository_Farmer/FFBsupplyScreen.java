@@ -6,6 +6,10 @@ import org.openqa.selenium.support.PageFactory;
 
 import io.appium.java_client.android.AndroidDriver;
 
+
+/**
+ *@author DivyaPrakashAmar
+ */
 public class FFBsupplyScreen {
 	
 	AndroidDriver driver;
@@ -17,10 +21,9 @@ public class FFBsupplyScreen {
 	@FindBy(xpath = "//android.widget.TextView[@resource-id='button-text']")
 	private WebElement recordHarvestingButton;
 	
-	public WebElement getrecordharvestingButton() {
-		return recordHarvestingButton;
-	}
-	
+	/**
+	 * This method is use to perform click action on RecordHarvesting Button
+	 * */
 	public void clickOnRecordHarvestingButton() {
 		try {
 			recordHarvestingButton.click();

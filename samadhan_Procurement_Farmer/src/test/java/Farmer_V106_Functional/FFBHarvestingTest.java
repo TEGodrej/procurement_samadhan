@@ -4,12 +4,13 @@ import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
 import GenericUtilities.BaseClass_Farmer;
-/*
- * @author Testing Engineer
+
+/**
+ *@author DivyaPrakashAmar
  */
 @Listeners(GenericUtilities.ExtentReportsListner.class)
 public class FFBHarvestingTest extends BaseClass_Farmer {
-/*
+/**
  *This is verify user is able to record harvest or not 
  *Date has to be changed every time before new run
  */
@@ -22,7 +23,7 @@ public class FFBHarvestingTest extends BaseClass_Farmer {
 		ffbSupplyScreen.clickOnRecordHarvestingButton();
 		farmerLandDetailScreen.clickOnFirstLandInfo();
 		plantationDetailScreen.clickOnPlantationId();
-		plantationDetailScreen.getrecordharvestbtn().click();
+		plantationDetailScreen.clickOnRecordHarvestButton();
 		recordHarvestScreen.clickOnDateTextFeild();
 
 //		WebElement date=sdriver.findElement(AppiumBy.xpath("//android.widget.TextView[@text=\"28\"]"));
@@ -40,7 +41,7 @@ public class FFBHarvestingTest extends BaseClass_Farmer {
 		recordHarvestScreen.clickOnOkayButton();
 	
 	}
-	/*
+	/**
 	 *This is to verify that the recorded harvest in have same data or not 
 	 *Xpath of harvestId Should Be changed before running every script
 	 */
@@ -57,31 +58,17 @@ public class FFBHarvestingTest extends BaseClass_Farmer {
 		plantationDetailScreen.clickOnRecordHarvestButton();
 		recordHarvestScreen.clickOnDateTextFeild();
 
-//		WebElement date=sdriver.findElement(AppiumBy.xpath("//android.widget.TextView[@text=\"28\"]"));
-//		date.click();
 		recordHarvestScreen.date();
 		recordHarvestScreen.clickOnSaveButton();
 		recordHarvestScreen.sendkeyToFfbCountTextFeild(expectedharvestId);
 		recordHarvestScreen.clickOnCaptureImageTab();
 		driverUtility.threadWait(8);
 	    recordHarvestScreen.clickOnSubmitButton();
-//		driverUtility.explicitWait(5, submitBtn);
-//		submitBtn.click();
 		recordHarvestScreen.clickOnOkayButton();
 		driverUtility.implicitWait(10);
 		homeScreen.clickOnhamburgerTab();
 		hamburgerTabScreen.clickOnFfbHarvestTab();
-//		WebElement harvest=sdriver.findElement(AppiumBy.xpath("//android.view.ViewGroup[@resource-id=\"card\"]/android.view.ViewGroup"));
-//		harvest.click();
 		recordHarvestScreen.ClickOnHarvest();
-//		WebElement harvestId=sdriver.findElement(AppiumBy.xpath("//android.widget.TextView[@text=\"589\"]"));
-//		String actualharvestid=harvestId.getText();
-//		
-//		if(actualharvestid.equals(expectedharvestId)) {
-//			assertTrue(true);
-//		}else {
-//			System.out.println("harvestId is not matching:Case Fail");
-//		}
 		recordHarvestScreen.verifyHarvestId();
 	}
 	/*
@@ -100,17 +87,10 @@ public class FFBHarvestingTest extends BaseClass_Farmer {
 		plantationDetailScreen.clickOnRecordHarvestButton();
 		recordHarvestScreen.sendkeyToFfbCountTextFeild(count);
 		recordHarvestScreen.clickOnSubmitButton();
-//		driverUtility.explicitWait(10, submitBtn);
-//		submitBtn.click();
-//		WebElement ErrorMsg=sdriver.findElement(AppiumBy.xpath("//android.widget.TextView[@text=\"Select harvesting date.\"]"));
-//		if(ErrorMsg.isDisplayed()) {
-//			assertTrue(true);
-//		}else {
-//			System.out.println("Message not displayed: case Fail");
-//		}
 		recordHarvestScreen.verifyWarningMessage();
 	}
-	/*
+	
+	/**
 	 *This is to verify that if user do not upload picture they should not be able to record the harvest
 	 *Date xpath should be changed every time before execution
 	 */
@@ -125,21 +105,10 @@ public class FFBHarvestingTest extends BaseClass_Farmer {
 		plantationDetailScreen.clickOnPlantationId();
 		plantationDetailScreen.clickOnRecordHarvestButton();
 		recordHarvestScreen.clickOnDateTextFeild();
-//		WebElement date=sdriver.findElement(AppiumBy.xpath("//android.widget.TextView[@text='28']"));
-//		gestureUtility.click(date);
 		recordHarvestScreen.date();
 		recordHarvestScreen.clickOnSaveButton();
 		recordHarvestScreen.sendkeyToFfbCountTextFeild(ffbCount);
-//		WebElement submitBtn=  recordHarvestScreen.getsubmitBtn();
-//		driverUtility.explicitWait(5, submitBtn);
-//		submitBtn.click();
 		recordHarvestScreen.clickOnSubmitButton();
-//		WebElement ImageErrorMsg=sdriver.findElement(AppiumBy.xpath("//android.widget.TextView[@text=\"Please upload file.\"]"));
-//		if(ImageErrorMsg.isDisplayed()) {
-//			assertTrue(true);
-//		}else {
-//			System.out.println("Message did not displayed: Case Fails");
-//		}
 		recordHarvestScreen.verifyFileErrorMessage();
 	}
 }

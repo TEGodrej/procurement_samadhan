@@ -9,6 +9,9 @@ import org.openqa.selenium.support.PageFactory;
 import GenericUtilities.BaseClass_Farmer;
 import io.appium.java_client.android.AndroidDriver;
 
+/**
+ *@author DivyaPrakashAmar
+ */
 public class HomeScreen extends BaseClass_Farmer{
 	AndroidDriver driver;
 	public HomeScreen(AndroidDriver driver) {
@@ -43,55 +46,29 @@ public class HomeScreen extends BaseClass_Farmer{
 	@FindBy(xpath = "//android.widget.TextView[@text='Payments']")
 	private WebElement paymentButton;
 
-	public WebElement gethamburgerTab() {
-		return hamburgerTab;
-	}
-
-	public WebElement getWeatherTab() {
-		return weatherTab;
-	}
-
-	public WebElement getAmatureTab() {
-		return amateurTab;
-	}
-	
-	public WebElement getAmatureText() {
-		return amatureText;
-	}
-
-	public WebElement getffbPrice() {
-		return ffbPrice;
-	}
-
-	public WebElement gethomeButton() {
-		return homeButton;
-	}
-
-	public WebElement getCropStatusbtn() {
-		return cropStatusButton;
-	}
-
-	public WebElement getCommunitybtn() {
-		return communityButton;
-	}
-
-	public WebElement getPaymentbtn() {
-		return paymentButton;
-	}
-	
+	/**
+	 *This method is use to perform click action on hamburgerTab
+	 */
 	public void clickOnhamburgerTab() {
 		try {
 //		gestureUtility.click(hamburgerTab);
 			hamburgerTab.click();
+			System.out.println("Clicked on hamburger Tab");
 		}catch (Exception e) {
 			System.out.println(hamburgerTab.isDisplayed() +"==> hamburgerTab is not clicked");
 		}
 	}
 	
+	/**
+	 *This method is use to perform scroll action using text reference
+	 */
 	public void scrollToElement(String text) {
 		gestureUtility.scrollIntoView(text);
 	}
 	
+	/**
+	 *This method is use to verify AmatureText
+	 */
 	public void verifyAmatureText() {
 		try {
 			assertTrue(amatureText.isDisplayed());
@@ -100,6 +77,9 @@ public class HomeScreen extends BaseClass_Farmer{
 		}
 	}
 	
+	/**
+	 *This method is use to verify FfbPrice
+	 */
 	public void verifyFfbPrice() {
 		try {
 			assertTrue(ffbPrice.isDisplayed());

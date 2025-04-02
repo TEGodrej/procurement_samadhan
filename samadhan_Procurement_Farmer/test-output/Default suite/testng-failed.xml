@@ -5,6 +5,7 @@
     <classes>
       <class name="Farmer_V106_Functional.CollectionCenterBookingTest">
         <methods>
+          <include name="closeApp"/>
           <include name="startApp"/>
           <include name="verifyUserIsAbleToBookCc"/>
         </methods>

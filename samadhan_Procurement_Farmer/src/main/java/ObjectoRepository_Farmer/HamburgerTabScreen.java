@@ -9,6 +9,9 @@ import org.openqa.selenium.support.PageFactory;
 import GenericUtilities.BaseClass_Farmer;
 import io.appium.java_client.android.AndroidDriver;
 
+/**
+ *@author DivyaPrakashAmar
+ */
 public class HamburgerTabScreen extends BaseClass_Farmer{
 	
 	AndroidDriver driver;
@@ -78,75 +81,22 @@ public class HamburgerTabScreen extends BaseClass_Farmer{
 	@FindBy(xpath = "//android.widget.TextView[@text=\"TEST ICICI BANK\"]")
 	private WebElement bankName;
 
-	public WebElement getProfile() {
-		return profile;
-	}
-
-	public WebElement getHometab() {
-		return Hometab;
-	}
-
-	public WebElement getmyLandTab() {
-		return myLandTab;
-	}
-
-	public WebElement getffbHarvestTab() {
-		return ffbHarvestTab;
-	}
-
-	public WebElement getccSlotTab() {
-		return ccSlotTab;
-	}
-
-	public WebElement getsaplingSlotTab() {
-		return saplingSlotTab;
-	}
-
-	public WebElement getoilPalmTab() {
-		return oilPalmTab;
-	}
-
-	public WebElement getreferAnotherTab() {
-		return referAnotherTab;
-	}
-
-	public WebElement getenquiriesTab() {
-		return enquiriesTab;
-	}
-
-	public WebElement getreportsTab() {
-		return reportsTab;
-	}
-
-	public WebElement gettermsAndConditionTab() {
-		return termsAndConditionTab;
-	}
-
-	public WebElement getprivacyPolicyTab() {
-		return privacyPolicyTab;
-	}
-
-	public WebElement getaboutUsTab() {
-		return aboutUsTab;
-	}
-
-	public WebElement getdarkModeButton() {
-		return darkModeButton;
-	}
-
-	public WebElement getlogoutButton() {
-		return logoutButton;
-	}
-	
+	/**
+	 *This method is use to perform click action on CCSlot Tab
+	 */
 	public void clickOnCcSlotTab() {
 		try {
 //			gestureUtility.click(ccSlotTab);
 			ccSlotTab.click();
+			System.out.println("Clicked on CC Slot Tab");
 		}catch (Exception e) {
 			System.out.println("Not able to click on cc Slot Tab");
 		}
 	}
 	
+	/**
+	 *This method is use to perform click action on FFBHarvest Tab
+	 */
 	public void clickOnFfbHarvestTab() {
 		try {
 			ffbHarvestTab.click();
@@ -155,6 +105,9 @@ public class HamburgerTabScreen extends BaseClass_Farmer{
 		}
 	}
 	
+	/**
+	 *This method is use to perform click action on MyLand Tab
+	 */
 	public void clickOnMyLandTab() {
 		try {
 			myLandTab.click();
@@ -162,6 +115,10 @@ public class HamburgerTabScreen extends BaseClass_Farmer{
 			System.out.println("Not able to click on myLand Tab");
 		}
 	}
+	
+	/**
+	 *This method is use to perform click action on Profile
+	 */
 	public void clickOnProfile() {
 		try {
 			profile.click();
@@ -170,6 +127,9 @@ public class HamburgerTabScreen extends BaseClass_Farmer{
 		}
 	}
 	
+	/**
+	 *This method is use to verify FarmerCode
+	 */
 	public void verifyFarmerCode() {
 		try {
 			assertTrue(farmerCode.isDisplayed());
@@ -177,6 +137,10 @@ public class HamburgerTabScreen extends BaseClass_Farmer{
 			System.out.println("farmerCode is not displayed");
 		}
 	}
+	
+	/**
+	 *This method is use to perform click action on BankDetails
+	 */
 	public void clickOnBankDetails() {
 		try {
 			bankDetails.click();
@@ -185,6 +149,9 @@ public class HamburgerTabScreen extends BaseClass_Farmer{
 		}
 	}
 	
+	/**
+	 *This method is use to verify BankName
+	 */
 	public void verifyBankName() {
 		try {
 			assertTrue(bankName.isDisplayed());

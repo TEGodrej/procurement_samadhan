@@ -4,20 +4,21 @@ import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
 import GenericUtilities.BaseClass_Farmer;
-/*
- * @author Testing Engineer
+
+/**
+ *@author DivyaPrakashAmar
  */
 @Listeners(GenericUtilities.ExtentReportsListner.class)
 
 public class CollectionCenterBookingTest extends BaseClass_Farmer{
-/*
+/**
  *This is to verify that user should be able to book slot 
  */
 	@Test
 	public void verifyUserIsAbleToBookCc() {
 		driverUtility.implicitWait(10);
 //		String weight="290";
-		String weight=excelutility.readDataFromExcel("TestData", 0, 0);
+		String weight=excelutility.readDataFromExcel("TestData", 4, 1);
 		driverUtility.implicitWait(20);
 		homeScreen.clickOnhamburgerTab();
 		driverUtility.threadWait(2);
@@ -28,7 +29,7 @@ public class CollectionCenterBookingTest extends BaseClass_Farmer{
 		selectLandScreen.clickOnNextButton();
 		selectCcScreen.clickOnSecondCenter();
 		selectCcScreen.clickOnBookASlotbutton();
-		driverUtility.threadWait(2);
+		driverUtility.threadWait(4);
 		deliveryTimeScreen.clickOnMonth();
 		driverUtility.threadWait(2);
 //		gestureUtility.scrollDown();
@@ -38,7 +39,7 @@ public class CollectionCenterBookingTest extends BaseClass_Farmer{
 		deliveryTimeScreen.verifyMessage();
 	}
 	
-	/*
+	/**
 	 *This is to verify that the user is able to do CC Slot Booking without entering weight on select land page 
 	 *Assertions are made on error Message display
 	 */
@@ -53,7 +54,7 @@ public class CollectionCenterBookingTest extends BaseClass_Farmer{
 		selectLandScreen.verifyLandErrorMessage();
 	}
 	
-	/*
+	/**
 	 *This is to verify that user should not be able to book a slot without selecting date 
 	 */
 	@Test

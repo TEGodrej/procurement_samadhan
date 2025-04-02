@@ -10,6 +10,15 @@ import java.io.IOException;
 
 	public class ExcelUtility {
 
+		/**
+		 * @author Testing.Engineer
+		 * This method is to read data from excel file 
+		 * @Exceptions IOException & FileNotFoundException
+		 * @Param  sheetName, takes Sheet name
+		 * @param rowNum, takes row number 
+		 * @param columnNum , takes column number
+		 * @Return  value , value form the excel sheet
+		 * */
 	    public  String  readDataFromExcel(String sheetName, int rowNum, int columnNum) {
 	        FileInputStream fileInputStream = null;
 	        Workbook workbook = null;

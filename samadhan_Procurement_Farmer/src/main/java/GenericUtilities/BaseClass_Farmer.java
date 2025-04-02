@@ -1,5 +1,6 @@
 package GenericUtilities;
 
+import java.io.File;
 import java.io.IOException;
 import java.net.URI;
 import java.net.URL;
@@ -26,6 +27,8 @@ import ObjectoRepository_Farmer.SelectCcScreen;
 import ObjectoRepository_Farmer.SelectLandScreen;
 import ObjectoRepository_Farmer.SuccessPopUpScreen;
 import io.appium.java_client.android.AndroidDriver;
+import io.appium.java_client.service.local.AppiumDriverLocalService;
+import io.appium.java_client.service.local.AppiumServiceBuilder;
 
 /*
  * @author Testing Engineer
@@ -40,7 +43,7 @@ public class BaseClass_Farmer {
 	public static MyLandDetailsScreen myLandDetailScreen;
 	public static RecordHarvestingScreen recordHarvestScreen;
 	public static DriverUtility driverUtility;
-//	public FileUtility futil;
+	public static FileUtility fileUtility;
 	public static GestureUtility gestureUtility;
 	public static LoginScreen loginScreen;
 	public static FFBsupplyScreen ffbSupplyScreen;
@@ -56,25 +59,49 @@ public class BaseClass_Farmer {
 	public static NewEnquiryScreen newEnquiryScreen;
 	public static ProfilePictureScreen profilePictureScreen;
 	public static ExcelUtility  excelutility;
+	public AppiumDriverLocalService service ;
 
 	
 
 		@BeforeClass
 		public void startApp() throws IOException {
 		
-//			String platformname=futil.getDataFromProperty("platformName");
-//			String DeviceName=futil.getDataFromProperty("DeviceName");
-//			String AutomationName=futil.getDataFromProperty("uiautomator2");
-//			String udid=futil.getDataFromProperty("WKAQCYCQKROVDE4L");
-//			String appactivty=futil.getDataFromProperty("appActivity");
-//			String apppackage=futil.getDataFromProperty("appPackage");
+/*
+ * this is to start the appium server
+ */			
+						
+						
+			File file = new File(FileUtility.getDataFromProperty("mainJSPath"));
+		    service = new AppiumServiceBuilder().withAppiumJS(file).withIPAddress(FileUtility.getDataFromProperty("ipAddress")).usingPort(Integer.parseInt(FileUtility.getDataFromProperty("portNumber"))).build();
+			service.start();
+							
+			/*         
+			 * Fetching data from property file
+			 * 
+			 */			
+						String platformName=FileUtility.getDataFromProperty("platformName");
+						String DeviceName=FileUtility.getDataFromProperty("DeviceName");
+						String automationName=FileUtility.getDataFromProperty("automationName");
+						String udid=FileUtility.getDataFromProperty("UDID");
+						String appActivty=FileUtility.getDataFromProperty("appActivity");
+						String appPackage=FileUtility.getDataFromProperty("appPackage");
+						String noReset=FileUtility.getDataFromProperty("noReset");
+						
+						DesiredCapabilities desiredCapability=new DesiredCapabilities();
+						desiredCapability.setCapability("platformName", platformName);
+						desiredCapability.setCapability("deviceName", DeviceName);
+						desiredCapability.setCapability("automationName", automationName);
+						desiredCapability.setCapability("UDID", udid);
+						desiredCapability.setCapability("noReset", noReset);
+						desiredCapability.setCapability("appActivity", appActivty);
+						desiredCapability.setCapability("appPackage", appPackage);
 			
-			DesiredCapabilities desiredCapability=new DesiredCapabilities();
-			desiredCapability.setCapability("platformName", "android");
-			desiredCapability.setCapability("deviceName", "Redmi A2");
-			desiredCapability.setCapability("automationName", "Uiautomator2");
-			desiredCapability.setCapability("UDID", "WKAQCYCQKROVDE4L");
-			desiredCapability.setCapability("noReset", true);
+//			DesiredCapabilities desiredCapability=new DesiredCapabilities();
+//			desiredCapability.setCapability("platformName", "android");
+//			desiredCapability.setCapability("deviceName", "Redmi A2");
+//			desiredCapability.setCapability("automationName", "Uiautomator2");
+//			desiredCapability.setCapability("UDID", "WKAQCYCQKROVDE4L");
+//			desiredCapability.setCapability("noReset", true);
 			
 //			dc.setCapability("appActivity", "com.godrejsamadhanmobile.MainActivity");
 //			dc.setCapability("appPackage", "com.gavl.oilpalm.samadhan");
@@ -84,7 +111,7 @@ public class BaseClass_Farmer {
 			sdriver=driver;
 //			driver = new AndroidDriver<>(new URL("http://localhost:4723/wd/hub"), capabilities);
 			
-			driver.activateApp("com.gavl.oilpalm.samadhan");
+//			driver.activateApp("com.gavl.oilpalm.samadhan");
 			System.out.println("app is launched");
 //			driverUtility.implicitWait(10);
 			homeScreen= new HomeScreen(driver);
@@ -107,6 +134,7 @@ public class BaseClass_Farmer {
 			newEnquiryScreen=new NewEnquiryScreen(driver);
 			profilePictureScreen=new ProfilePictureScreen(driver);
 			excelutility = new ExcelUtility();
+			fileUtility = new FileUtility();
 			driverUtility.implicitWait(10);
 		}
 		@AfterClass

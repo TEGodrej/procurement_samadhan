@@ -7,6 +7,9 @@ import org.openqa.selenium.support.PageFactory;
 import GenericUtilities.BaseClass_Farmer;
 import io.appium.java_client.android.AndroidDriver;
 
+/**
+ *@author DivyaPrakashAmar
+ */
 public class MyProfileScreen extends BaseClass_Farmer{
 	AndroidDriver driver;
 	
@@ -33,11 +36,9 @@ public class MyProfileScreen extends BaseClass_Farmer{
 	@FindBy(xpath = "//android.widget.TextView[@text=\"26516919\"]")
 	private WebElement rfidCardNumber;
 	
-	
-	
-
-	
-	
+	/**
+	 *This method is use to perform click action on RFIDDetail
+	 */
 	public void clickOnRFIDDetail() {
 		try {
 			gestureUtility.swipeLeftUsingElement(bankDetail);
@@ -47,6 +48,10 @@ public class MyProfileScreen extends BaseClass_Farmer{
 			System.out.println("Not able to click on RFID detail");
 		}
 	}
+	
+	/**
+	 *This method is use to verify RFID CardNumber
+	 */
 	public void verifyRfidCardNumber() {
 		try {
 			rfidCardNumber.click();
@@ -54,6 +59,10 @@ public class MyProfileScreen extends BaseClass_Farmer{
 			System.out.println("rfid CardNumber is not displayed");
 		}
 	}
+	
+	/**
+	 *This method is use to perform click action on Profile Picture Icon
+	 */
 	public void clickOnProfilePictureIcon() {
 		try {
 			profilePictureIcon.click();
