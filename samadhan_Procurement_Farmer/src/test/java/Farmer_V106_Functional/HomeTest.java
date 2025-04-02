@@ -13,6 +13,7 @@ public class HomeTest extends BaseClass_Farmer {
 
 	/**
 	 *This method is use to verify UserRank
+	 *Rank should display automatically
 	 */
     @Test
     public void verifyUserRank() {
